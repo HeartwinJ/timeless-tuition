@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import { IconSend2 } from "@tabler/icons-vue";
+import {
+  IconSend2,
+  IconHome,
+  IconBook,
+  IconBriefcase,
+  IconNews,
+  IconUsersGroup,
+} from "@tabler/icons-vue";
 
 const navLinks = [
-  { title: "Home", path: "/" },
-  { title: "Courses", path: "/courses" },
-  { title: "Careers", path: "/careers" },
-  { title: "News", path: "/news" },
-  { title: "About Us", path: "/about" },
+  { title: "Home", icon: IconHome, path: "/" },
+  { title: "Courses", icon: IconBook, path: "/courses" },
+  { title: "Careers", icon: IconBriefcase, path: "/careers" },
+  { title: "News", icon: IconNews, path: "/news" },
+  { title: "About Us", icon: IconUsersGroup, path: "/about" },
 ];
 </script>
 
@@ -16,7 +23,8 @@ const navLinks = [
     <div class="absolute ml-8 w-[95%] border-b-2 border-t-2 border-white p-2">
       <div class="ml-64 flex items-center justify-between gap-3">
         <div v-for="(navLink, idx) in navLinks" :key="idx">
-          <RouterLink :to="navLink.path" class="text-white">
+          <RouterLink :to="navLink.path" class="uppercase text-white font-medium flex gap-2 items-center">
+            <component :is="navLink.icon" class="h-5 w-5" />
             {{ navLink.title }}
           </RouterLink>
         </div>
