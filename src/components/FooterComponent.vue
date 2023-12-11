@@ -1,6 +1,39 @@
+<script setup lang="ts">
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTiktok,
+  IconBrandTwitter,
+  IconBrandWhatsapp,
+} from "@tabler/icons-vue";
+
+const socials = [
+  { icon: IconBrandFacebook, path: "https://facebook.com" },
+  { icon: IconBrandLinkedin, path: "https://linkedin.com" },
+  { icon: IconBrandInstagram, path: "https://instagram.com" },
+  { icon: IconBrandTwitter, path: "https://twitter.com" },
+  { icon: IconBrandTiktok, path: "https://tiktok.com" },
+  { icon: IconBrandWhatsapp, path: "https://whatsapp.com" },
+];
+</script>
+
 <template>
-  <div class="flex w-full items-center justify-between p-5">
-    <div>Copyright Timeless Tutors. All rights reserved.</div>
-    <div>Socials</div>
+  <div class="flex w-full items-center justify-between bg-gray-100 px-48 py-5">
+    <div class="text-gray-500">
+      &copy; {{ new Date().getFullYear() }} Timeless Tuition. All rights
+      reserved.
+    </div>
+    <div class="flex items-center gap-3">
+      <div v-for="(social, idx) in socials" :key="idx">
+        <a
+          :href="social.path"
+          target="_blank"
+          class="text-2xl text-gray-500 hover:text-gray-700"
+        >
+          <component :is="social.icon" class="h-6 w-6" />
+        </a>
+      </div>
+    </div>
   </div>
 </template>
