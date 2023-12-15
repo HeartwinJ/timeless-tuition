@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@tabler/icons-vue": "^2.43.0",
+    "@vueuse/components": "^10.7.0",
+    "@vueuse/core": "^10.7.0",
     "trianglify": "^4.1.1",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5",

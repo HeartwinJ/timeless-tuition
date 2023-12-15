@@ -12,7 +12,9 @@ const formData = reactive({
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+  <div
+    class="mx-auto max-w-7xl px-6 py-16 pb-0 sm:py-20 sm:pb-0 lg:px-8 lg:py-24 lg:pb-0"
+  >
     <div class="mx-auto max-w-2xl lg:max-w-none">
       <div class="flex items-center justify-center">
         <form>

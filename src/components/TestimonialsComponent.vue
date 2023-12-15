@@ -38,7 +38,7 @@ const testimonials = [
 
 <template>
   <div>
-    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div class="mx-auto max-w-4xl"></div>
       <div class="py-8 text-center">
         <div class="font-medium text-pink-600">Testimonials</div>
