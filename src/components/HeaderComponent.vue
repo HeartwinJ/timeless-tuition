@@ -19,19 +19,24 @@ const navLinks = [
 
 <template>
   <div class="bg-triangles relative flex w-full items-center px-5 py-2">
-    <img src="../assets/logo.svg" alt="Timeless Tutors Logo" class="h-24" />
+    <RouterLink to="/" class="z-10">
+      <img src="../assets/logo.svg" alt="Timeless Tutors Logo" class="h-24" />
+    </RouterLink>
     <div class="absolute ml-8 w-[95%] border-b-2 border-t-2 border-white p-2">
       <div class="ml-64 flex items-center justify-between gap-3">
         <div v-for="(navLink, idx) in navLinks" :key="idx">
-          <RouterLink :to="navLink.path" class="uppercase text-white font-medium flex gap-2 items-center">
+          <RouterLink
+            :to="navLink.path"
+            class="flex items-center gap-2 font-medium uppercase text-white"
+          >
             <component :is="navLink.icon" class="h-5 w-5" />
             {{ navLink.title }}
           </RouterLink>
         </div>
-        <div class="flex items-center gap-2 rounded-md border p-2 text-white">
+        <RouterLink to="/get-started" class="flex items-center gap-2 rounded-md border p-2 text-white">
           <IconSend2 class="h-5 w-5" />
           <span> Get Started </span>
-        </div>
+        </RouterLink>
       </div>
     </div>
   </div>

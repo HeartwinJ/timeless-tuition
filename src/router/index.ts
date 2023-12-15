@@ -4,6 +4,8 @@ import CoursesView from "@/views/CoursesView.vue";
 import CareersView from "@/views/CareersView.vue";
 import NewsView from "@/views/NewsView.vue";
 import AboutView from "@/views/AboutView.vue";
+import CourseDetailView from "@/views/CourseDetailView.vue";
+import GetStartedView from "@/views/GetStartedView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +21,11 @@ const router = createRouter({
       component: CoursesView,
     },
     {
+      path: "/courses/:courseId",
+      name: "course_details",
+      component: CourseDetailView,
+    },
+    {
       path: "/careers",
       name: "careers",
       component: CareersView,
@@ -32,6 +39,11 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutView,
+    },
+    {
+      path: "/get-started",
+      name: "get_started",
+      component: GetStartedView,
     },
   ],
 });

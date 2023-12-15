@@ -19,7 +19,7 @@ const socials = [
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between bg-gray-100 px-48 py-5">
+  <div class="flex w-full items-center justify-between bg-gray-200 px-48 py-5">
     <div class="text-gray-500">
       &copy; {{ new Date().getFullYear() }} Timeless Tuition. All rights
       reserved.
