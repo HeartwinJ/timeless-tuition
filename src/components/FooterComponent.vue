@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import {
-  IconBrandFacebook,
+  IconBrandFacebookFilled,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandTiktok,
-  IconBrandTwitter,
+  IconBrandTiktokFilled,
+  IconBrandTwitterFilled,
   IconBrandWhatsapp,
 } from "@tabler/icons-vue";
 
 const socials = [
-  { icon: IconBrandFacebook, path: "https://facebook.com" },
+  { icon: IconBrandFacebookFilled, path: "https://facebook.com" },
   { icon: IconBrandLinkedin, path: "https://linkedin.com" },
   { icon: IconBrandInstagram, path: "https://instagram.com" },
-  { icon: IconBrandTwitter, path: "https://twitter.com" },
-  { icon: IconBrandTiktok, path: "https://tiktok.com" },
+  { icon: IconBrandTwitterFilled, path: "https://twitter.com" },
+  { icon: IconBrandTiktokFilled, path: "https://tiktok.com" },
   { icon: IconBrandWhatsapp, path: "https://whatsapp.com" },
 ];
 </script>
 
 <template>
   <div
-    class="flex w-full flex-col items-center justify-between gap-3 bg-gray-200 px-8 py-5 sm:flex-row sm:px-18 lg:px-48"
+    class="sm:px-18 flex w-full flex-col items-center justify-between gap-3 bg-gray-200 px-8 py-5 sm:flex-row lg:px-48"
   >
     <div class="text-gray-500">
       &copy; {{ new Date().getFullYear() }} Timeless Tuition. All rights

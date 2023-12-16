@@ -3,6 +3,7 @@ import { ref } from "vue";
 import ServicesComponent from "@/components/ServicesComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
+import DividerComponent from "@/components/DividerComponent.vue";
 
 const selectedCourse = ref("");
 </script>
@@ -10,11 +11,11 @@ const selectedCourse = ref("");
 <template>
   <div>
     <div class="relative isolate overflow-hidden pt-14">
-      <img
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&sat=-80"
-        alt=""
+      <!-- <img
+        src=""
         class="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
-      />
+      /> -->
+      <div class="absolute inset-0 -z-10 h-full bg-gray-500"></div>
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
           <h1
@@ -43,17 +44,19 @@ const selectedCourse = ref("");
               <option value="year-7">Year 7</option>
             </select>
             <button
-              class="rounded bg-blue-500 px-4 py-1 text-white hover:bg-blue-600"
+              class="rounded bg-pink-600 px-4 py-1 text-white hover:bg-pink-500"
               @click="$router.push(`/courses/${selectedCourse}`)"
             >
-              Search
+              View Subjects
             </button>
           </div>
         </div>
       </div>
     </div>
     <ServicesComponent />
+    <DividerComponent />
     <TestimonialsComponent />
+    <DividerComponent />
     <FAQComponent />
   </div>
 </template>

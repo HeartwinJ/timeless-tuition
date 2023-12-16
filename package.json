@@ -18,6 +18,7 @@
     ]
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "@tabler/icons-vue": "^2.43.0",
     "@vueuse/components": "^10.7.0",
     "@vueuse/core": "^10.7.0",

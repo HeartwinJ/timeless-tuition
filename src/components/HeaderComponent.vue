@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { vOnClickOutside } from "@vueuse/components";
+import { IconMenu2 } from "@tabler/icons-vue";
 import {
-  IconSend2,
-  IconHome,
-  IconBook,
-  IconBriefcase,
-  IconNews,
-  IconUsersGroup,
-  IconMenu2,
-} from "@tabler/icons-vue";
+  HomeIcon,
+  BookOpenIcon,
+  BriefcaseIcon,
+  NewspaperIcon,
+  UserIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/vue/24/solid";
 
 const navLinks = [
-  { title: "Home", icon: IconHome, path: "/" },
-  { title: "Courses", icon: IconBook, path: "/courses" },
-  { title: "Careers", icon: IconBriefcase, path: "/careers" },
-  { title: "News", icon: IconNews, path: "/news" },
-  { title: "About Us", icon: IconUsersGroup, path: "/about" },
+  { title: "Home", icon: HomeIcon, path: "/" },
+  { title: "Courses", icon: BookOpenIcon, path: "/courses" },
+  { title: "Careers", icon: BriefcaseIcon, path: "/careers" },
+  { title: "News", icon: NewspaperIcon, path: "/news" },
+  { title: "About Us", icon: UserIcon, path: "/about" },
 ];
 
 const mobileMenuOpen = ref(false);
@@ -25,10 +25,10 @@ const mobileMenuOpen = ref(false);
 <template>
   <div class="bg-triangles relative flex w-full items-center px-5 py-2">
     <RouterLink to="/" class="z-10">
-      <img src="../assets/logo.svg" alt="Timeless Tutors Logo" class="h-24" />
+      <img src="../assets/logo.svg" alt="Timeless Tutors Logo" class="h-28" />
     </RouterLink>
     <div
-      class="absolute left-12 right-2 ml-1 border-b-2 border-t-2 border-white p-2"
+      class="absolute left-12 right-2 ml-1 border-b-2 border-t-2 border-white p-4"
     >
       <div class="flex justify-end py-2 md:hidden">
         <IconMenu2
@@ -36,21 +36,25 @@ const mobileMenuOpen = ref(false);
           @click="mobileMenuOpen = !mobileMenuOpen"
         />
       </div>
-      <div class="ml-64 hidden items-center justify-between gap-3 md:flex">
-        <div v-for="(navLink, idx) in navLinks" :key="idx">
+      <div class="ml-80 hidden items-center justify-between gap-3 md:flex">
+        <div
+          v-for="(navLink, idx) in navLinks"
+          :key="idx"
+          class="flex items-center"
+        >
           <RouterLink
             :to="navLink.path"
-            class="flex items-center gap-2 font-medium uppercase text-white"
+            class="flex items-center gap-2 text-xl font-medium uppercase text-white"
           >
-            <component :is="navLink.icon" class="h-5 w-5" />
             {{ navLink.title }}
+            <component :is="navLink.icon" class="h-5 w-5" />
           </RouterLink>
         </div>
         <RouterLink
           to="/get-started"
-          class="flex items-center gap-2 rounded-md border p-2 text-white"
+          class="flex items-center gap-2 rounded-md border px-4 py-2 text-lg font-medium uppercase text-white"
         >
-          <IconSend2 class="h-5 w-5" />
+          <PaperAirplaneIcon class="h-5 w-5" />
           <span> Get Started </span>
         </RouterLink>
       </div>

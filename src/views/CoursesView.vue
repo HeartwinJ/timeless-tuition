@@ -14,7 +14,7 @@ const courses = [
 
 function getImage(seed: string) {
   return `data:image/svg+xml;base64,${window.btoa(
-    new XMLSerializer().serializeToString(Trianglify({ seed: seed }).toSVG()),
+    new XMLSerializer().serializeToString(Trianglify({ seed: seed, cellSize: 300 }).toSVG()),
   )}`;
 }
 </script>
