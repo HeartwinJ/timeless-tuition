@@ -25,18 +25,27 @@ const mobileMenuOpen = ref(false);
 <template>
   <div class="bg-triangles relative flex w-full items-center px-5 py-2">
     <RouterLink to="/" class="z-10">
-      <img src="../assets/logo.svg" alt="Timeless Tutors Logo" class="h-28" />
+      <img
+        src="../assets/logo_pencil.svg"
+        alt="Timeless Tutors Logo"
+        class="h-28"
+      />
     </RouterLink>
-    <div
-      class="absolute left-12 right-2 ml-1 border-b-2 border-t-2 border-white p-4"
-    >
+    <div class="flex items-center gap-24 grow border-b-2 border-t-2 border-white p-4 pl-0 ml-1">
+      <RouterLink to="/" class="z-10">
+        <img
+          src="../assets/logo_text.svg"
+          alt="Timeless Tutors Logo"
+          class="h-8"
+        />
+      </RouterLink>
       <div class="flex justify-end py-2 md:hidden">
         <IconMenu2
           class="h-6 w-6 cursor-pointer text-white"
           @click="mobileMenuOpen = !mobileMenuOpen"
         />
       </div>
-      <div class="ml-80 hidden items-center justify-between gap-3 md:flex">
+      <div class="hidden grow items-center justify-between gap-3 md:flex">
         <div
           v-for="(navLink, idx) in navLinks"
           :key="idx"
@@ -86,7 +95,7 @@ const mobileMenuOpen = ref(false);
               to="/get-started"
               class="flex items-center gap-2 rounded-md border p-2 text-gray-700"
             >
-              <IconSend2 class="h-5 w-5" />
+              <PaperAirplaneIcon class="h-5 w-5" />
               <div class="grow text-center">Get Started</div>
             </RouterLink>
           </div>
