@@ -14,7 +14,9 @@ const courses = [
 
 function getImage(seed: string) {
   return `data:image/svg+xml;base64,${window.btoa(
-    new XMLSerializer().serializeToString(Trianglify({ seed: seed, cellSize: 300 }).toSVG()),
+    new XMLSerializer().serializeToString(
+      Trianglify({ seed: seed, cellSize: 300 }).toSVG(),
+    ),
   )}`;
 }
 </script>
@@ -22,6 +24,19 @@ function getImage(seed: string) {
 <template>
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-2xl lg:max-w-none">
+      <div class="py-8 text-center">
+        <div class="font-medium text-pink-600">Courses</div>
+        <div class="text-xl font-bold uppercase">lorem ipsum</div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia,
+          aspernatur provident corporis incidunt rem laudantium explicabo eum
+          esse doloribus officia et commodi optio dicta? Maiores repellat illo
+          eum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+          at voluptate facere tempore nesciunt, animi beatae accusantium
+          aspernatur commodi obcaecati voluptatibus illo fugit nulla, ipsam quo
+          expedita officia iusto! Esse.
+        </div>
+      </div>
       <dl
         class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
       >

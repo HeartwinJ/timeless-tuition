@@ -3,6 +3,19 @@
 <template>
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
+      <div class="py-8 text-center">
+        <div class="font-medium text-pink-600">About Us</div>
+        <div class="text-xl font-bold uppercase">lorem ipsum</div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error
+          nisi laboriosam nihil aspernatur nulla cum optio natus expedita
+          debitis voluptatem, amet obcaecati et eveniet, a inventore temporibus
+          maiores eum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Excepturi quos voluptatum reiciendis, perspiciatis distinctio quidem
+          dolorem! Atque error tenetur asperiores? Ad adipisci sapiente impedit
+          temporibus corporis eaque esse vitae accusantium?
+        </div>
+      </div>
       <div class="flex flex-col gap-8 sm:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
@@ -23,9 +36,7 @@
         />
       </div>
       <div class="flex flex-col gap-8 sm:flex-row">
-        <img
-          src="https://picsum.photos/500/328?random=2"
-        />
+        <img src="https://picsum.photos/500/328?random=2" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -60,9 +71,7 @@
         />
       </div>
       <div class="flex flex-col gap-8 sm:flex-row">
-        <img
-          src="https://picsum.photos/500/328?random=4"
-        />
+        <img src="https://picsum.photos/500/328?random=4" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus

@@ -45,20 +45,24 @@ const coursesData = {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
-    <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
-      <div class="flex gap-8">
-        <img src="https://picsum.photos/500/328?random=1" />
-        <div>
-          <div class="text-3xl font-medium">
-            {{ coursesData[courseId as keyof typeof coursesData].title }}
-          </div>
+  <div>
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
+        <div class="flex gap-8">
+          <img src="https://picsum.photos/500/328?random=1" />
           <div>
-            {{ coursesData[courseId as keyof typeof coursesData].description }}
+            <div class="text-3xl font-medium">
+              {{ coursesData[courseId as keyof typeof coursesData].title }}
+            </div>
+            <div>
+              {{
+                coursesData[courseId as keyof typeof coursesData].description
+              }}
+            </div>
           </div>
         </div>
       </div>
-      <FAQComponent />
     </div>
+    <FAQComponent />
   </div>
 </template>

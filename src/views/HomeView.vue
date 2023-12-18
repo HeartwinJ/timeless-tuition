@@ -16,7 +16,7 @@ const selectedCourse = ref("");
         class="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
       /> -->
       <div class="absolute inset-0 -z-10 h-full bg-gray-500"></div>
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
           <h1
             class="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
@@ -33,7 +33,7 @@ const selectedCourse = ref("");
           <div
             class="mt-10 flex items-center justify-center gap-x-6 text-gray-300"
           >
-            <span>Find the right course for your child:</span>
+            <!-- <span>Find the right course for your child:</span>
             <select v-model="selectedCourse">
               <option value="year-1">Year 1</option>
               <option value="year-2">Year 2</option>
@@ -42,7 +42,7 @@ const selectedCourse = ref("");
               <option value="year-5">Year 5</option>
               <option value="year-6">Year 6</option>
               <option value="year-7">Year 7</option>
-            </select>
+            </select> -->
             <button
               class="rounded bg-pink-600 px-4 py-1 text-white hover:bg-pink-500"
               @click="$router.push(`/courses/${selectedCourse}`)"
@@ -56,7 +56,6 @@ const selectedCourse = ref("");
     <ServicesComponent />
     <DividerComponent />
     <TestimonialsComponent />
-    <DividerComponent />
     <FAQComponent />
   </div>
 </template>

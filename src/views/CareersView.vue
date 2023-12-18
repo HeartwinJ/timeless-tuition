@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import {
-  IconHourglass,
-  IconCalendar,
-  IconMapPin,
-  IconWallet,
-} from "@tabler/icons-vue";
+import { IconHourglass, IconCalendar, IconMapPin } from "@tabler/icons-vue";
 
 const openings = [
   {
@@ -13,37 +8,33 @@ const openings = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
     experience: "2 years",
-    salary: "£20,000",
     employmentType: "Full-time",
     location: "London",
   },
   {
-    department: "Mathematics",
-    role: "Mathematics Tutor",
+    department: "Science",
+    role: "Physics Teaching Assistant",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
+    experience: "1 year",
+    employmentType: "Part-time",
+    location: "London",
+  },
+  {
+    department: "Science",
+    role: "Biology Tutor",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
     experience: "2 years",
-    salary: "£20,000",
     employmentType: "Full-time",
     location: "London",
   },
   {
-    department: "Mathematics",
-    role: "Mathematics Tutor",
+    department: "Language",
+    role: "English Tutor",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
     experience: "2 years",
-    salary: "£20,000",
-    employmentType: "Full-time",
-    location: "London",
-  },
-  {
-    department: "Mathematics",
-    role: "Mathematics Tutor",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
-    experience: "2 years",
-    salary: "£20,000",
     employmentType: "Full-time",
     location: "London",
   },
@@ -69,27 +60,28 @@ const openings = [
       <div
         v-for="(opening, idx) in openings"
         :key="idx"
-        class="m-3 rounded-lg border bg-white p-3 shadow"
+        class="m-3 flex rounded-lg border bg-white p-3 shadow"
       >
-        <div class="mb-2 text-sm text-gray-700">
-          <span class="rounded-full border bg-white px-2 py-1">
-            {{ opening.department }}
-          </span>
+        <div>
+          <div class="mb-2 text-sm text-gray-700">
+            <span class="rounded-full border bg-white px-2 py-1">
+              {{ opening.department }}
+            </span>
+          </div>
+          <div class="text-lg font-medium text-pink-600">
+            {{ opening.role }}
+          </div>
+          <div class="text-gray-700">{{ opening.description }}</div>
         </div>
-        <div class="text-lg font-medium">{{ opening.role }}</div>
-        <div class="text-gray-700">{{ opening.description }}</div>
-        <div class="flex justify-around">
-          <div class="flex gap-2 p-2 text-gray-700">
-            <IconCalendar /> {{ opening.experience }}
+        <div class="flex flex-col basis-1/4 justify-around items-center">
+          <div class="flex gap-2 p-2 text-gray-700 items-center w-full">
+            <IconCalendar class="h-5 w-5" /> {{ opening.experience }}
           </div>
-          <div class="flex gap-2 p-2 text-gray-700">
-            <IconWallet /> {{ opening.salary }}
+          <div class="flex gap-2 p-2 text-gray-700 items-center w-full">
+            <IconHourglass class="h-5 w-5" /> {{ opening.employmentType }}
           </div>
-          <div class="flex gap-2 p-2 text-gray-700">
-            <IconHourglass /> {{ opening.employmentType }}
-          </div>
-          <div class="flex gap-2 p-2 text-gray-700">
-            <IconMapPin /> {{ opening.location }}
+          <div class="flex gap-2 p-2 text-gray-700 items-center w-full">
+            <IconMapPin class="h-5 w-5" /> {{ opening.location }}
           </div>
         </div>
       </div>

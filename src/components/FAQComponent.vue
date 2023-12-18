@@ -32,10 +32,10 @@ const faqs = [
 </script>
 
 <template>
-  <div>
+  <div class="bg-gradient-to-b from-pink-500 to-pink-600">
     <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
-        <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+        <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">
           Frequently asked questions
         </h2>
         <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -48,7 +48,7 @@ const faqs = [
           >
             <dt>
               <DisclosureButton
-                class="flex w-full items-start justify-between text-left text-gray-900"
+                class="flex w-full items-start justify-between text-left text-white"
               >
                 <span class="text-base font-semibold leading-7">{{
                   faq.question
@@ -60,7 +60,7 @@ const faqs = [
               </DisclosureButton>
             </dt>
             <DisclosurePanel as="dd" class="mt-2 pr-12">
-              <p class="text-base leading-7 text-gray-600">
+              <p class="text-base leading-7 text-white">
                 {{ faq.answer }}
               </p>
             </DisclosurePanel>
