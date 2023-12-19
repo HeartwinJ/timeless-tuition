@@ -3,13 +3,48 @@
 import Trianglify from "trianglify";
 
 const courses = [
-  { title: "Year 1", link: "/courses/year-1" },
-  { title: "Year 2", link: "/courses/year-2" },
-  { title: "Year 3", link: "/courses/year-3" },
-  { title: "Year 4", link: "/courses/year-4" },
-  { title: "Year 5", link: "/courses/year-5" },
-  { title: "Year 6", link: "/courses/year-6" },
-  { title: "Year 7", link: "/courses/year-7" },
+  {
+    title: "Year 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-1",
+  },
+  {
+    title: "Year 2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-2",
+  },
+  {
+    title: "Year 3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-3",
+  },
+  {
+    title: "Year 4",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-4",
+  },
+  {
+    title: "Year 5",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-5",
+  },
+  {
+    title: "Year 6",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-6",
+  },
+  {
+    title: "Year 7",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    link: "/courses/year-7",
+  },
 ];
 
 function getImage(seed: string) {
@@ -46,8 +81,22 @@ function getImage(seed: string) {
           :to="course.link"
           class="flex flex-col items-center justify-center gap-3"
         >
-          <img :src="getImage((idx + 1).toString(36))" />
-          <div>{{ course.title }}</div>
+          <div
+            :style="{
+              backgroundImage: `url(${getImage((idx + 1).toString(36))})`,
+            }"
+            class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white"
+          >
+            <div class="z-10 flex flex-col items-center justify-center">
+              <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
+              <div class="mt-3 hidden text-center group-hover:block">
+                {{ course.description }}
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 hidden bg-black/30 group-hover:block"
+            ></div>
+          </div>
         </RouterLink>
       </dl>
     </div>

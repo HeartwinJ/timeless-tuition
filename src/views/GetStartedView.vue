@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { ref, reactive } from "vue";
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  DialogDescription,
+} from "@headlessui/vue";
 import FAQComponent from "@/components/FAQComponent.vue";
+import SpinnerComponent from "@/components/SpinnerComponent.vue";
 import Services from "@/services";
 
 interface FormData {
@@ -23,6 +30,9 @@ const defaultFormData: FormData = {
   message: "",
 };
 
+const isProcessing = ref(false);
+const isSuccessDialogOpen = ref(false);
+
 const formData: FormData = reactive({
   ...defaultFormData,
 });
@@ -36,8 +46,11 @@ function resetForm() {
 async function handleSubmit(e: Event) {
   e.preventDefault();
   console.log(formData);
+  isProcessing.value = true;
   await Services.saveContact(formData);
   resetForm();
+  isProcessing.value = false;
+  isSuccessDialogOpen.value = true;
 }
 </script>
 
@@ -75,6 +88,8 @@ async function handleSubmit(e: Event) {
                     placeholder="Firstname"
                     class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                     v-model="formData.firstname"
+                    required
+                    :disabled="isProcessing"
                   />
                 </div>
                 <div class="grow">
@@ -87,6 +102,8 @@ async function handleSubmit(e: Event) {
                     placeholder="Lastname"
                     class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                     v-model="formData.lastname"
+                    required
+                    :disabled="isProcessing"
                   />
                 </div>
               </div>
@@ -98,6 +115,8 @@ async function handleSubmit(e: Event) {
                   placeholder="Email"
                   class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                   v-model="formData.email"
+                  required
+                  :disabled="isProcessing"
                 />
               </div>
               <div>
@@ -110,6 +129,8 @@ async function handleSubmit(e: Event) {
                   placeholder="Phone Number"
                   class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                   v-model="formData.phone"
+                  required
+                  :disabled="isProcessing"
                 />
               </div>
               <div>
@@ -119,6 +140,8 @@ async function handleSubmit(e: Event) {
                   placeholder="Year"
                   class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                   v-model="formData.year"
+                  required
+                  :disabled="isProcessing"
                 >
                   <option>Year 1</option>
                   <option>Year 2</option>
@@ -142,6 +165,8 @@ async function handleSubmit(e: Event) {
                   placeholder="Subject"
                   class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                   v-model="formData.subject"
+                  required
+                  :disabled="isProcessing"
                 />
               </div>
               <div>
@@ -151,14 +176,19 @@ async function handleSubmit(e: Event) {
                   placeholder="Eg. I would like to book a lesson"
                   class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
                   v-model="formData.message"
+                  :disabled="isProcessing"
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
-                  class="w-full rounded-lg bg-pink-600 px-4 py-2 uppercase text-white"
+                  class="flex w-full items-center justify-center rounded-lg bg-pink-600 px-4 py-2 uppercase text-white"
+                  :disabled="isProcessing"
                 >
-                  Submit
+                  <div v-if="isProcessing">
+                    <SpinnerComponent class="h-6 w-6" />
+                  </div>
+                  <div v-else>Submit</div>
                 </button>
               </div>
             </form>
@@ -177,5 +207,28 @@ async function handleSubmit(e: Event) {
       </div>
     </div>
     <FAQComponent />
+    <Dialog
+      :open="isSuccessDialogOpen"
+      @close="isSuccessDialogOpen = false"
+      class="relative z-50"
+    >
+      <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
+      <div class="fixed inset-0 flex w-screen items-center justify-center p-4">
+        <DialogPanel class="w-full max-w-sm rounded bg-white p-4">
+          <DialogTitle class="mb-3 text-2xl font-medium">
+            Request recorded
+          </DialogTitle>
+          <DialogDescription>
+            We have recorded your request and will get back to you shortly.
+          </DialogDescription>
+          <button
+            @click="isSuccessDialogOpen = false"
+            class="mt-5 w-full rounded-lg bg-pink-600 px-4 py-2 uppercase text-white"
+          >
+            Ok
+          </button>
+        </DialogPanel>
+      </div>
+    </Dialog>
   </div>
 </template>
