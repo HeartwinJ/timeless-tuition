@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
+import { reset } from "@formkit/vue";
 import {
   Dialog,
   DialogPanel,
@@ -20,7 +21,10 @@ interface FormData {
   message: string;
 }
 
-const defaultFormData: FormData = {
+const isProcessing = ref(false);
+const isSuccessDialogOpen = ref(false);
+
+const formData = reactive({
   firstname: "",
   lastname: "",
   email: "",
@@ -28,27 +32,13 @@ const defaultFormData: FormData = {
   year: "",
   subject: "",
   message: "",
-};
-
-const isProcessing = ref(false);
-const isSuccessDialogOpen = ref(false);
-
-const formData: FormData = reactive({
-  ...defaultFormData,
 });
 
-function resetForm() {
-  Object.keys(formData).forEach((key) => {
-    formData[key as keyof FormData] = defaultFormData[key as keyof FormData];
-  });
-}
-
-async function handleSubmit(e: Event) {
-  e.preventDefault();
+async function handleSubmit(formData: FormData) {
   console.log(formData);
   isProcessing.value = true;
   await Services.saveContact(formData);
-  resetForm();
+  reset("query-form");
   isProcessing.value = false;
   isSuccessDialogOpen.value = true;
 }
@@ -76,21 +66,15 @@ async function handleSubmit(e: Event) {
         </div>
         <div class="flex justify-around gap-8 border-2 border-pink-600 p-5">
           <div class="basis-1/2">
-            <form @submit="handleSubmit">
+            <FormKit
+              id="query-form"
+              type="form"
+              :actions="false"
+              v-model="formData"
+              @submit="handleSubmit"
+            >
               <div class="flex w-full gap-3">
                 <div class="grow">
-                  <!-- <label for="firstname" class="mb-1 block text-sm"
-                    >Firstname</label
-                  >
-                  <input
-                    type="text"
-                    id="firstname"
-                    placeholder="Firstname"
-                    class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                    v-model="formData.firstname"
-                    required
-                    :disabled="isProcessing"
-                  /> -->
                   <FormKit
                     type="text"
                     name="firstname"
@@ -111,80 +95,70 @@ async function handleSubmit(e: Event) {
                   />
                 </div>
               </div>
-              <div>
-                <FormKit
-                  type="email"
-                  name="email"
-                  label="Email"
-                  placeholder="Email"
-                  validation="required"
-                  :disabled="isProcessing"
-                />
-              </div>
-              <div>
-                <FormKit
-                  type="tel"
-                  name="phone"
-                  label="Phone Number"
-                  placeholder="Phone Number"
-                  validation="required"
-                  :disabled="isProcessing"
-                />
-              </div>
-              <div>
-                <FormKit
-                  type="select"
-                  name="year"
-                  label="Year"
-                  placeholder="Select Year"
-                  validation="required"
-                  :disabled="isProcessing"
-                  :options="[
-                    'Year 1',
-                    'Year 2',
-                    'Year 3',
-                    'Year 4',
-                    'Year 5',
-                    'Year 6',
-                    'Year 7',
-                    'Year 8',
-                    'Year 9',
-                    'Year 10',
-                    'Year 11',
-                    'A Level',
-                  ]"
-                />
-              </div>
-              <div>
-                <FormKit
-                  type="select"
-                  name="subject"
-                  label="Subject"
-                  placeholder="Select Subject"
-                  validation="required"
-                  :disabled="isProcessing"
-                  :options="[
-                    'Maths',
-                    'English',
-                    'Science',
-                    'History',
-                    'Geography',
-                    'Computer Science',
-                    'Biology',
-                    'Chemistry',
-                    'Physics',
-                  ]"
-                />
-              </div>
-              <div>
-                <FormKit
-                  type="textarea"
-                  name="message"
-                  label="Message"
-                  placeholder="Eg. I would like to book a lesson"
-                  :disabled="isProcessing"
-                />
-              </div>
+              <FormKit
+                type="email"
+                name="email"
+                label="Email"
+                placeholder="Email"
+                validation="required"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="tel"
+                name="phone"
+                label="Phone Number"
+                placeholder="Phone Number"
+                validation="required"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="select"
+                name="year"
+                label="Year"
+                placeholder="Select Year"
+                validation="required"
+                :disabled="isProcessing"
+                :options="[
+                  'Year 1',
+                  'Year 2',
+                  'Year 3',
+                  'Year 4',
+                  'Year 5',
+                  'Year 6',
+                  'Year 7',
+                  'Year 8',
+                  'Year 9',
+                  'Year 10',
+                  'Year 11',
+                  'A Level',
+                ]"
+              />
+              <FormKit
+                type="select"
+                name="subject"
+                label="Subject"
+                placeholder="Select Subject"
+                validation="required"
+                :disabled="isProcessing"
+                :options="[
+                  'Maths',
+                  'English',
+                  'Science',
+                  'History',
+                  'Geography',
+                  'Computer Science',
+                  'Biology',
+                  'Chemistry',
+                  'Physics',
+                ]"
+              />
+              <FormKit
+                type="textarea"
+                name="message"
+                label="Message"
+                placeholder="Eg. I would like to book a lesson"
+                :disabled="isProcessing"
+              />
               <div>
                 <button
                   type="submit"
@@ -197,7 +171,7 @@ async function handleSubmit(e: Event) {
                   <div v-else>Submit</div>
                 </button>
               </div>
-            </form>
+            </FormKit>
           </div>
           <div class="basis-1/2 border shadow">
             <iframe
