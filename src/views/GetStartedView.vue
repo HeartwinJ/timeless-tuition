@@ -79,7 +79,7 @@ async function handleSubmit(e: Event) {
             <form @submit="handleSubmit">
               <div class="flex w-full gap-3">
                 <div class="grow">
-                  <label for="firstname" class="mb-1 block text-sm"
+                  <!-- <label for="firstname" class="mb-1 block text-sm"
                     >Firstname</label
                   >
                   <input
@@ -90,94 +90,100 @@ async function handleSubmit(e: Event) {
                     v-model="formData.firstname"
                     required
                     :disabled="isProcessing"
+                  /> -->
+                  <FormKit
+                    type="text"
+                    name="firstname"
+                    label="Firstname"
+                    placeholder="Firstname"
+                    validation="required"
+                    :disabled="isProcessing"
                   />
                 </div>
                 <div class="grow">
-                  <label for="lastname" class="mb-1 block text-sm"
-                    >Lastname</label
-                  >
-                  <input
+                  <FormKit
                     type="text"
-                    id="lastname"
+                    name="lastname"
+                    label="Lastname"
                     placeholder="Lastname"
-                    class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                    v-model="formData.lastname"
-                    required
+                    validation="required"
                     :disabled="isProcessing"
                   />
                 </div>
               </div>
               <div>
-                <label for="email" class="mb-1 block text-sm">Email</label>
-                <input
+                <FormKit
                   type="email"
-                  id="email"
+                  name="email"
+                  label="Email"
                   placeholder="Email"
-                  class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                  v-model="formData.email"
-                  required
+                  validation="required"
                   :disabled="isProcessing"
                 />
               </div>
               <div>
-                <label for="phone" class="mb-1 block text-sm"
-                  >Phone Number</label
-                >
-                <input
+                <FormKit
                   type="tel"
-                  id="phone"
+                  name="phone"
+                  label="Phone Number"
                   placeholder="Phone Number"
-                  class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                  v-model="formData.phone"
-                  required
+                  validation="required"
                   :disabled="isProcessing"
                 />
               </div>
               <div>
-                <label for="year" class="mb-1 block text-sm">Year</label>
-                <select
-                  id="year"
-                  placeholder="Year"
-                  class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                  v-model="formData.year"
-                  required
+                <FormKit
+                  type="select"
+                  name="year"
+                  label="Year"
+                  placeholder="Select Year"
+                  validation="required"
                   :disabled="isProcessing"
-                >
-                  <option>Year 1</option>
-                  <option>Year 2</option>
-                  <option>Year 3</option>
-                  <option>Year 4</option>
-                  <option>Year 5</option>
-                  <option>Year 6</option>
-                  <option>Year 7</option>
-                  <option>Year 8</option>
-                  <option>Year 9</option>
-                  <option>Year 10</option>
-                  <option>Year 11</option>
-                  <option>A Level</option>
-                </select>
-              </div>
-              <div>
-                <label for="subject" class="mb-1 block text-sm">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  placeholder="Subject"
-                  class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                  v-model="formData.subject"
-                  required
-                  :disabled="isProcessing"
+                  :options="[
+                    'Year 1',
+                    'Year 2',
+                    'Year 3',
+                    'Year 4',
+                    'Year 5',
+                    'Year 6',
+                    'Year 7',
+                    'Year 8',
+                    'Year 9',
+                    'Year 10',
+                    'Year 11',
+                    'A Level',
+                  ]"
                 />
               </div>
               <div>
-                <label for="message" class="mb-1 block text-sm">Message</label>
-                <textarea
-                  id="message"
+                <FormKit
+                  type="select"
+                  name="subject"
+                  label="Subject"
+                  placeholder="Select Subject"
+                  validation="required"
+                  :disabled="isProcessing"
+                  :options="[
+                    'Maths',
+                    'English',
+                    'Science',
+                    'History',
+                    'Geography',
+                    'Computer Science',
+                    'Biology',
+                    'Chemistry',
+                    'Physics',
+                  ]"
+                />
+              </div>
+              <div>
+                <FormKit
+                  type="textarea"
+                  name="message"
+                  label="Message"
                   placeholder="Eg. I would like to book a lesson"
-                  class="mb-3 w-full rounded-lg border px-2 py-1 shadow"
-                  v-model="formData.message"
                   :disabled="isProcessing"
-                ></textarea>
+                />
               </div>
               <div>
                 <button

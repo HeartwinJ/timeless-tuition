@@ -18,6 +18,7 @@
     ]
   },
   "dependencies": {
+    "@formkit/vue": "^1.4.0",
     "@heroicons/vue": "^2.0.18",
     "@supabase/supabase-js": "^2.39.0",
     "@tabler/icons-vue": "^2.43.0",
