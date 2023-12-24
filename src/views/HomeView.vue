@@ -33,16 +33,6 @@ const selectedCourse = ref("");
           <div
             class="mt-10 flex items-center justify-center gap-x-6 text-gray-300"
           >
-            <!-- <span>Find the right course for your child:</span>
-            <select v-model="selectedCourse">
-              <option value="year-1">Year 1</option>
-              <option value="year-2">Year 2</option>
-              <option value="year-3">Year 3</option>
-              <option value="year-4">Year 4</option>
-              <option value="year-5">Year 5</option>
-              <option value="year-6">Year 6</option>
-              <option value="year-7">Year 7</option>
-            </select> -->
             <button
               class="rounded bg-pink-600 px-4 py-1 text-white hover:bg-pink-500"
               @click="$router.push(`/courses/${selectedCourse}`)"

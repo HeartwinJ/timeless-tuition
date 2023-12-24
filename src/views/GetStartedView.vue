@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 import { reset } from "@formkit/vue";
 import {
   Dialog,
@@ -24,18 +24,7 @@ interface FormData {
 const isProcessing = ref(false);
 const isSuccessDialogOpen = ref(false);
 
-const formData = reactive({
-  firstname: "",
-  lastname: "",
-  email: "",
-  phone: "",
-  year: "",
-  subject: "",
-  message: "",
-});
-
 async function handleSubmit(formData: FormData) {
-  console.log(formData);
   isProcessing.value = true;
   await Services.saveContact(formData);
   reset("query-form");
@@ -70,7 +59,6 @@ async function handleSubmit(formData: FormData) {
               id="query-form"
               type="form"
               :actions="false"
-              v-model="formData"
               @submit="handleSubmit"
             >
               <div class="flex w-full gap-3">
