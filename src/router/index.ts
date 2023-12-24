@@ -6,6 +6,8 @@ import NewsView from "@/views/NewsView.vue";
 import AboutView from "@/views/AboutView.vue";
 import CourseDetailView from "@/views/CourseDetailView.vue";
 import GetStartedView from "@/views/GetStartedView.vue";
+import LegalView from "@/views/LegalView.vue";
+import TermsView from "@/views/TermsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +46,16 @@ const router = createRouter({
       path: "/get-started",
       name: "get_started",
       component: GetStartedView,
+    },
+    {
+      path: "/legal",
+      name: "legal",
+      component: LegalView,
+    },
+    {
+      path: "/terms",
+      name: "terms",
+      component: TermsView,
     },
   ],
 });
