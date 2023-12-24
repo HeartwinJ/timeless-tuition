@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-ignore
-import Trianglify from "trianglify";
+import Trianglify from "trianglify/dist/trianglify.bundle.js";
 
 const courses = [
   {
