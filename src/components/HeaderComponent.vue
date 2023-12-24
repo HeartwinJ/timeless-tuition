@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { vOnClickOutside } from "@vueuse/components";
-import { IconMenu2 } from "@tabler/icons-vue";
+import { IconMenu2, IconX } from "@tabler/icons-vue";
 import {
   HomeIcon,
   BookOpenIcon,
@@ -23,8 +23,8 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="sticky top-0 z-50">
-    <div class="bg-triangles relative flex w-full items-center px-5 py-2">
+  <div class="bg-triangles sticky top-0 z-50 w-full px-5 py-2">
+    <div class="flex items-center">
       <RouterLink to="/" class="z-10">
         <img
           src="../assets/logo_pencil.svg"
@@ -45,7 +45,13 @@ const mobileMenuOpen = ref(false);
         <div class="flex justify-end py-2 md:hidden">
           <IconMenu2
             class="h-6 w-6 cursor-pointer text-white"
-            @click="mobileMenuOpen = !mobileMenuOpen"
+            @click="mobileMenuOpen = true"
+            v-if="!mobileMenuOpen"
+          />
+          <IconX
+            class="h-6 w-6 cursor-pointer text-white"
+            @click="mobileMenuOpen = false"
+            v-if="mobileMenuOpen"
           />
         </div>
         <div class="hidden grow items-center justify-between gap-3 md:flex">
@@ -78,28 +84,28 @@ const mobileMenuOpen = ref(false);
       v-on-click-outside="() => (mobileMenuOpen = false)"
     >
       <div
-        class="z-10 w-full bg-white p-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        class="z-10 w-full p-4 text-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
         <div class="flow-root">
           <div class="divide-y divide-gray-500/10">
-            <div class="space-y-2 divide-y">
+            <div class="space-y-2">
               <RouterLink
                 v-for="(navLink, idx) in navLinks"
                 :key="idx"
                 :to="navLink.path"
-                class="flex items-center gap-2 p-1 text-gray-700"
+                class="flex w-full items-center gap-2 p-1"
               >
                 <component :is="navLink.icon" class="h-5 w-5" />
-                {{ navLink.title }}
+                <div class="grow text-center uppercase">{{ navLink.title }}</div>
               </RouterLink>
             </div>
             <div class="pt-3">
               <RouterLink
                 to="/get-started"
-                class="flex items-center gap-2 rounded-md border p-2 text-gray-700"
+                class="flex items-center gap-2 rounded-md border p-2"
               >
                 <PaperAirplaneIcon class="h-5 w-5" />
-                <div class="grow text-center">Get Started</div>
+                <div class="grow text-center uppercase">Get Started</div>
               </RouterLink>
             </div>
           </div>
