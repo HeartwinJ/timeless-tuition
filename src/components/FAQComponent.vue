@@ -32,7 +32,7 @@ const faqs = [
 </script>
 
 <template>
-  <div class="bg-gradient-to-b from-pink-500 to-pink-600">
+  <div class="bg-triangles">
     <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
         <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">
@@ -70,3 +70,12 @@ const faqs = [
     </div>
   </div>
 </template>
+
+<style scoped>
+.bg-triangles {
+  background-image: url("../assets/triangles.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+</style>

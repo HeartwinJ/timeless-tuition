@@ -58,6 +58,9 @@ const router = createRouter({
       component: TermsView,
     },
   ],
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 export default router;

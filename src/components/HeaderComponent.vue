@@ -70,7 +70,7 @@ const mobileMenuOpen = ref(false);
           </div>
           <RouterLink
             to="/get-started"
-            class="flex items-center gap-2 rounded-md border px-4 py-2 text-lg font-medium uppercase text-white"
+            class="flex items-center gap-2 rounded-md border shadow bg-white px-4 py-2 text-lg font-medium uppercase text-pink-600"
           >
             <PaperAirplaneIcon class="h-5 w-5" />
             <span> Get Started </span>
@@ -96,7 +96,9 @@ const mobileMenuOpen = ref(false);
                 class="flex w-full items-center gap-2 p-1"
               >
                 <component :is="navLink.icon" class="h-5 w-5" />
-                <div class="grow text-center uppercase">{{ navLink.title }}</div>
+                <div class="grow text-center uppercase">
+                  {{ navLink.title }}
+                </div>
               </RouterLink>
             </div>
             <div class="pt-3">
