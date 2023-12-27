@@ -8,49 +8,59 @@ const courses = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-1",
+    colors: ["#446fda", "#da70d6"],
   },
   {
     title: "Year 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-2",
+    colors: ["#4585e1", "#40E0D0"],
   },
   {
     title: "Year 3",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-3",
+    colors: ["#446fda", "#da70d6"],
   },
   {
     title: "Year 4",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-4",
+    colors: ["#4585e1", "#40E0D0"],
   },
   {
     title: "Year 5",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-5",
+    colors: ["#446fda", "#da70d6"],
   },
   {
     title: "Year 6",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-6",
+    colors: ["#4585e1", "#40E0D0"],
   },
   {
     title: "Year 7",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     link: "/courses/year-7",
+    colors: ["#4585e1", "#40E0D0"],
   },
 ];
 
-function getImage(seed: string) {
+function getImage(colors: Array<string>) {
   return `data:image/svg+xml;base64,${window.btoa(
     new XMLSerializer().serializeToString(
-      Trianglify({ seed: seed, cellSize: 300 }).toSVG(),
+      Trianglify({
+        cellSize: 100,
+        xColors: colors,
+      }).toSVG(),
     ),
   )}`;
 }
@@ -83,7 +93,7 @@ function getImage(seed: string) {
         >
           <div
             :style="{
-              backgroundImage: `url(${getImage((idx + 1).toString(36))})`,
+              backgroundImage: `url(${getImage(course.colors)})`,
             }"
             class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white"
           >

@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import ServicesComponent from "@/components/ServicesComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
 import DividerComponent from "@/components/DividerComponent.vue";
-
-const selectedCourse = ref("");
 </script>
 
 <template>
   <div>
     <div class="relative isolate overflow-hidden pt-14">
-      <!-- <img
-        src=""
-        class="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
-      /> -->
-      <div class="absolute inset-0 -z-10 h-full bg-gray-500"></div>
+      <img
+        src="https://www.shutterstock.com/shutterstock/photos/1944697600/display_1500/stock-photo-parent-helping-child-happy-family-doing-homework-in-the-evening-mother-and-daughter-working-on-1944697600.jpg"
+        class="absolute inset-0 -z-10 h-full w-full object-left brightness-50 sm:object-cover"
+        alt=""
+      />
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
           <h1
@@ -33,12 +30,12 @@ const selectedCourse = ref("");
           <div
             class="mt-10 flex items-center justify-center gap-x-6 text-gray-300"
           >
-            <button
-              class="rounded bg-pink-600 px-4 py-1 text-white hover:bg-pink-500"
-              @click="$router.push(`/courses/${selectedCourse}`)"
+            <RouterLink
+              to="/courses"
+              class="rounded bg-pink-600 px-6 py-2 text-2xl text-white hover:bg-pink-500"
             >
               View Subjects
-            </button>
+            </RouterLink>
           </div>
         </div>
       </div>
