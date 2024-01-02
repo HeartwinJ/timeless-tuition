@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CoursesView from "@/views/CoursesView.vue";
+import CourseDetailView from "@/views/CourseDetailView.vue";
 import CareersView from "@/views/CareersView.vue";
 import NewsView from "@/views/NewsView.vue";
+import NewsDetailView from "@/views/NewsDetailView.vue";
 import AboutView from "@/views/AboutView.vue";
-import CourseDetailView from "@/views/CourseDetailView.vue";
 import GetStartedView from "@/views/GetStartedView.vue";
 import LegalView from "@/views/LegalView.vue";
 import TermsView from "@/views/TermsView.vue";
@@ -36,6 +37,11 @@ const router = createRouter({
       path: "/news",
       name: "news",
       component: NewsView,
+    },
+    {
+      path: "/news/:newsId",
+      name: "news_details",
+      component: NewsDetailView,
     },
     {
       path: "/about",
