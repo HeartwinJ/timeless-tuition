@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@headlessui/vue";
+import { IconPhone, IconAt, IconBuilding } from "@tabler/icons-vue";
 import FAQComponent from "@/components/FAQComponent.vue";
 import SpinnerComponent from "@/components/SpinnerComponent.vue";
 import Services from "@/services";
@@ -172,6 +173,33 @@ async function handleSubmit(formData: FormData) {
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
+          </div>
+        </div>
+        <div class="py-8 text-center">
+          <div class="text-xl font-bold uppercase">contact us</div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor
+            hic consectetur ullam, vero architecto voluptatibus alias ratione
+            exercitationem aliquam placeat unde. Velit repudiandae repellendus
+            quod enim obcaecati doloremque officia! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Quidem repellendus magni, iusto
+            blanditiis cumque maiores nobis. Suscipit facilis minima
+            praesentium, alias aperiam ipsam porro, odio iure, exercitationem
+            culpa dolorem temporibus.
+          </div>
+          <div class="grid grid-cols-1 gap-8 py-8 lg:grid-cols-3">
+            <div class="flex items-center justify-center gap-3">
+              <IconPhone />
+              <div>+44 123123123</div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <IconAt />
+              <div>timelesstuition@test.com</div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <IconBuilding />
+              <div>23 Fictional Road, Place, TW00 0AA</div>
+            </div>
           </div>
         </div>
       </div>
