@@ -53,15 +53,17 @@ async function handleSubmit(formData: FormData) {
             culpa dolorem temporibus.
           </div>
         </div>
-        <div class="flex justify-around gap-8 border-2 border-pink-600 p-5">
-          <div class="basis-1/2">
+        <div
+          class="flex flex-col justify-around gap-8 border-2 border-pink-600 p-5 sm:flex-row"
+        >
+          <div class="order-last basis-1/2 sm:order-first">
             <FormKit
               id="query-form"
               type="form"
               :actions="false"
               @submit="handleSubmit"
             >
-              <div class="flex w-full gap-3">
+              <div class="flex w-full flex-col sm:flex-row sm:gap-3">
                 <div class="grow">
                   <FormKit
                     type="text"

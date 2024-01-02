@@ -32,40 +32,42 @@ const faqs = [
 </script>
 
 <template>
-  <div class="bg-triangles">
-    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-      <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
-        <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">
-          Frequently asked questions
-        </h2>
-        <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
-          <Disclosure
-            as="div"
-            v-for="faq in faqs"
-            :key="faq.question"
-            class="pt-6"
-            v-slot="{ open }"
-          >
-            <dt>
-              <DisclosureButton
-                class="flex w-full items-start justify-between text-left text-white"
-              >
-                <span class="text-base font-semibold leading-7">{{
-                  faq.question
-                }}</span>
-                <span class="ml-6 flex h-7 items-center">
-                  <IconPlus v-if="!open" class="h-6 w-6" aria-hidden="true" />
-                  <IconMinus v-else class="h-6 w-6" aria-hidden="true" />
-                </span>
-              </DisclosureButton>
-            </dt>
-            <DisclosurePanel as="dd" class="mt-2 pr-12">
-              <p class="text-base leading-7 text-white">
-                {{ faq.answer }}
-              </p>
-            </DisclosurePanel>
-          </Disclosure>
-        </dl>
+  <div class="bg-triangles py-8 px-5">
+    <div class="border-y-2 border-white">
+      <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
+          <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">
+            Frequently asked questions
+          </h2>
+          <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
+            <Disclosure
+              as="div"
+              v-for="faq in faqs"
+              :key="faq.question"
+              class="pt-6"
+              v-slot="{ open }"
+            >
+              <dt>
+                <DisclosureButton
+                  class="flex w-full items-start justify-between text-left text-white"
+                >
+                  <span class="text-base font-semibold leading-7">{{
+                    faq.question
+                  }}</span>
+                  <span class="ml-6 flex h-7 items-center">
+                    <IconPlus v-if="!open" class="h-6 w-6" aria-hidden="true" />
+                    <IconMinus v-else class="h-6 w-6" aria-hidden="true" />
+                  </span>
+                </DisclosureButton>
+              </dt>
+              <DisclosurePanel as="dd" class="mt-2 pr-12">
+                <p class="text-base leading-7 text-white">
+                  {{ faq.answer }}
+                </p>
+              </DisclosurePanel>
+            </Disclosure>
+          </dl>
+        </div>
       </div>
     </div>
   </div>

@@ -70,7 +70,7 @@ const mobileMenuOpen = ref(false);
           </div>
           <RouterLink
             to="/get-started"
-            class="flex items-center gap-2 rounded-md border shadow bg-white px-4 py-2 text-lg font-medium uppercase text-pink-600"
+            class="flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase text-pink-600 shadow"
           >
             <PaperAirplaneIcon class="h-5 w-5" />
             <span> Get Started </span>
@@ -82,34 +82,33 @@ const mobileMenuOpen = ref(false);
       class="md:hidden"
       v-if="mobileMenuOpen"
       v-on-click-outside="() => (mobileMenuOpen = false)"
+      @click="mobileMenuOpen = false"
     >
       <div
         class="z-10 w-full p-4 text-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
         <div class="flow-root">
-          <div class="divide-y divide-gray-500/10">
-            <div class="space-y-2">
-              <RouterLink
-                v-for="(navLink, idx) in navLinks"
-                :key="idx"
-                :to="navLink.path"
-                class="flex w-full items-center gap-2 p-1"
-              >
-                <component :is="navLink.icon" class="h-5 w-5" />
-                <div class="grow text-center uppercase">
-                  {{ navLink.title }}
-                </div>
-              </RouterLink>
-            </div>
-            <div class="pt-3">
-              <RouterLink
-                to="/get-started"
-                class="flex items-center gap-2 rounded-md border p-2"
-              >
-                <PaperAirplaneIcon class="h-5 w-5" />
-                <div class="grow text-center uppercase">Get Started</div>
-              </RouterLink>
-            </div>
+          <div class="space-y-2">
+            <RouterLink
+              v-for="(navLink, idx) in navLinks"
+              :key="idx"
+              :to="navLink.path"
+              class="flex w-full items-center gap-2 p-1"
+            >
+              <component :is="navLink.icon" class="h-5 w-5" />
+              <div class="grow text-center uppercase">
+                {{ navLink.title }}
+              </div>
+            </RouterLink>
+          </div>
+          <div class="pt-3">
+            <RouterLink
+              to="/get-started"
+              class="flex items-center gap-2 rounded-md border p-2"
+            >
+              <PaperAirplaneIcon class="h-5 w-5" />
+              <div class="grow text-center uppercase">Get Started</div>
+            </RouterLink>
           </div>
         </div>
       </div>
