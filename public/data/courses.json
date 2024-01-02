@@ -1,0 +1,44 @@
+[
+  {
+    "id": "year-1",
+    "title": "Year 1",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#446fda", "#da70d6"]
+  },
+  {
+    "id": "year-2",
+    "title": "Year 2",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#4585e1", "#40E0D0"]
+  },
+  {
+    "id": "year-3",
+    "title": "Year 3",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#446fda", "#da70d6"]
+  },
+  {
+    "id": "year-4",
+    "title": "Year 4",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#4585e1", "#40E0D0"]
+  },
+  {
+    "id": "year-5",
+    "title": "Year 5",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#446fda", "#da70d6"]
+  },
+  {
+    "id": "year-6",
+    "title": "Year 6",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#4585e1", "#40E0D0"]
+  },
+  {
+    "id": "year-7",
+    "title": "Year 7",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "colors": ["#4585e1", "#40E0D0"]
+  }
+]

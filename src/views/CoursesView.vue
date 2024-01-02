@@ -1,69 +1,19 @@
 <script setup lang="ts">
-// @ts-ignore
-import Trianglify from "trianglify/dist/trianglify.bundle.js";
+import { ref, onMounted } from "vue";
+import Utils from "@/utils";
+import type Course from "@/types/Course";
 
-const courses = [
-  {
-    title: "Year 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-1",
-    colors: ["#446fda", "#da70d6"],
-  },
-  {
-    title: "Year 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-2",
-    colors: ["#4585e1", "#40E0D0"],
-  },
-  {
-    title: "Year 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-3",
-    colors: ["#446fda", "#da70d6"],
-  },
-  {
-    title: "Year 4",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-4",
-    colors: ["#4585e1", "#40E0D0"],
-  },
-  {
-    title: "Year 5",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-5",
-    colors: ["#446fda", "#da70d6"],
-  },
-  {
-    title: "Year 6",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-6",
-    colors: ["#4585e1", "#40E0D0"],
-  },
-  {
-    title: "Year 7",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
-    link: "/courses/year-7",
-    colors: ["#4585e1", "#40E0D0"],
-  },
-];
+const isLoading = ref(true);
+const courses = ref<Course[]>([]);
 
-function getImage(colors: Array<string>) {
-  return `data:image/svg+xml;base64,${window.btoa(
-    new XMLSerializer().serializeToString(
-      Trianglify({
-        cellSize: 100,
-        xColors: colors,
-      }).toSVG(),
-    ),
-  )}`;
-}
+onMounted(() => {
+  fetch("/data/courses.json")
+    .then((res) => res.json())
+    .then((data) => {
+      courses.value.push(...data);
+      isLoading.value = false;
+    });
+});
 </script>
 
 <template>
@@ -82,18 +32,23 @@ function getImage(colors: Array<string>) {
           expedita officia iusto! Esse.
         </div>
       </div>
+
+      <div v-if="isLoading">Loading...</div>
       <dl
         class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+        v-else
       >
         <RouterLink
           v-for="(course, idx) in courses"
           :key="idx"
-          :to="course.link"
+          :to="`/courses/${course.id}`"
           class="flex flex-col items-center justify-center gap-3"
         >
           <div
             :style="{
-              backgroundImage: `url(${getImage(course.colors)})`,
+              backgroundImage: `url(${Utils.getTrianglifyImage(
+                course.colors,
+              )})`,
             }"
             class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white"
           >

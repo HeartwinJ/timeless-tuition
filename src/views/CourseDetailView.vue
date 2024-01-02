@@ -1,63 +1,46 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import FAQComponent from "@/components/FAQComponent.vue";
+import Utils from "@/utils";
+import type Course from "@/types/Course";
 
 const route = useRoute();
 const courseId = route.params.courseId;
 
-const coursesData = {
-  "year-1": {
-    title: "Year 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-2": {
-    title: "Year 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-3": {
-    title: "Year 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-4": {
-    title: "Year 4",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-5": {
-    title: "Year 5",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-6": {
-    title: "Year 6",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-  "year-7": {
-    title: "Year 7",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima veritatis nisi corrupti sequi magni porro, omnis tempore amet dolores dolorum numquam neque, nam, pariatur quasi est ratione quae maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quas repudiandae suscipit aut, minus asperiores quisquam? Molestiae facilis fuga non exercitationem consequuntur ex. Hic odio nihil numquam, modi corrupti nesciunt?",
-  },
-};
+const isLoading = ref(true);
+const courseData = ref<Course>({
+  id: "",
+  title: "",
+  description: "",
+  colors: [],
+});
+
+onMounted(() => {
+  fetch("/data/courses.json")
+    .then((res) => res.json())
+    .then((data) => {
+      courseData.value = data.find((course: Course) => {
+        return course.id === courseId;
+      });
+      isLoading.value = false;
+    });
+});
 </script>
 
 <template>
   <div>
     <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
-        <div class="flex gap-8">
-          <img src="https://picsum.photos/500/328?random=1" />
+        <div v-if="isLoading">Loading...</div>
+        <div class="flex gap-8" v-else>
+          <img :src="Utils.getTrianglifyImage(courseData.colors)" />
           <div>
             <div class="text-3xl font-medium">
-              {{ coursesData[courseId as keyof typeof coursesData].title }}
+              {{ courseData.title }}
             </div>
             <div>
-              {{
-                coursesData[courseId as keyof typeof coursesData].description
-              }}
+              {{ courseData.description }}
             </div>
           </div>
         </div>
