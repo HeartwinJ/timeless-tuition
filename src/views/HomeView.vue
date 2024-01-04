@@ -8,14 +8,14 @@ import DividerComponent from "@/components/DividerComponent.vue";
 
 <template>
   <div>
-    <div class="relative isolate overflow-hidden pt-14">
+    <div class="relative isolate overflow-hidden ">
       <img
-        src="https://www.shutterstock.com/shutterstock/photos/1944697600/display_1500/stock-photo-parent-helping-child-happy-family-doing-homework-in-the-evening-mother-and-daughter-working-on-1944697600.jpg"
-        class="absolute inset-0 -z-10 h-full w-full object-left brightness-50 sm:object-cover"
+        src="../assets/home-background.jpg"
+        class="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
         alt=""
       />
-      <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
-        <div class="text-center">
+      <div class="mx-8 max-w-3xl pt-16 pb-72">
+        <div class="text-left">
           <h1
             class="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
           >
@@ -33,7 +33,7 @@ import DividerComponent from "@/components/DividerComponent.vue";
           >
             <RouterLink
               to="/courses"
-              class="bg-brand hover:bg-brand/80 flex items-center gap-3 rounded px-6 py-2 text-xl font-bold uppercase text-white"
+              class="flex items-center gap-3 rounded bg-brand px-6 py-2 text-xl font-bold uppercase text-white hover:bg-brand/80"
             >
               Find your course <PaperAirplaneIcon class="h-5 w-5" />
             </RouterLink>
