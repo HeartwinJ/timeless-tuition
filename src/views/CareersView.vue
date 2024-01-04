@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { reset } from "@formkit/vue";
 import {
   Dialog,
@@ -15,53 +15,13 @@ import {
 } from "@tabler/icons-vue";
 import SpinnerComponent from "@/components/SpinnerComponent.vue";
 import Services from "@/services";
-
-const openings = [
-  {
-    id: "1",
-    department: "Mathematics",
-    role: "Mathematics Tutor",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
-    experience: "2 years",
-    employmentType: "Full-time",
-    location: "London",
-  },
-  {
-    id: "2",
-    department: "Science",
-    role: "Physics Teaching Assistant",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
-    experience: "1 year",
-    employmentType: "Part-time",
-    location: "London",
-  },
-  {
-    id: "3",
-    department: "Science",
-    role: "Biology Tutor",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
-    experience: "2 years",
-    employmentType: "Full-time",
-    location: "London",
-  },
-  {
-    id: "4",
-    department: "Language",
-    role: "English Tutor",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi. Sed vitae nisi eget nunc ultricies aliquam. Donec euismod, nisl vitae aliquet ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisi.",
-    experience: "2 years",
-    employmentType: "Full-time",
-    location: "London",
-  },
-];
+import type Career from "@/types/Career";
 
 const isApplyDialogOpen = ref(false);
 const isSuccessDialogOpen = ref(false);
 const isProcessing = ref(false);
+const isLoading = ref(true);
+const openings = ref<Career[]>([]);
 
 const formData = reactive({
   opening_id: "",
@@ -71,6 +31,15 @@ const formData = reactive({
   email: "",
   phone: "",
   message: "",
+});
+
+onMounted(() => {
+  fetch("/data/careers.json")
+    .then((res) => res.json())
+    .then((data) => {
+      openings.value.push(...data);
+      isLoading.value = false;
+    });
 });
 
 function applyTo(openingId: string) {
@@ -110,10 +79,12 @@ async function handleSubmit(data: any) {
             pariatur explicabo.
           </div>
         </div>
+        <div v-if="isLoading">Loading...</div>
         <div
           v-for="(opening, idx) in openings"
           :key="idx"
-          class="m-3 flex rounded-lg border bg-white p-3 shadow"
+          class="m-3 flex flex-col gap-3 rounded-lg border bg-white p-3 shadow md:flex-row"
+          v-else
         >
           <div>
             <div class="mb-2 text-sm text-gray-700">
@@ -126,18 +97,26 @@ async function handleSubmit(data: any) {
             </div>
             <div class="text-gray-700">{{ opening.description }}</div>
           </div>
-          <div class="flex basis-1/4 flex-col items-center justify-around">
-            <div class="flex w-full items-center gap-2 p-2 text-gray-700">
-              <IconCalendar class="h-5 w-5" /> {{ opening.experience }}
-            </div>
-            <div class="flex w-full items-center gap-2 p-2 text-gray-700">
-              <IconHourglass class="h-5 w-5" /> {{ opening.employmentType }}
-            </div>
-            <div class="flex w-full items-center gap-2 p-2 text-gray-700">
-              <IconMapPin class="h-5 w-5" /> {{ opening.location }}
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col items-center justify-around">
+              <div
+                class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+              >
+                <IconCalendar class="h-5 w-5" /> {{ opening.experience }}
+              </div>
+              <div
+                class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+              >
+                <IconHourglass class="h-5 w-5" /> {{ opening.employmentType }}
+              </div>
+              <div
+                class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+              >
+                <IconMapPin class="h-5 w-5" /> {{ opening.location }}
+              </div>
             </div>
             <button
-              class="flex w-full items-center justify-center gap-2 rounded-lg bg-pink-600 px-4 py-2 text-white"
+              class="flex w-full items-center justify-center gap-2 rounded-lg bg-pink-600 px-12 py-2 text-white"
               @click="applyTo(opening.id)"
             >
               Apply <IconCircleArrowRight class="h-5 w-5" />
@@ -165,14 +144,6 @@ async function handleSubmit(data: any) {
               v-model="formData"
               @submit="handleSubmit"
             >
-              <FormKit
-                type="file"
-                name="cv_url"
-                label="CV"
-                accept=".pdf"
-                validation="required"
-                :disabled="isProcessing"
-              />
               <div class="flex w-full gap-3">
                 <div class="grow">
                   <FormKit
@@ -208,6 +179,14 @@ async function handleSubmit(data: any) {
                 name="phone"
                 label="Phone Number"
                 placeholder="Phone Number"
+                validation="required"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="file"
+                name="cv_url"
+                label="CV"
+                accept=".pdf"
                 validation="required"
                 :disabled="isProcessing"
               />
