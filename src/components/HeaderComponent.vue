@@ -70,7 +70,7 @@ const mobileMenuOpen = ref(false);
           </div>
           <RouterLink
             to="/get-started"
-            class="flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase text-pink-600 shadow"
+            class="flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase text-brand shadow"
           >
             <PaperAirplaneIcon class="h-5 w-5" />
             <span class="whitespace-nowrap"> Get Started </span>

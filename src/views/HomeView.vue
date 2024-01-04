@@ -19,7 +19,7 @@ import DividerComponent from "@/components/DividerComponent.vue";
           <h1
             class="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
           >
-            we <span class="text-pink-600">tutor</span> for success
+            we <span class="text-brand">tutor</span> for success
           </h1>
           <p class="mt-6 text-lg leading-8 text-gray-300">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
@@ -33,7 +33,7 @@ import DividerComponent from "@/components/DividerComponent.vue";
           >
             <RouterLink
               to="/courses"
-              class="flex items-center gap-3 rounded bg-pink-600 px-6 py-2 text-xl font-bold uppercase text-white hover:bg-pink-500"
+              class="flex items-center gap-3 rounded bg-brand px-6 py-2 text-xl font-bold uppercase text-white hover:bg-brand/80"
             >
               Find your course <PaperAirplaneIcon class="h-5 w-5" />
             </RouterLink>

@@ -41,7 +41,7 @@ async function handleSubmit(formData: FormData) {
     >
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
-          <div class="font-medium text-pink-600">Get Started</div>
+          <div class="font-medium text-brand">Get Started</div>
           <div class="text-xl font-bold uppercase">reach out to us</div>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor
@@ -55,7 +55,7 @@ async function handleSubmit(formData: FormData) {
           </div>
         </div>
         <div
-          class="flex flex-col justify-around gap-8 border-2 border-pink-600 p-5 sm:flex-row"
+          class="flex flex-col justify-around gap-8 border-2 border-brand p-5 sm:flex-row"
         >
           <div class="order-last basis-1/2 sm:order-first">
             <FormKit
@@ -153,7 +153,7 @@ async function handleSubmit(formData: FormData) {
               <div>
                 <button
                   type="submit"
-                  class="flex w-full items-center justify-center rounded-lg bg-pink-600 px-4 py-2 uppercase text-white"
+                  class="flex w-full items-center justify-center rounded-lg bg-brand px-4 py-2 uppercase text-white"
                   :disabled="isProcessing"
                 >
                   <div v-if="isProcessing">
@@ -221,7 +221,7 @@ async function handleSubmit(formData: FormData) {
           </DialogDescription>
           <button
             @click="isSuccessDialogOpen = false"
-            class="mt-5 w-full rounded-lg bg-pink-600 px-4 py-2 uppercase text-white"
+            class="mt-5 w-full rounded-lg bg-brand px-4 py-2 uppercase text-white"
           >
             Ok
           </button>
