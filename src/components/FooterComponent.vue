@@ -1,40 +1,24 @@
 <script setup lang="ts">
 import {
-  IconBrandFacebookFilled,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTiktokFilled,
-  IconBrandTwitterFilled,
-  IconBrandWhatsapp,
-} from "@tabler/icons-vue";
+  RiFacebookFill,
+  RiLinkedinFill,
+  RiInstagramFill,
+  RiTwitterFill,
+  RiTiktokFill,
+  RiWhatsappFill,
+} from "@remixicon/vue";
 
 const socials = [
-  { icon: IconBrandFacebookFilled, path: "https://facebook.com" },
-  { icon: IconBrandLinkedin, path: "https://linkedin.com" },
-  { icon: IconBrandInstagram, path: "https://instagram.com" },
-  { icon: IconBrandTwitterFilled, path: "https://twitter.com" },
-  { icon: IconBrandTiktokFilled, path: "https://tiktok.com" },
-  { icon: IconBrandWhatsapp, path: "https://whatsapp.com" },
+  { icon: RiFacebookFill, path: "https://facebook.com" },
+  { icon: RiLinkedinFill, path: "https://linkedin.com" },
+  { icon: RiInstagramFill, path: "https://instagram.com" },
+  { icon: RiTwitterFill, path: "https://twitter.com" },
+  { icon: RiTiktokFill, path: "https://tiktok.com" },
+  { icon: RiWhatsappFill, path: "https://whatsapp.com" },
 ];
 </script>
 
 <template>
-  <!-- <div
-    class="bg-triangles flex aspect-square h-96 items-center justify-center gap-1 p-3"
-  >
-    <img
-      src="../assets/logo_pencil.svg"
-      alt="Timeless Tutors Logo"
-      class="h-28"
-    />
-    <div class="border-y-2 border-white py-4">
-      <img
-        src="../assets/logo_text.svg"
-        alt="Timeless Tutors Logo"
-        class="h-8"
-      />
-    </div>
-  </div> -->
   <div
     class="sm:px-18 flex w-full flex-col items-center justify-center gap-3 bg-gray-200 px-8 py-5 lg:px-48"
   >
