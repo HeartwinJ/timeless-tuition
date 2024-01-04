@@ -4,7 +4,7 @@
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-2xl space-y-8 lg:max-w-none">
       <div class="py-8 text-center">
-        <div class="font-medium text-brand">Legal</div>
+        <div class="text-brand font-medium">Legal</div>
         <div class="text-xl font-bold uppercase">lorem ipsum</div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error

@@ -32,7 +32,7 @@ const faqs = [
 </script>
 
 <template>
-  <div class="bg-triangles py-8 px-5">
+  <div class="bg-triangles px-5 py-8">
     <div class="border-y-2 border-white">
       <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">

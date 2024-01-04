@@ -38,7 +38,8 @@ export default {
   async saveApplication(data: ApplicationsTable) {
     await supabase.from("applications").insert({
       ...data,
-      cv_url: supabase.storage.from("cvs").getPublicUrl(data.cv_url).data.publicUrl,
+      cv_url: supabase.storage.from("cvs").getPublicUrl(data.cv_url).data
+        .publicUrl,
     });
   },
 };

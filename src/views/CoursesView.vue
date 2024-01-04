@@ -20,7 +20,7 @@ onMounted(() => {
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
-        <div class="font-medium text-brand">Courses</div>
+        <div class="text-brand font-medium">Courses</div>
         <div class="text-xl font-bold uppercase">lorem ipsum</div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia,

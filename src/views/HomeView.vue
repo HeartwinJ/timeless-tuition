@@ -33,7 +33,7 @@ import DividerComponent from "@/components/DividerComponent.vue";
           >
             <RouterLink
               to="/courses"
-              class="flex items-center gap-3 rounded bg-brand px-6 py-2 text-xl font-bold uppercase text-white hover:bg-brand/80"
+              class="bg-brand hover:bg-brand/80 flex items-center gap-3 rounded px-6 py-2 text-xl font-bold uppercase text-white"
             >
               Find your course <PaperAirplaneIcon class="h-5 w-5" />
             </RouterLink>

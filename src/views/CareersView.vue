@@ -200,7 +200,7 @@ async function handleSubmit(data: any) {
               <div>
                 <button
                   type="submit"
-                  class="flex w-full items-center justify-center rounded-lg bg-brand px-4 py-2 uppercase text-white"
+                  class="bg-brand flex w-full items-center justify-center rounded-lg px-4 py-2 uppercase text-white"
                   :disabled="isProcessing"
                 >
                   <div v-if="isProcessing">
@@ -230,7 +230,7 @@ async function handleSubmit(data: any) {
           </DialogDescription>
           <button
             @click="isSuccessDialogOpen = false"
-            class="mt-5 w-full rounded-lg bg-brand px-4 py-2 uppercase text-white"
+            class="bg-brand mt-5 w-full rounded-lg px-4 py-2 uppercase text-white"
           >
             Ok
           </button>

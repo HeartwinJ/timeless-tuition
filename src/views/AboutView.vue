@@ -16,7 +16,7 @@
           temporibus corporis eaque esse vitae accusantium?
         </div>
       </div>
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -32,10 +32,10 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=1"
-          class="order-first sm:order-last"
+          class="order-first lg:order-last"
         />
       </div>
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <img src="https://picsum.photos/500/328?random=2" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
@@ -51,7 +51,7 @@
           molestias ratione porro.
         </div>
       </div>
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -67,10 +67,10 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=3"
-          class="order-first sm:order-last"
+          class="order-first lg:order-last"
         />
       </div>
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <img src="https://picsum.photos/500/328?random=4" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
@@ -86,7 +86,7 @@
           molestias ratione porro.
         </div>
       </div>
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -102,7 +102,7 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=5"
-          class="order-first sm:order-last"
+          class="order-first lg:order-last"
         />
       </div>
     </div>

@@ -40,7 +40,7 @@ const features = [
         >
           <dt class="text-base font-semibold leading-7 text-gray-900">
             <div
-              class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-brand"
+              class="bg-brand mb-6 flex h-10 w-10 items-center justify-center rounded-lg"
             >
               <component
                 :is="feature.icon"
@@ -57,7 +57,7 @@ const features = [
             <p class="mt-6">
               <a
                 :href="feature.href"
-                class="text-sm font-semibold leading-6 text-brand"
+                class="text-brand text-sm font-semibold leading-6"
                 >Learn more <span aria-hidden="true">→</span></a
               >
             </p>

@@ -17,9 +17,9 @@ onMounted(() => {
 
 <template>
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
-    <div class="mx-auto max-w-2xl lg:max-w-none">
+    <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
-        <div class="font-medium text-brand">News</div>
+        <div class="text-brand font-medium">News</div>
         <div class="text-xl font-bold uppercase">latest updates</div>
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
@@ -33,11 +33,11 @@ onMounted(() => {
       </div>
       <div v-if="isLoading">Loading...</div>
       <dl
-        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+        class="grid w-full max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
         v-else
       >
         <RouterLink :to="`/news/${n.id}`" v-for="(n, idx) in news" :key="idx">
-          <img :src="n.img" class="mb-3 rounded-lg" />
+          <img :src="n.img" class="mb-3 rounded-lg w-full" />
           <div class="text-sm text-gray-500">{{ n.date }}</div>
           <div class="text-lg font-medium">{{ n.title }}</div>
           <div class="text-gray-700">{{ n.description }}</div>
