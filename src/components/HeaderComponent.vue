@@ -33,7 +33,7 @@ const mobileMenuOpen = ref(false);
         />
       </RouterLink>
       <div
-        class="ml-1 flex grow items-center gap-24 border-b-2 border-t-2 border-white p-4 pl-0"
+        class="ml-1 flex grow items-center justify-between gap-24 border-b-2 border-t-2 border-white p-4 pl-0"
       >
         <RouterLink to="/" class="z-10">
           <img
@@ -42,7 +42,7 @@ const mobileMenuOpen = ref(false);
             class="h-8"
           />
         </RouterLink>
-        <div class="flex justify-end py-2 md:hidden">
+        <div class="flex justify-end py-2 lg:hidden">
           <IconMenu2
             class="h-6 w-6 cursor-pointer text-white"
             @click="mobileMenuOpen = true"
@@ -54,7 +54,7 @@ const mobileMenuOpen = ref(false);
             v-if="mobileMenuOpen"
           />
         </div>
-        <div class="hidden grow items-center justify-between gap-3 md:flex">
+        <div class="hidden grow items-center justify-between gap-3 lg:flex">
           <div
             v-for="(navLink, idx) in navLinks"
             :key="idx"
@@ -62,7 +62,7 @@ const mobileMenuOpen = ref(false);
           >
             <RouterLink
               :to="navLink.path"
-              class="flex items-center gap-2 text-xl font-medium uppercase text-white"
+              class="flex items-center gap-2 whitespace-nowrap text-lg font-medium uppercase text-white"
             >
               {{ navLink.title }}
               <component :is="navLink.icon" class="h-5 w-5" />
@@ -73,13 +73,13 @@ const mobileMenuOpen = ref(false);
             class="flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase text-pink-600 shadow"
           >
             <PaperAirplaneIcon class="h-5 w-5" />
-            <span> Get Started </span>
+            <span class="whitespace-nowrap"> Get Started </span>
           </RouterLink>
         </div>
       </div>
     </div>
     <div
-      class="md:hidden"
+      class="lg:hidden"
       v-if="mobileMenuOpen"
       v-on-click-outside="() => (mobileMenuOpen = false)"
       @click="mobileMenuOpen = false"
