@@ -79,14 +79,12 @@ const mobileMenuOpen = ref(false);
       </div>
     </div>
     <div
-      class="lg:hidden"
+      class="w-full lg:hidden"
       v-if="mobileMenuOpen"
       v-on-click-outside="() => (mobileMenuOpen = false)"
       @click="mobileMenuOpen = false"
     >
-      <div
-        class="z-10 w-full p-4 text-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-      >
+      <div class="z-10 w-full p-4 text-white">
         <div class="flow-root">
           <div class="space-y-2">
             <RouterLink

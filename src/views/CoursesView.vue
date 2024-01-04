@@ -18,7 +18,7 @@ onMounted(() => {
 
 <template>
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
-    <div class="mx-auto max-w-2xl lg:max-w-none">
+    <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-pink-600">Courses</div>
         <div class="text-xl font-bold uppercase">lorem ipsum</div>
@@ -35,14 +35,14 @@ onMounted(() => {
 
       <div v-if="isLoading">Loading...</div>
       <dl
-        class="flex max-w-xl flex-col flex-wrap justify-center gap-x-8 gap-y-16 lg:max-w-none lg:flex-row"
+        class="flex w-full max-w-xl flex-col flex-wrap items-center justify-center gap-x-8 gap-y-16 lg:max-w-none lg:flex-row"
         v-else
       >
         <RouterLink
           v-for="(course, idx) in courses"
           :key="idx"
           :to="`/courses/${course.id}`"
-          class="flex aspect-square flex-col items-center justify-center gap-3 lg:w-1/4"
+          class="flex w-full flex-col items-center justify-center gap-3 lg:w-1/4"
         >
           <div
             :style="{
