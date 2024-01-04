@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PaperAirplaneIcon } from "@heroicons/vue/24/solid";
 import ServicesComponent from "@/components/ServicesComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
@@ -32,9 +33,9 @@ import DividerComponent from "@/components/DividerComponent.vue";
           >
             <RouterLink
               to="/courses"
-              class="rounded bg-pink-600 px-6 py-2 text-2xl text-white hover:bg-pink-500"
+              class="flex items-center gap-3 rounded bg-pink-600 px-6 py-2 text-xl font-bold uppercase text-white hover:bg-pink-500"
             >
-              View Subjects
+              Find your course <PaperAirplaneIcon class="h-5 w-5" />
             </RouterLink>
           </div>
         </div>

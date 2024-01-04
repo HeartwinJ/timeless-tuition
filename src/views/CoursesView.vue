@@ -35,14 +35,14 @@ onMounted(() => {
 
       <div v-if="isLoading">Loading...</div>
       <dl
-        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+        class="flex max-w-xl flex-col flex-wrap justify-center gap-x-8 gap-y-16 lg:max-w-none lg:flex-row"
         v-else
       >
         <RouterLink
           v-for="(course, idx) in courses"
           :key="idx"
           :to="`/courses/${course.id}`"
-          class="flex flex-col items-center justify-center gap-3"
+          class="flex aspect-square flex-col items-center justify-center gap-3 lg:w-1/4"
         >
           <div
             :style="{
