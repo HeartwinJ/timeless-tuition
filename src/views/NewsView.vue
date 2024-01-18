@@ -19,7 +19,7 @@ onMounted(() => {
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
-        <div class="text-brand font-medium">News</div>
+        <div class="font-medium text-brand">News</div>
         <div class="text-xl font-bold uppercase">latest updates</div>
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
@@ -37,11 +37,20 @@ onMounted(() => {
         v-else
       >
         <RouterLink :to="`/news/${n.id}`" v-for="(n, idx) in news" :key="idx">
-          <img :src="n.img" class="mb-3 rounded-lg w-full" />
+          <img :src="n.img" class="mb-3 w-full rounded-lg" />
           <div class="text-sm text-gray-500">{{ n.date }}</div>
           <div class="text-lg font-medium">{{ n.title }}</div>
-          <div class="text-gray-700">{{ n.description }}</div>
+          <div class="line-clamp-4 text-gray-700">{{ n.summary }}</div>
         </RouterLink>
+        <!-- <div class="col-span-3 h-[700px] w-full">
+          <iframe
+            src="https://www.juicer.io/api/feeds/heartehh/iframe"
+            frameborder="0"
+            width="100%"
+            height="100%"
+            style="display: block; margin: 0 auto"
+          ></iframe>
+        </div> -->
       </dl>
     </div>
   </div>
