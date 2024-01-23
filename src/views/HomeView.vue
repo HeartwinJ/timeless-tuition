@@ -1,21 +1,34 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
+import anime from "animejs";
 import { PaperAirplaneIcon } from "@heroicons/vue/24/solid";
 import ServicesComponent from "@/components/ServicesComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
 import DividerComponent from "@/components/DividerComponent.vue";
+
+onMounted(() => {
+  anime({
+    targets: "#hero-content",
+    translateY: ["20%", "0%"],
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: 500,
+  });
+});
 </script>
 
 <template>
   <div>
-    <div class="relative isolate overflow-hidden ">
+    <div class="relative isolate overflow-hidden">
       <img
         src="../assets/home-background.jpg"
         class="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
         alt=""
       />
-      <div class="mx-8 max-w-3xl pt-16 pb-72">
-        <div class="text-left">
+      <div class="mx-8 max-w-3xl pb-72 pt-16">
+        <div class="text-left" id="hero-content">
           <h1
             class="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
           >

@@ -1,4 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from "vue";
+import anime from "animejs";
+import VanillaTilt from "vanilla-tilt";
+
+onMounted(() => {
+  anime({
+    targets: ".about",
+    translateY: ["20%", "0%"],
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: anime.stagger(500, { start: 500 }),
+  });
+
+  //@ts-ignore
+  VanillaTilt.init(document.querySelectorAll(".tilt-img"), {
+    max: 10,
+    speed: 1500,
+    reverse: true,
+  });
+});
+</script>
 
 <template>
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
@@ -16,7 +38,7 @@
           temporibus corporis eaque esse vitae accusantium?
         </div>
       </div>
-      <div class="flex flex-col gap-8 lg:flex-row">
+      <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -32,11 +54,11 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=1"
-          class="order-first lg:order-last"
+          class="tilt-img order-first lg:order-last"
         />
       </div>
-      <div class="flex flex-col gap-8 lg:flex-row">
-        <img src="https://picsum.photos/500/328?random=2" />
+      <div class="about flex flex-col gap-8 lg:flex-row">
+        <img src="https://picsum.photos/500/328?random=2" class="tilt-img" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -51,7 +73,7 @@
           molestias ratione porro.
         </div>
       </div>
-      <div class="flex flex-col gap-8 lg:flex-row">
+      <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -67,11 +89,11 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=3"
-          class="order-first lg:order-last"
+          class="tilt-img order-first lg:order-last"
         />
       </div>
-      <div class="flex flex-col gap-8 lg:flex-row">
-        <img src="https://picsum.photos/500/328?random=4" />
+      <div class="about flex flex-col gap-8 lg:flex-row">
+        <img src="https://picsum.photos/500/328?random=4" class="tilt-img" />
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -86,7 +108,7 @@
           molestias ratione porro.
         </div>
       </div>
-      <div class="flex flex-col gap-8 lg:flex-row">
+      <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ipsam
           deleniti nisi, laudantium iusto eveniet odit laboriosam quis possimus
@@ -102,7 +124,7 @@
         </div>
         <img
           src="https://picsum.photos/500/328?random=5"
-          class="order-first lg:order-last"
+          class="tilt-img order-first lg:order-last"
         />
       </div>
     </div>

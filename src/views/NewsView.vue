@@ -1,17 +1,26 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
+import anime from "animejs";
 import type News from "@/types/News";
 
 const isLoading = ref(true);
 const news = ref<News[]>([]);
 
-onMounted(() => {
-  fetch("/data/news.json")
-    .then((res) => res.json())
-    .then((data) => {
-      news.value.push(...data);
-      isLoading.value = false;
+onMounted(async () => {
+  const data = await (await fetch("/data/news.json")).json();
+  news.value.push(...data);
+  isLoading.value = false;
+
+  nextTick(() => {
+    anime({
+      targets: ".news",
+      translateY: ["20%", "0%"],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1500,
+      delay: anime.stagger(100, { start: 500 }),
     });
+  });
 });
 </script>
 
@@ -36,7 +45,12 @@ onMounted(() => {
         class="grid w-full max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
         v-else
       >
-        <RouterLink :to="`/news/${n.id}`" v-for="(n, idx) in news" :key="idx">
+        <RouterLink
+          v-for="(n, idx) in news"
+          :key="idx"
+          :to="`/news/${n.id}`"
+          class="news"
+        >
           <img :src="n.img" class="mb-3 w-full rounded-lg" />
           <div class="text-sm text-gray-500">{{ n.date }}</div>
           <div class="text-lg font-medium">{{ n.title }}</div>

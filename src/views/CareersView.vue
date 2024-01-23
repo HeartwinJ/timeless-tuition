@@ -144,7 +144,7 @@ async function handleSubmit(data: any) {
               v-model="formData"
               @submit="handleSubmit"
             >
-              <div class="flex w-full gap-3">
+              <div class="flex w-full flex-col lg:flex-row lg:gap-3">
                 <div class="grow">
                   <FormKit
                     type="text"

@@ -1,18 +1,27 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
+import anime from "animejs";
 import Utils from "@/utils";
 import type Course from "@/types/Course";
 
 const isLoading = ref(true);
 const courses = ref<Course[]>([]);
 
-onMounted(() => {
-  fetch("/data/courses.json")
-    .then((res) => res.json())
-    .then((data) => {
-      courses.value.push(...data);
-      isLoading.value = false;
+onMounted(async () => {
+  const data = await (await fetch("/data/courses.json")).json();
+  courses.value.push(...data);
+  isLoading.value = false;
+
+  nextTick(() => {
+    anime({
+      targets: ".courses",
+      translateY: ["20%", "0%"],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1500,
+      delay: anime.stagger(100, { start: 500 }),
     });
+  });
 });
 </script>
 
@@ -20,7 +29,7 @@ onMounted(() => {
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
-        <div class="text-brand font-medium">Courses</div>
+        <div class="font-medium text-brand">Courses</div>
         <div class="text-xl font-bold uppercase">lorem ipsum</div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia,
@@ -42,7 +51,7 @@ onMounted(() => {
           v-for="(course, idx) in courses"
           :key="idx"
           :to="`/courses/${course.id}`"
-          class="flex w-full flex-col items-center justify-center gap-3 lg:w-1/4"
+          class="courses flex w-full flex-col items-center justify-center gap-3 lg:w-1/4"
         >
           <div
             :style="{

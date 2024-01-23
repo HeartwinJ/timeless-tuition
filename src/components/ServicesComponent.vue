@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
+import anime from "animejs";
 import { IconInbox, IconTrash, IconUsers } from "@tabler/icons-vue";
 
 const features = [
@@ -24,6 +26,17 @@ const features = [
     icon: IconTrash,
   },
 ];
+
+onMounted(() => {
+  anime({
+    targets: ".features",
+    translateY: ["20%", "0%"],
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: anime.stagger(500, { start: 1000 }),
+  });
+});
 </script>
 
 <template>
@@ -36,11 +49,11 @@ const features = [
         <div
           v-for="feature in features"
           :key="feature.name"
-          class="flex flex-col"
+          class="features flex flex-col"
         >
           <dt class="text-base font-semibold leading-7 text-gray-900">
             <div
-              class="bg-brand mb-6 flex h-10 w-10 items-center justify-center rounded-lg"
+              class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-brand"
             >
               <component
                 :is="feature.icon"
@@ -57,7 +70,7 @@ const features = [
             <p class="mt-6">
               <a
                 :href="feature.href"
-                class="text-brand text-sm font-semibold leading-6"
+                class="text-sm font-semibold leading-6 text-brand"
                 >Learn more <span aria-hidden="true">→</span></a
               >
             </p>
