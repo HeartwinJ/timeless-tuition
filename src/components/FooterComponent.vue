@@ -9,12 +9,12 @@ import {
 } from "@remixicon/vue";
 
 const socials = [
-  { icon: RiFacebookFill, path: "https://facebook.com" },
-  { icon: RiLinkedinFill, path: "https://linkedin.com" },
-  { icon: RiInstagramFill, path: "https://instagram.com" },
-  { icon: RiTwitterFill, path: "https://twitter.com" },
-  { icon: RiTiktokFill, path: "https://tiktok.com" },
-  { icon: RiWhatsappFill, path: "https://whatsapp.com" },
+  { icon: RiFacebookFill, path: "https://facebook.com", title: "Facebook" },
+  { icon: RiInstagramFill, path: "https://instagram.com", title: "Instagram" },
+  { icon: RiWhatsappFill, path: "https://whatsapp.com", title: "Whatsapp" },
+  { icon: RiTwitterFill, path: "https://twitter.com", title: "Twitter" },
+  { icon: RiTiktokFill, path: "https://tiktok.com", title: "TikTok" },
+  { icon: RiLinkedinFill, path: "https://linkedin.com", title: "LinkedIn" },
 ];
 </script>
 
@@ -28,9 +28,14 @@ const socials = [
           <a
             :href="social.path"
             target="_blank"
-            class="text-2xl text-gray-500 hover:text-gray-700"
+            class="group relative flex justify-center text-2xl text-gray-500 hover:text-gray-700"
           >
             <component :is="social.icon" class="h-6 w-6" />
+            <div
+              class="absolute -top-7 hidden rounded bg-white px-2 py-0.5 text-sm text-gray-500 shadow group-hover:block"
+            >
+              {{ social.title }}
+            </div>
           </a>
         </div>
       </div>
@@ -41,7 +46,7 @@ const socials = [
         All rights reserved.
       </div>
       <div class="flex gap-3 text-center text-gray-700 sm:text-left">
-        <RouterLink to="/legal" class="hover:text-gray-900">
+        <RouterLink to="/privacy" class="hover:text-gray-900">
           Privacy Policy
         </RouterLink>
         &vert;

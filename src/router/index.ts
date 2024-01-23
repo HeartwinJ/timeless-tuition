@@ -7,7 +7,7 @@ import NewsView from "@/views/NewsView.vue";
 import NewsDetailView from "@/views/NewsDetailView.vue";
 import AboutView from "@/views/AboutView.vue";
 import GetStartedView from "@/views/GetStartedView.vue";
-import LegalView from "@/views/LegalView.vue";
+import PrivacyView from "@/views/PrivacyView.vue";
 import TermsView from "@/views/TermsView.vue";
 
 const router = createRouter({
@@ -54,9 +54,9 @@ const router = createRouter({
       component: GetStartedView,
     },
     {
-      path: "/legal",
-      name: "legal",
-      component: LegalView,
+      path: "/privacy",
+      name: "privacy",
+      component: PrivacyView,
     },
     {
       path: "/terms",
