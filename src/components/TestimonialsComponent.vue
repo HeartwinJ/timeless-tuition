@@ -46,7 +46,7 @@ const carouselRef = ref(null as any);
     <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div class="mx-auto max-w-4xl"></div>
       <div class="py-8 text-center">
-        <div class="text-brand font-medium">Testimonials</div>
+        <div class="font-medium text-brand">Testimonials</div>
         <div class="text-xl font-bold uppercase">
           we have tutored many students
         </div>
@@ -66,7 +66,7 @@ const carouselRef = ref(null as any);
           :breakpoints="{ 1024: { itemsToShow: 3 } }"
         >
           <Slide v-for="(testimony, idx) in testimonials" :key="idx">
-            <div class="text-left">
+            <div class="text-left my-2">
               <div>
                 {{ testimony.content }}
               </div>
@@ -90,3 +90,45 @@ const carouselRef = ref(null as any);
     </div>
   </div>
 </template>
+
+<style scoped>
+.carousel__slide {
+  padding: 5px;
+}
+
+.carousel__viewport {
+  perspective: 2000px;
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
+}
+
+.carousel__slide {
+  opacity: 0.9;
+  transform: rotateY(-20deg) scale(0.9);
+}
+
+.carousel__slide--active ~ .carousel__slide {
+  transform: rotateY(20deg) scale(0.9);
+}
+
+.carousel__slide--prev {
+  opacity: 1;
+  transform: rotateY(-10deg) scale(0.9);
+}
+
+.carousel__slide--next {
+  opacity: 1;
+  transform: rotateY(10deg) scale(0.9);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
+}
+</style>
