@@ -66,7 +66,7 @@ const carouselRef = ref(null as any);
           :breakpoints="{ 1024: { itemsToShow: 3 } }"
         >
           <Slide v-for="(testimony, idx) in testimonials" :key="idx">
-            <div class="text-left my-2">
+            <div class="my-2 text-left">
               <div>
                 {{ testimony.content }}
               </div>
@@ -129,6 +129,13 @@ const carouselRef = ref(null as any);
 
 .carousel__slide--active {
   opacity: 1;
-  transform: rotateY(0) scale(1.1);
+  transform: rotateY(0) scale(1);
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel__slide--active {
+    opacity: 1;
+    transform: rotateY(0) scale(1.1);
+  }
 }
 </style>

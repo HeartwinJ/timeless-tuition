@@ -23,11 +23,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">About Us</div>
-        <div class="text-xl font-bold uppercase">lorem ipsum</div>
+        <div class="mb-3 text-xl font-bold uppercase">lorem ipsum</div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error
           nisi laboriosam nihil aspernatur nulla cum optio natus expedita

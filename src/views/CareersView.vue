@@ -63,11 +63,11 @@ async function handleSubmit(data: any) {
 
 <template>
   <div>
-    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+    <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
-          <div class="text-brand font-medium">Careers</div>
-          <div class="text-xl font-bold uppercase">work with us</div>
+          <div class="font-medium text-brand">Careers</div>
+          <div class="mb-3 text-xl font-bold uppercase">work with us</div>
           <div>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet ut
             consequuntur neque eum, porro enim labore quis aspernatur impedit ad
@@ -92,7 +92,7 @@ async function handleSubmit(data: any) {
                 {{ opening.department }}
               </span>
             </div>
-            <div class="text-brand text-lg font-medium">
+            <div class="text-lg font-medium text-brand">
               {{ opening.role }}
             </div>
             <div class="text-gray-700">{{ opening.description }}</div>
@@ -116,7 +116,7 @@ async function handleSubmit(data: any) {
               </div>
             </div>
             <button
-              class="bg-brand flex w-full items-center justify-center gap-2 rounded-lg px-12 py-2 text-white"
+              class="flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-12 py-2 text-white"
               @click="applyTo(opening.id)"
             >
               Apply <IconCircleArrowRight class="h-5 w-5" />
@@ -200,7 +200,7 @@ async function handleSubmit(data: any) {
               <div>
                 <button
                   type="submit"
-                  class="bg-brand flex w-full items-center justify-center rounded-lg px-4 py-2 uppercase text-white"
+                  class="flex w-full items-center justify-center rounded-lg bg-brand px-4 py-2 uppercase text-white"
                   :disabled="isProcessing"
                 >
                   <div v-if="isProcessing">
@@ -230,7 +230,7 @@ async function handleSubmit(data: any) {
           </DialogDescription>
           <button
             @click="isSuccessDialogOpen = false"
-            class="bg-brand mt-5 w-full rounded-lg px-4 py-2 uppercase text-white"
+            class="mt-5 w-full rounded-lg bg-brand px-4 py-2 uppercase text-white"
           >
             Ok
           </button>

@@ -25,11 +25,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">News</div>
-        <div class="text-xl font-bold uppercase">latest updates</div>
+        <div class="mb-3 text-xl font-bold uppercase">latest updates</div>
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
           praesentium deserunt fuga. Sequi blanditiis nemo nisi. Sequi tempora

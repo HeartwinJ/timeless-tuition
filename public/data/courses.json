@@ -2,42 +2,49 @@
   {
     "id": "year-1",
     "title": "Year 1",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "summary": "Blha balha blah",
+    "description": "## Course overview\n\nOur special Year 1 Math and English class is carefully crafted to help kids start learning about numbers and words. In Math, we do fun activities to help them with basic number skills. At the same time, in English, we focus on sounds and early reading to help their language skills grow. We use a step-by-step and interactive way of teaching to make learning fun. Our goal is to make Year 1 kids enjoy learning and give them a good start in both Math and English for their school journey.\n\n## Course highlights:\n\n- Engaging Weekly Sessions: Enjoy face-to-face, interactive lessons each week, fostering an engaging learning environment for Year 1 students.\n- Parents' Engagement Evening: Participate in a dedicated parents' presentation evening to gain insights into your child's progress, our teaching methods, and ways to support their learning journey.\n- Continuous Monitoring: Benefit from ongoing monitoring to track your child's development, ensuring that they receive personalised attention and support.\n- Individualised Support: Avail the opportunity for one-to-one support sessions, providing tailored assistance to address specific learning needs and enhance overall understanding.\n- Progress Reports: Stay informed about your child's academic journey through regular pupil progress reports, offering a detailed overview of achievements and areas for improvement.\n- Gradual Preparation: Our program is designed to prepare Year 1 children in a gradual and supportive manner, laying a strong foundation for their educational growth.\n- Exclusive Discounts: Enjoy exclusive discounts ranging from 20-30% on teaching materials, making quality resources more accessible for your child's Year 1 learning experience.",
     "colors": ["#446fda", "#da70d6"]
   },
   {
     "id": "year-2",
     "title": "Year 2",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
+    "summary": "Blha balha blah",
+    "description": "# Course overview\n\nOur special Year 2 Math and English class is designed to help kids build on what they learned in Year 1. In Math, we explore more about numbers, doing activities that make counting and math more fun. In English, we move from learning sounds to reading more advanced things, helping their language skills grow. We teach in a step-by-step and fun way to keep them interested in learning. Our aim is to make sure Year 2 kids really understand Math and English well, making their school journey even better.\n\n## Course highlights:\n\n- Engaging Weekly Sessions: Enjoy face-to-face, interactive lessons each week, fostering an engaging learning environment for Year 2 students.\n- Parents' Engagement Evening: Participate in a dedicated parents' presentation evening to gain insights into your child's progress, our teaching methods, and ways to support their learning journey.\n- Continuous Monitoring: Benefit from ongoing monitoring to track your child's development, ensuring that they receive personalised attention and support.\n- Individualised Support: Avail the opportunity for one-to-one support sessions, providing tailored assistance to address specific learning needs and enhance overall understanding.\n- Progress Reports: Stay informed about your child's academic journey through regular pupil progress reports, offering a detailed overview of achievements and areas for improvement.\n- Gradual Preparation: Our program is designed to prepare Year 2 children in a gradual and supportive manner, laying a strong foundation for their educational growth.\n- Exclusive Discounts: Enjoy exclusive discounts ranging from 20-30% on teaching materials, making quality resources more accessible for your child's Year 2 learning experience.",
     "colors": ["#4585e1", "#40E0D0"]
   },
   {
     "id": "year-3",
     "title": "Year 3",
+    "summary": "Blha balha blah",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     "colors": ["#446fda", "#da70d6"]
   },
   {
     "id": "year-4",
     "title": "Year 4",
+    "summary": "Blha balha blah",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     "colors": ["#4585e1", "#40E0D0"]
   },
   {
     "id": "year-5",
     "title": "Year 5",
+    "summary": "Blha balha blah",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     "colors": ["#446fda", "#da70d6"]
   },
   {
     "id": "year-6",
     "title": "Year 6",
+    "summary": "Blha balha blah",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     "colors": ["#4585e1", "#40E0D0"]
   },
   {
     "id": "year-7",
     "title": "Year 7",
+    "summary": "Blha balha blah",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia, aspernatur provident corporis incidunt rem laudantium explicabo eum esse doloribus officia et commodi optio dicta? Maiores repellat illo eum!",
     "colors": ["#4585e1", "#40E0D0"]
   }

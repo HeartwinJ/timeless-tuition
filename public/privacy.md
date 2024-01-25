@@ -72,3 +72,5 @@ Any revisions to our privacy notice will be posted on our website. Please period
 ## How to contact us
 
 Should you have any inquiries or concerns regarding the utilization of your personal information, please reach out to the Privacy Manager at (email)
+
+**By using this website, you agree to the terms and conditions and Privacy Policy outlined in this website. Thank you for choosing Timeless Tuition.**

@@ -37,12 +37,12 @@ async function handleSubmit(formData: FormData) {
 <template>
   <div class="space-y-12">
     <div
-      class="mx-auto max-w-7xl px-6 py-16 pb-0 sm:py-20 sm:pb-0 lg:px-8 lg:py-24 lg:pb-0"
+      class="max-w-8xl mx-auto px-6 py-8 pb-0 sm:py-10 sm:pb-0 lg:px-8 lg:py-12 lg:pb-0"
     >
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
-          <div class="text-brand font-medium">Get Started</div>
-          <div class="text-xl font-bold uppercase">reach out to us</div>
+          <div class="font-medium text-brand">Get Started</div>
+          <div class="mb-3 text-xl font-bold uppercase">reach out to us</div>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor
             hic consectetur ullam, vero architecto voluptatibus alias ratione
@@ -55,7 +55,7 @@ async function handleSubmit(formData: FormData) {
           </div>
         </div>
         <div
-          class="border-brand flex flex-col justify-around gap-8 border-2 p-5 lg:flex-row"
+          class="flex flex-col justify-around gap-8 border-2 border-brand p-5 lg:flex-row"
         >
           <div class="order-last basis-1/2 lg:order-first">
             <FormKit
@@ -153,7 +153,7 @@ async function handleSubmit(formData: FormData) {
               <div>
                 <button
                   type="submit"
-                  class="bg-brand flex w-full items-center justify-center rounded-lg px-4 py-2 uppercase text-white"
+                  class="flex w-full items-center justify-center rounded-lg bg-brand px-4 py-2 uppercase text-white"
                   :disabled="isProcessing"
                 >
                   <div v-if="isProcessing">
@@ -221,7 +221,7 @@ async function handleSubmit(formData: FormData) {
           </DialogDescription>
           <button
             @click="isSuccessDialogOpen = false"
-            class="bg-brand mt-5 w-full rounded-lg px-4 py-2 uppercase text-white"
+            class="mt-5 w-full rounded-lg bg-brand px-4 py-2 uppercase text-white"
           >
             Ok
           </button>

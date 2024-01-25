@@ -31,12 +31,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
       <div v-if="isLoading">Loading...</div>
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2" v-else>
-        <img :src="newsData.img" />
+      <div class="flex flex-col gap-8 lg:flex-row" v-else>
         <div>
+          <img :src="newsData.img" />
+        </div>
+        <div class="grow">
           <div class="text-3xl font-medium">
             {{ newsData.title }}
           </div>

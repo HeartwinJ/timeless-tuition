@@ -26,19 +26,20 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">Courses</div>
-        <div class="text-xl font-bold uppercase">lorem ipsum</div>
+        <div class="mb-3 text-xl font-bold uppercase">
+          find the right course
+        </div>
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae id quia,
-          aspernatur provident corporis incidunt rem laudantium explicabo eum
-          esse doloribus officia et commodi optio dicta? Maiores repellat illo
-          eum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-          at voluptate facere tempore nesciunt, animi beatae accusantium
-          aspernatur commodi obcaecati voluptatibus illo fugit nulla, ipsam quo
-          expedita officia iusto! Esse.
+          With a decade of combined expertise, our courses are created to meet
+          your child's unique needs. Covering core subjects like Mathematics,
+          English, and Science, as well as specialised preparation for 11+,
+          GCSE, A-Level exams and more, our programs provide a personalised and
+          effective learning experience. Explore the summary of the courses
+          available for your child's academic year group below.
         </div>
       </div>
 
@@ -51,7 +52,7 @@ onMounted(async () => {
           v-for="(course, idx) in courses"
           :key="idx"
           :to="`/courses/${course.id}`"
-          class="courses flex w-full flex-col items-center justify-center gap-3 lg:w-1/4"
+          class="courses flex w-full flex-col items-center justify-center gap-3 lg:w-1/5"
         >
           <div
             :style="{
@@ -64,7 +65,7 @@ onMounted(async () => {
             <div class="z-10 flex flex-col items-center justify-center">
               <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
               <div class="mt-3 hidden text-center group-hover:block">
-                {{ course.description }}
+                {{ course.summary }}
               </div>
             </div>
             <div

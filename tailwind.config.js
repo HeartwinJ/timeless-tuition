@@ -12,6 +12,9 @@ export default {
       colors: {
         brand: "#f94564",
       },
+      spacing: {
+        "8xl": "92rem",
+      },
     },
   },
   plugins: [typography],
