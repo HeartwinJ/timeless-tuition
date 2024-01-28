@@ -53,7 +53,7 @@ const carouselRef = ref(null as any);
       </div>
       <div class="flex justify-center gap-3">
         <button
-          class="px-2 text-gray-400 hover:text-gray-600"
+          class="hidden px-2 text-gray-400 hover:text-gray-600 lg:block"
           @click="carouselRef.prev()"
         >
           <IconChevronLeft />
@@ -81,7 +81,7 @@ const carouselRef = ref(null as any);
           </template>
         </Carousel>
         <button
-          class="px-2 text-gray-400 hover:text-gray-600"
+          class="hidden px-2 text-gray-400 hover:text-gray-600 lg:block"
           @click="carouselRef.next()"
         >
           <IconChevronRight />

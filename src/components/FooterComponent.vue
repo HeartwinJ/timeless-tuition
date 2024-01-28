@@ -22,7 +22,7 @@ const socials = [
   <div
     class="sm:px-18 flex w-full flex-col items-center justify-center gap-3 bg-gray-200 px-8 py-5 lg:px-48"
   >
-    <div class="flex w-full items-center justify-end">
+    <div class="flex w-full items-center justify-center lg:justify-end">
       <div class="flex items-center gap-3">
         <div v-for="(social, idx) in socials" :key="idx">
           <a
@@ -41,11 +41,13 @@ const socials = [
       </div>
     </div>
     <div class="flex w-full flex-col justify-between gap-3 sm:flex-row">
-      <div class="text-gray-700">
-        Copyright &copy; {{ new Date().getFullYear() }} Timeless Tuition Ltd.
-        All rights reserved.
+      <div class="text-center text-sm text-gray-700 lg:text-left lg:text-base">
+        &copy; {{ new Date().getFullYear() }} Timeless Tuition Ltd. All rights
+        reserved.
       </div>
-      <div class="flex gap-3 text-center text-gray-700 sm:text-left">
+      <div
+        class="flex justify-center gap-1 text-sm text-gray-700 lg:justify-start lg:gap-3 lg:text-base"
+      >
         <RouterLink to="/privacy" class="hover:text-gray-900">
           Privacy Policy
         </RouterLink>

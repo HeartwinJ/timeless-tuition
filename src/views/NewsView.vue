@@ -25,19 +25,17 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
+  <div class="mx-auto max-w-8xl px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">News</div>
         <div class="mb-3 text-xl font-bold uppercase">latest updates</div>
         <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-          praesentium deserunt fuga. Sequi blanditiis nemo nisi. Sequi tempora
-          praesentium ab, ullam cumque nesciunt maiores, necessitatibus eum a
-          illo unde fuga. Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. Consequatur officia commodi accusamus fuga? Maxime deserunt quae
-          nam temporibus dolores quaerat dolore assumenda. Mollitia quibusdam id
-          aspernatur voluptates eos quam quas!
+          On our news page, we share practical tips, insights, and news about
+          education and learning that can help you and your child reach your
+          academic potential. We keep you informed on the latest news and
+          innovations in education. Here are some of the latest updates from our
+          news page, explore our most recent news at your convenience.
         </div>
       </div>
       <div v-if="isLoading">Loading...</div>

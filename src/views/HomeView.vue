@@ -2,6 +2,7 @@
 import { onMounted } from "vue";
 import anime from "animejs";
 import { PaperAirplaneIcon } from "@heroicons/vue/24/solid";
+import ScrollerComponent from "@/components/ScrollerComponent.vue";
 import ServicesComponent from "@/components/ServicesComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
@@ -54,6 +55,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <ScrollerComponent />
     <ServicesComponent />
     <DividerComponent />
     <TestimonialsComponent />
