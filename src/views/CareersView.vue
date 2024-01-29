@@ -8,6 +8,7 @@ import {
   DialogDescription,
 } from "@headlessui/vue";
 import {
+  IconX,
   IconHourglass,
   IconCalendar,
   IconMapPin,
@@ -63,7 +64,7 @@ async function handleSubmit(data: any) {
 
 <template>
   <div>
-    <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
+    <div class="mx-auto max-w-8xl px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
           <div class="font-medium text-brand">Careers</div>
@@ -133,9 +134,17 @@ async function handleSubmit(data: any) {
       <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
       <div class="fixed inset-0 flex w-screen items-center justify-center p-4">
         <DialogPanel class="w-full max-w-lg rounded bg-white p-4">
-          <DialogTitle class="mb-3 text-2xl font-medium">
-            Apply for opening
-          </DialogTitle>
+          <div class="flex items-center justify-between">
+            <DialogTitle class="mb-3 text-2xl font-medium">
+              Apply for opening
+            </DialogTitle>
+            <button
+              class="rounded-lg border border-transparent p-2 hover:border-red-200 hover:bg-red-100 hover:text-red-600"
+              @click="isApplyDialogOpen = false"
+            >
+              <IconX />
+            </button>
+          </div>
           <div>
             <FormKit
               id="application-form"
@@ -194,7 +203,7 @@ async function handleSubmit(data: any) {
                 type="textarea"
                 name="message"
                 label="Message"
-                placeholder="Eg. I would like to book a lesson"
+                placeholder="Eg. I would like to apply for this position because..."
                 :disabled="isProcessing"
               />
               <div>
