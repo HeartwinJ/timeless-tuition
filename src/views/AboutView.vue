@@ -18,12 +18,13 @@ onMounted(() => {
     max: 10,
     speed: 1500,
     reverse: true,
+    "full-page-listening": true,
   });
 });
 </script>
 
 <template>
-  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
+  <div class="mx-auto max-w-8xl px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">About Us</div>

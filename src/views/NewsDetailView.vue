@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import { useRoute } from "vue-router";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import VanillaTilt from "vanilla-tilt";
 import type News from "@/types/News";
 
 const route = useRoute();
@@ -30,6 +31,15 @@ onMounted(async () => {
     await marked(newsData.value.description),
   );
   isLoading.value = false;
+
+  nextTick(() => {
+    //@ts-ignore
+    VanillaTilt.init(document.querySelectorAll(".tilt-img"), {
+      max: 10,
+      speed: 1500,
+      reverse: true,
+    });
+  });
 });
 </script>
 
@@ -39,7 +49,7 @@ onMounted(async () => {
       <div v-if="isLoading">Loading...</div>
       <div class="flex flex-col gap-8 lg:flex-row" v-else>
         <div>
-          <img :src="newsData.img" />
+          <img class="tilt-img" :src="newsData.img" />
         </div>
         <div class="grow">
           <div class="text-3xl font-bold">
@@ -50,7 +60,7 @@ onMounted(async () => {
           </div>
         </div>
       </div>
-      <div class="prose prose-slate max-w-none lg:prose-lg mt-5">
+      <div class="prose prose-slate mt-5 max-w-none lg:prose-lg">
         <div v-html="newsData.description"></div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import { useRoute } from "vue-router";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import VanillaTilt from "vanilla-tilt";
 import FAQComponent from "@/components/FAQComponent.vue";
 import Utils from "@/utils";
 import type Course from "@/types/Course";
@@ -31,7 +32,17 @@ onMounted(async () => {
   courseData.value.highlights = DOMPurify.sanitize(
     await marked(courseData.value.highlights),
   );
+
   isLoading.value = false;
+
+  nextTick(() => {
+    //@ts-ignore
+    VanillaTilt.init(document.querySelectorAll(".tilt-img"), {
+      max: 10,
+      speed: 1500,
+      reverse: true,
+    });
+  });
 });
 </script>
 
@@ -42,7 +53,10 @@ onMounted(async () => {
         <div v-if="isLoading">Loading...</div>
         <div class="flex flex-col gap-8 lg:flex-row" v-else>
           <div>
-            <img :src="Utils.getTrianglifyImage(courseData.colors)" />
+            <img
+              class="tilt-img"
+              :src="Utils.getTrianglifyImage(courseData.colors)"
+            />
           </div>
           <div class="lg:grow">
             <div class="text-3xl font-bold">
