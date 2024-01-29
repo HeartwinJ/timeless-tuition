@@ -15,7 +15,8 @@ const courseData = ref<Course>({
   id: "",
   title: "",
   summary: "",
-  description: "",
+  overview: "",
+  highlights: "",
   colors: [],
 });
 
@@ -24,8 +25,11 @@ onMounted(async () => {
   courseData.value = data.find((course: Course) => {
     return course.id === courseId;
   });
-  courseData.value.description = DOMPurify.sanitize(
-    await marked(courseData.value.description),
+  courseData.value.overview = DOMPurify.sanitize(
+    await marked(courseData.value.overview),
+  );
+  courseData.value.highlights = DOMPurify.sanitize(
+    await marked(courseData.value.highlights),
   );
   isLoading.value = false;
 });
@@ -33,7 +37,7 @@ onMounted(async () => {
 
 <template>
   <div>
-    <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
+    <div class="mx-auto max-w-8xl px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
       <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
         <div v-if="isLoading">Loading...</div>
         <div class="flex flex-col gap-8 lg:flex-row" v-else>
@@ -41,13 +45,16 @@ onMounted(async () => {
             <img :src="Utils.getTrianglifyImage(courseData.colors)" />
           </div>
           <div class="lg:grow">
-            <div class="text-3xl font-medium">
+            <div class="text-3xl font-bold">
               {{ courseData.title }}
             </div>
             <div class="prose prose-slate lg:prose-lg">
-              <div v-html="courseData.description"></div>
+              <div v-html="courseData.overview"></div>
             </div>
           </div>
+        </div>
+        <div class="prose prose-slate mt-5 max-w-none lg:prose-lg">
+          <div v-html="courseData.highlights"></div>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ export default interface Course {
   id: string;
   title: string;
   summary: string;
-  description: string;
+  overview: string;
+  highlights: string;
   colors: Array<string>;
 }
