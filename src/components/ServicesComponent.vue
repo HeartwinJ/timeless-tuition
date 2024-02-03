@@ -1,29 +1,41 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import anime from "animejs";
-import { IconInbox, IconTrash, IconUsers } from "@tabler/icons-vue";
+import {
+  IconBook,
+  IconSchool,
+  IconUsers,
+  IconChartBar,
+} from "@tabler/icons-vue";
 
 const features = [
   {
-    name: "Placeholder text 1",
+    name: "Tailored Courses For You",
     description:
-      "Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.",
+      "At Timeless Tuition, our dedicated tutors assist in crafting customised and tailored tuition programmes for each student, providing weekly homework and assesments that are aligned with the National Curriculum. Our goal is to support every learner in achieving the best grades possible by advancing at their own pace and addressing their individual learning needs.",
     href: "#",
-    icon: IconInbox,
+    icon: IconBook,
   },
   {
-    name: "Placeholder text 2",
+    name: "Professional Tutors",
     description:
-      "Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.",
+      "Trust our tutors; you're in good hands. Our professional tutors are meticulously DBS checked and rigorously trained by us to guide your child towards exceptional results. Carefully selected, our tutors undergo a thorough selection and training process to meet our high standards of excellence.",
+    href: "#",
+    icon: IconSchool,
+  },
+  {
+    name: "Small Group Sessions & One-to-One Support",
+    description:
+      "Our classes feature small group settings, with 3-6 students per table, ensuring personalised attention in every lesson. We foster an intimate learning environment, providing students with ample time, attention, and resources to excel. Additionally, we offer the option for one-on-one sessions, both in-person and online.",
     href: "#",
     icon: IconUsers,
   },
   {
-    name: "Placeholder text 3",
+    name: "Parental Engagement: Weekly Updates and Communication",
     description:
-      "Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.",
+      "We highly value keeping parents informed about their child's progress. Our team shares comprehensive weekly reports, detailing your child's performance, and achievements during tuition sessions. Additionally, meetings can be scheduled to address any concerns. We uphold the importance of transparency in your child's educational journey.",
     href: "#",
-    icon: IconTrash,
+    icon: IconChartBar,
   },
 ];
 
@@ -41,10 +53,10 @@ onMounted(() => {
 
 <template>
   <div>
-    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <div class="mx-auto max-w-8xl px-6 py-24 lg:px-8">
       <div class="mx-auto max-w-4xl"></div>
       <dl
-        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4"
       >
         <div
           v-for="feature in features"
@@ -61,7 +73,9 @@ onMounted(() => {
                 aria-hidden="true"
               />
             </div>
-            {{ feature.name }}
+            <div class="uppercase">
+              {{ feature.name }}
+            </div>
           </dt>
           <dd
             class="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600"

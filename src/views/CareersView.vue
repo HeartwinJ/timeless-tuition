@@ -70,14 +70,20 @@ async function handleSubmit(data: any) {
           <div class="font-medium text-brand">Careers</div>
           <div class="mb-3 text-xl font-bold uppercase">work with us</div>
           <div>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet ut
-            consequuntur neque eum, porro enim labore quis aspernatur impedit ad
-            eos cupiditate non quibusdam numquam alias necessitatibus illo
-            corporis obcaecati. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Ducimus, reprehenderit ullam praesentium
-            accusantium, assumenda sequi possimus soluta iste sit ipsa
-            laudantium corrupti. Voluptas harum sit saepe. Modi provident
-            pariatur explicabo.
+            Join Our Team at Timeless Tuition! Are you an enthusiastic educator
+            with a passion for making a difference in students' lives? Timeless
+            Tuition is seeking talented individuals to join our team of tutors
+            and educators. As a tutor at Timeless Tuition, you'll play a crucial
+            role in shaping students' academic journeys. We offer a supportive
+            and collaborative work environment where your expertise and
+            creativity are valued. Whether you're an experienced educator or a
+            recent graduate eager to embark on a fulfilling teaching career, we
+            welcome you to apply. At Timeless Tuition, you'll have the
+            opportunity to work with students of all ages and abilities,
+            providing personalised support and guidance tailored to their
+            individual learning needs. Explore our career opportunities and
+            become a part of the Timeless Tuition family today! Fill out the
+            form below, and we will be in touch.
           </div>
         </div>
         <div v-if="isLoading">Loading...</div>
@@ -89,7 +95,10 @@ async function handleSubmit(data: any) {
         >
           <div>
             <div class="mb-2 text-sm text-gray-700">
-              <span class="rounded-full border bg-white px-2 py-1">
+              <span
+                class="rounded-full border bg-white px-2 py-1"
+                v-if="opening.department"
+              >
                 {{ opening.department }}
               </span>
             </div>
@@ -102,16 +111,19 @@ async function handleSubmit(data: any) {
             <div class="flex flex-col items-center justify-around">
               <div
                 class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="opening.experience"
               >
                 <IconCalendar class="h-5 w-5" /> {{ opening.experience }}
               </div>
               <div
                 class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="opening.employmentType"
               >
                 <IconHourglass class="h-5 w-5" /> {{ opening.employmentType }}
               </div>
               <div
                 class="flex w-full items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="opening.location"
               >
                 <IconMapPin class="h-5 w-5" /> {{ opening.location }}
               </div>

@@ -18,7 +18,7 @@ interface FormData {
   email: string;
   phone: string;
   year: string;
-  subject: string;
+  subject: string[];
   message: string;
 }
 
@@ -27,7 +27,11 @@ const isSuccessDialogOpen = ref(false);
 
 async function handleSubmit(formData: FormData) {
   isProcessing.value = true;
-  await Services.saveContact(formData);
+  const payload = {
+    ...formData,
+    subject: formData.subject.join(", "),
+  };
+  await Services.saveContact(payload);
   reset("query-form");
   isProcessing.value = false;
   isSuccessDialogOpen.value = true;
@@ -37,21 +41,24 @@ async function handleSubmit(formData: FormData) {
 <template>
   <div class="space-y-12">
     <div
-      class="max-w-8xl mx-auto px-6 py-8 pb-0 sm:py-10 sm:pb-0 lg:px-8 lg:py-12 lg:pb-0"
+      class="mx-auto max-w-8xl px-6 py-8 pb-0 sm:py-10 sm:pb-0 lg:px-8 lg:py-12 lg:pb-0"
     >
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
           <div class="font-medium text-brand">Get Started</div>
           <div class="mb-3 text-xl font-bold uppercase">reach out to us</div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor
-            hic consectetur ullam, vero architecto voluptatibus alias ratione
-            exercitationem aliquam placeat unde. Velit repudiandae repellendus
-            quod enim obcaecati doloremque officia! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quidem repellendus magni, iusto
-            blanditiis cumque maiores nobis. Suscipit facilis minima
-            praesentium, alias aperiam ipsam porro, odio iure, exercitationem
-            culpa dolorem temporibus.
+            Begin your child's educational journey with our complimentary
+            induction session. Our free induction is designed to assess your
+            child's current level and identify their unique learning needs.
+            Through a tailored assessment, we'll determine the best path forward
+            to support their academic growth and success. At Timeless Tuition,
+            we believe in providing personalised guidance from the very
+            beginning. Our experienced tutors will work closely with you and
+            your child to understand their strengths, areas for improvement, and
+            educational goals. Ready to get started? Simply fill out the form
+            below, and we'll be in touch to schedule your child's free induction
+            session. Let's unlock their full potential together!
           </div>
         </div>
         <div
@@ -69,8 +76,8 @@ async function handleSubmit(formData: FormData) {
                   <FormKit
                     type="text"
                     name="firstname"
-                    label="Firstname"
-                    placeholder="Firstname"
+                    label="First Name"
+                    placeholder="First Name"
                     validation="required"
                     :disabled="isProcessing"
                   />
@@ -79,8 +86,8 @@ async function handleSubmit(formData: FormData) {
                   <FormKit
                     type="text"
                     name="lastname"
-                    label="Lastname"
-                    placeholder="Lastname"
+                    label="Last Name"
+                    placeholder="Last Name"
                     validation="required"
                     :disabled="isProcessing"
                   />
@@ -89,8 +96,8 @@ async function handleSubmit(formData: FormData) {
               <FormKit
                 type="email"
                 name="email"
-                label="Email"
-                placeholder="Email"
+                label="Email Address"
+                placeholder="Email Address"
                 validation="required"
                 :disabled="isProcessing"
               />
@@ -106,7 +113,7 @@ async function handleSubmit(formData: FormData) {
                 type="select"
                 name="year"
                 label="Year"
-                placeholder="Select Year"
+                placeholder="Select Year Group"
                 validation="required"
                 :disabled="isProcessing"
                 :options="[
@@ -125,7 +132,7 @@ async function handleSubmit(formData: FormData) {
                 ]"
               />
               <FormKit
-                type="select"
+                type="checkbox"
                 name="subject"
                 label="Subject"
                 placeholder="Select Subject"
@@ -178,14 +185,13 @@ async function handleSubmit(formData: FormData) {
         <div class="py-8 text-center">
           <div class="text-xl font-bold uppercase">contact us</div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor
-            hic consectetur ullam, vero architecto voluptatibus alias ratione
-            exercitationem aliquam placeat unde. Velit repudiandae repellendus
-            quod enim obcaecati doloremque officia! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quidem repellendus magni, iusto
-            blanditiis cumque maiores nobis. Suscipit facilis minima
-            praesentium, alias aperiam ipsam porro, odio iure, exercitationem
-            culpa dolorem temporibus.
+            We're thrilled to hear from you and discuss how we can support your
+            child's educational journey. Whether you have questions about our
+            tutoring services, want to schedule a consultation, or simply wish
+            to learn more about Timeless Tuition, we're here to help. Feel free
+            to reach out to us using the contact form above, and our friendly
+            team will get back to you promptly. Alternatively, you can connect
+            with us via phone, text or email using the contact details provided.
           </div>
           <div class="grid grid-cols-1 gap-8 py-8 lg:grid-cols-3">
             <div class="flex items-center justify-center gap-3">

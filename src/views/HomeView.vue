@@ -31,16 +31,19 @@ onMounted(() => {
       <div class="mx-8 max-w-3xl pb-72 pt-16">
         <div class="text-left" id="hero-content">
           <h1
-            class="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
+            class="text-center text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
           >
             we <span class="text-brand">tutor</span> for success
           </h1>
-          <p class="mt-6 text-lg leading-8 text-gray-300">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
-            Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-            occaecat fugiat aliqua.
+          <p
+            class="mt-6 text-center text-2xl font-normal leading-8 text-gray-200"
+          >
+            Welcome to Timeless Tuition! We offer personally tailored, in-person
+            and online tutoring for all ages and subjects. Located at the heart
+            of Watford, our experienced team of tutors create engaging learning
+            environments, focusing on excellence and integrity to help students
+            achieve academic success. Join us on a journey of discovery and
+            achievement.
           </p>
           <div
             class="mt-10 flex items-center justify-center gap-x-6 text-gray-300"
