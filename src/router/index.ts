@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import CoursesView from "@/views/CoursesView.vue";
 import CourseDetailView from "@/views/CourseDetailView.vue";
 import CareersView from "@/views/CareersView.vue";
+import CareerDetailView from "@/views/CareerDetailView.vue";
 import NewsView from "@/views/NewsView.vue";
 import NewsDetailView from "@/views/NewsDetailView.vue";
 import AboutView from "@/views/AboutView.vue";
@@ -13,56 +14,17 @@ import TermsView from "@/views/TermsView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: "/",
-      name: "home",
-      component: HomeView,
-    },
-    {
-      path: "/courses",
-      name: "courses",
-      component: CoursesView,
-    },
-    {
-      path: "/courses/:courseId",
-      name: "course_details",
-      component: CourseDetailView,
-    },
-    {
-      path: "/careers",
-      name: "careers",
-      component: CareersView,
-    },
-    {
-      path: "/news",
-      name: "news",
-      component: NewsView,
-    },
-    {
-      path: "/news/:newsId",
-      name: "news_details",
-      component: NewsDetailView,
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: AboutView,
-    },
-    {
-      path: "/get-started",
-      name: "get_started",
-      component: GetStartedView,
-    },
-    {
-      path: "/privacy",
-      name: "privacy",
-      component: PrivacyView,
-    },
-    {
-      path: "/terms",
-      name: "terms",
-      component: TermsView,
-    },
+    { path: "/", component: HomeView },
+    { path: "/courses", component: CoursesView },
+    { path: "/courses/:courseId", component: CourseDetailView },
+    { path: "/careers", component: CareersView },
+    { path: "/careers/:openingId", component: CareerDetailView },
+    { path: "/news", component: NewsView },
+    { path: "/news/:newsId", component: NewsDetailView },
+    { path: "/about", component: AboutView },
+    { path: "/get-started", component: GetStartedView },
+    { path: "/privacy", component: PrivacyView },
+    { path: "/terms", component: TermsView },
   ],
   scrollBehavior() {
     return { top: 0 };
