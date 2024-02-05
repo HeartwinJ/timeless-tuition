@@ -36,14 +36,14 @@ onMounted(() => {
             we <span class="text-brand">tutor</span> for success
           </h1>
           <p
-            class="mt-6 text-center text-2xl font-normal leading-8 text-gray-200"
+            class="mt-6 text-left text-xl font-normal leading-8 text-gray-200 lg:text-center"
           >
-            Welcome to Timeless Tuition! We offer personally tailored, in-person
-            and online tutoring for all ages and subjects. Located at the heart
-            of Watford, our experienced team of tutors create engaging learning
-            environments, focusing on excellence and integrity to help students
-            achieve academic success. Join us on a journey of discovery and
-            achievement.
+            Welcome to Timeless Tuition! With over a decade of combined
+            experience in tutoring, we offer personally tailored, in-person and
+            online tutoring for all ages and subjects. Located at the heart of
+            Watford, our experienced team of tutors create engaging learning
+            environments to help students achieve academic success. Join us on a
+            journey of discovery and achievement.
           </p>
           <div
             class="mt-10 flex items-center justify-center gap-x-6 text-gray-300"

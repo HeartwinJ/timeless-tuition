@@ -23,7 +23,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-triangles sticky top-0 z-50 w-full px-5 py-2">
+  <div class="bg-triangles sticky top-0 z-50 w-full px-5 py-2 shadow-lg">
     <div class="flex items-center">
       <RouterLink to="/" class="z-10">
         <img
