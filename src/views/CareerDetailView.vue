@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 import { reset } from "@formkit/vue";
 import {
   Dialog,
@@ -44,6 +46,10 @@ const formData = reactive({
   lastname: "",
   email: "",
   phone: "",
+  referrer: "",
+  gcse_math: "",
+  gcse_science: "",
+  gcse_english: "",
   message: "",
 });
 
@@ -52,6 +58,9 @@ onMounted(async () => {
   openingData.value = data.find((career: Career) => {
     return career.id === openingId;
   });
+  openingData.value.description = DOMPurify.sanitize(
+    await marked(openingData.value.description),
+  );
   isLoading.value = false;
 });
 
@@ -84,43 +93,46 @@ async function handleSubmit(data: any) {
             <div class="mb-5 text-2xl font-medium text-brand">
               {{ openingData.role }}
             </div>
-            <div>
-              {{ openingData.description }}
+            <div class="prose prose-slate lg:prose-lg">
+              <div v-html="openingData.description"></div>
             </div>
           </div>
-          <div class="rounded-lg border px-4 py-2 shadow">
-            <div class="mb-2 text-sm text-gray-700">
-              <span
-                class="rounded-full border bg-white px-2 py-1"
-                v-if="openingData.department"
+          <div>
+            <div class="rounded-lg border px-4 py-2 shadow">
+              <div class="mb-2 text-sm text-gray-700">
+                <span
+                  class="rounded-full border bg-white px-2 py-1"
+                  v-if="openingData.department"
+                >
+                  {{ openingData.department }}
+                </span>
+              </div>
+              <div
+                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="openingData.experience"
               >
-                {{ openingData.department }}
-              </span>
+                <IconCalendar class="h-5 w-5" /> {{ openingData.experience }}
+              </div>
+              <div
+                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="openingData.employmentType"
+              >
+                <IconHourglass class="h-5 w-5" />
+                {{ openingData.employmentType }}
+              </div>
+              <div
+                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                v-if="openingData.location"
+              >
+                <IconMapPin class="h-5 w-5" /> {{ openingData.location }}
+              </div>
+              <button
+                class="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-brand px-12 py-2 text-white"
+                @click="applyTo(openingData.id)"
+              >
+                Apply <IconCircleArrowRight class="h-5 w-5" />
+              </button>
             </div>
-            <div
-              class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
-              v-if="openingData.experience"
-            >
-              <IconCalendar class="h-5 w-5" /> {{ openingData.experience }}
-            </div>
-            <div
-              class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
-              v-if="openingData.employmentType"
-            >
-              <IconHourglass class="h-5 w-5" /> {{ openingData.employmentType }}
-            </div>
-            <div
-              class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
-              v-if="openingData.location"
-            >
-              <IconMapPin class="h-5 w-5" /> {{ openingData.location }}
-            </div>
-            <button
-              class="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-brand px-12 py-2 text-white"
-              @click="applyTo(openingData.id)"
-            >
-              Apply <IconCircleArrowRight class="h-5 w-5" />
-            </button>
           </div>
         </div>
       </div>
@@ -132,7 +144,7 @@ async function handleSubmit(data: any) {
     >
       <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
       <div class="fixed inset-0 flex w-screen items-center justify-center p-4">
-        <DialogPanel class="w-full max-w-lg rounded bg-white p-4">
+        <DialogPanel class="w-full max-w-4xl rounded bg-white p-4">
           <div class="flex items-center justify-between">
             <DialogTitle class="mb-3 text-2xl font-medium">
               Apply for opening
@@ -157,8 +169,8 @@ async function handleSubmit(data: any) {
                   <FormKit
                     type="text"
                     name="firstname"
-                    label="Firstname"
-                    placeholder="Firstname"
+                    label="First Name"
+                    placeholder="First Name"
                     validation="required"
                     :disabled="isProcessing"
                   />
@@ -167,33 +179,81 @@ async function handleSubmit(data: any) {
                   <FormKit
                     type="text"
                     name="lastname"
-                    label="Lastname"
-                    placeholder="Lastname"
+                    label="Last Name"
+                    placeholder="Last Name"
+                    validation="required"
+                    :disabled="isProcessing"
+                  />
+                </div>
+              </div>
+              <div class="flex w-full flex-col lg:flex-row lg:gap-3">
+                <div class="grow">
+                  <FormKit
+                    type="email"
+                    name="email"
+                    label="Email Address"
+                    placeholder="Email Address"
+                    validation="required"
+                    :disabled="isProcessing"
+                  />
+                </div>
+                <div class="grow">
+                  <FormKit
+                    type="tel"
+                    name="phone"
+                    label="Phone Number"
+                    placeholder="Phone Number"
                     validation="required"
                     :disabled="isProcessing"
                   />
                 </div>
               </div>
               <FormKit
-                type="email"
-                name="email"
-                label="Email"
-                placeholder="Email"
+                type="checkbox"
+                name="referrer"
+                label="How did you hear about us?"
+                :options="['Friends', 'Social Media', 'Leaflet', 'Other']"
+                options-class="flex gap-4"
                 validation="required"
                 :disabled="isProcessing"
               />
-              <FormKit
-                type="tel"
-                name="phone"
-                label="Phone Number"
-                placeholder="Phone Number"
-                validation="required"
-                :disabled="isProcessing"
-              />
+              <div class="flex w-full flex-col lg:flex-row lg:gap-3">
+                <div class="grow">
+                  <FormKit
+                    type="text"
+                    name="gcse_math"
+                    label="GCSE Math Grade"
+                    placeholder="Enter your GCSE Math grade"
+                    validation="required"
+                    :disabled="isProcessing"
+                  />
+                </div>
+                <div class="grow">
+                  <FormKit
+                    type="text"
+                    name="gcse_science"
+                    label="GCSE Science Grade"
+                    placeholder="Enter your GCSE Science grade"
+                    validation="required"
+                    :disabled="isProcessing"
+                  />
+                </div>
+                <div class="grow">
+                  <FormKit
+                    type="text"
+                    name="gcse_english"
+                    label="GCSE English Grade"
+                    placeholder="Enter your GCSE English grade"
+                    validation="required"
+                    :disabled="isProcessing"
+                  />
+                </div>
+              </div>
               <FormKit
                 type="file"
                 name="cv_url"
                 label="CV"
+                help="Upload your CV in PDF format."
                 accept=".pdf"
                 validation="required"
                 :disabled="isProcessing"
