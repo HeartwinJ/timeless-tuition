@@ -15,24 +15,24 @@ const faqs = [
       "We offer formalised Maths, English, and Science Grade-Specific Courses for KS2, 11+, KS3, GCSE/A-level students and more. Starting from children aged 5 to 17, each child follows a structured bespoke programme with set topics aligned with the national curriculum, along with a weekly homework and revision plan. To get started fill out the contact form to begin your educational journey.",
   },
   {
-    question: "How do I get started?",
+    question: "How do I get my child enrolled / get started?",
     answer:
       'To initiate your educational journey, complete the contact form on the "Get Started" page. Once submitted, we\'ll be in touch to discuss available subjects, next steps, and provide details about our free induction.',
   },
   {
-    question: "Where is your tuition centre based?",
+    question: "Where is your tuition centre located?",
     answer:
       "We offer tuition services both in person at our Watford center …. and online, providing flexibility and convenience to meet your educational needs. This allow you the flexibility to opt for either in-person or online tuition.",
   },
   {
-    question: "Are you tutors qualified?",
+    question: "Are Timeless Tuition's tutors qualified?",
     answer:
       "Certainly! All our tutors are qualified, with verified DBS certificates and Safeguarding Training. Some are also first aid trained. Our team includes QTS Qualified teachers, graduates, and subject matter specialists. Each tutor undergoes a rigorous selection and hiring process, ensuring they meet high standards. Feel confident that the tutor assigned to your child has been thoughtfully chosen for their expertise and commitment to achieve the best results possible.",
   },
   {
     question: "What are your prices?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Our prices are competitive, starting from as low as £15/hr and vary depending on the course and the number of subjects your child is enrolled in. We offer a free induction and assessment to understand your child's needs and provide a tailored plan. We also offer sibling discounts and flexible payment options. To get a quote, please fill out the contact form and we'll be in touch to discuss your requirements.",
   },
 ];
 </script>

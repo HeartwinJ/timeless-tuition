@@ -13,7 +13,7 @@ const testimonials = [
   {
     author: "Amrit Lalli",
     content:
-      "Enrolling my child in this tuition program was a fantastic choice. The caring teachers have made a real difference, and I've seen a noticeable improvement in my kid's grades. I wholeheartedly recommend it to fellow parents looking for extra support in their child's education!",
+      "Putting my child in this tuition was the best choice. The tutors have made a big difference, and I've seen a huge improvement in my kid's grades. I definitely recommend it to parents looking for results in their child's education!",
   },
   {
     author: "Ethan Willis",
@@ -78,10 +78,10 @@ const carouselRef = ref(null as any);
                   :key="i"
                 />
               </div>
-              <div>
+              <div class="text-center">
                 {{ testimony.content }}
               </div>
-              <div class="mt-3 font-medium">
+              <div class="mt-3 text-center font-medium">
                 {{ testimony.author }}
               </div>
             </div>
