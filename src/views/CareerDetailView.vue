@@ -146,8 +146,8 @@ async function handleSubmit(data: any) {
       <div class="fixed inset-0 flex w-screen items-center justify-center p-4">
         <DialogPanel class="w-full max-w-4xl rounded bg-white p-4">
           <div class="flex items-center justify-between">
-            <DialogTitle class="mb-3 text-2xl font-medium">
-              Apply for opening
+            <DialogTitle class="mb-3 text-2xl font-medium uppercase">
+              Apply for position
             </DialogTitle>
             <button
               class="rounded-lg border border-transparent p-2 hover:border-red-200 hover:bg-red-100 hover:text-red-600"

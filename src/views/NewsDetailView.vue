@@ -52,7 +52,7 @@ onMounted(async () => {
           <img class="tilt-img" :src="newsData.img" />
         </div>
         <div class="grow">
-          <div class="text-3xl font-bold">
+          <div class="text-3xl font-medium">
             {{ newsData.title }}
           </div>
           <div class="prose prose-slate lg:prose-lg">

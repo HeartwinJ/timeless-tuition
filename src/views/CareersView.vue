@@ -61,7 +61,7 @@ onMounted(async () => {
             <div class="text-lg font-medium text-brand">
               {{ opening.role }}
             </div>
-            <div class="text-gray-700">{{ opening.summary }}</div>
+            <div class="text-gray-700 line-clamp-3">{{ opening.summary }}</div>
           </div>
           <div class="flex flex-col gap-3">
             <div class="flex flex-col items-center justify-around">

@@ -52,11 +52,19 @@ onMounted(async () => {
       <div class="mx-auto max-w-2xl space-y-16 lg:max-w-none">
         <div v-if="isLoading">Loading...</div>
         <div class="flex flex-col gap-8 lg:flex-row" v-else>
-          <div>
-            <img
-              class="tilt-img"
-              :src="Utils.getTrianglifyImage(courseData.colors)"
-            />
+          <div
+            class="tilt-img relative flex items-center justify-center"
+            style="transform-style: preserve-3d"
+          >
+            <img :src="Utils.getTrianglifyImage(courseData.colors)" />
+            <div
+              class="absolute z-10 flex flex-col items-center justify-center"
+              :style="{ transform: 'translateZ(20px)' }"
+            >
+              <div class="text-4xl font-bold uppercase text-white">
+                {{ courseData.title }}
+              </div>
+            </div>
           </div>
           <div class="lg:grow">
             <div class="text-3xl font-bold">
