@@ -26,7 +26,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="max-w-8xl mx-auto px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
+  <div class="mx-auto max-w-8xl px-6 py-8 sm:py-10 lg:px-8 lg:py-12">
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">Courses</div>
@@ -34,12 +34,13 @@ onMounted(async () => {
           find the right course
         </div>
         <div>
-          With a decade of combined expertise, our courses are created to meet
-          your child's unique needs. Covering core subjects like Mathematics,
-          English, and Science, as well as specialised preparation for 11+,
-          GCSE, A-Level exams and more, our programs provide a personalised and
-          effective learning experience. Explore the summary of the courses
-          available for your child's academic year group below.
+          With over a decade of combined expertise, our courses are tailored to
+          the national curriculum exam boards to meet your child's needs.
+          Covering core subjects like Mathematics, English, and Science, as well
+          as specialised preparation for 11+, GCSE, A-Level exams and more, our
+          programs provide a personalised and effective learning experience.
+          Explore the summary of the courses available for your child's academic
+          year group below.
         </div>
       </div>
 
@@ -60,7 +61,25 @@ onMounted(async () => {
                 course.colors,
               )})`,
             }"
-            class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white"
+            class="group relative hidden h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white lg:flex"
+          >
+            <div class="z-10 flex flex-col items-center justify-center">
+              <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
+              <div class="mt-3 hidden text-center group-hover:block">
+                {{ course.summary }}
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 hidden bg-black/30 group-hover:block"
+            ></div>
+          </div>
+          <div
+            :style="{
+              backgroundImage: `url(${Utils.getTrianglifyImage(
+                course.mobileColors,
+              )})`,
+            }"
+            class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white lg:hidden"
           >
             <div class="z-10 flex flex-col items-center justify-center">
               <div class="text-4xl font-bold uppercase">{{ course.title }}</div>

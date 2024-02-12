@@ -19,6 +19,7 @@ const courseData = ref<Course>({
   overview: "",
   highlights: "",
   colors: [],
+  mobileColors: [],
 });
 
 onMounted(async () => {
@@ -61,7 +62,7 @@ onMounted(async () => {
               class="absolute z-10 flex flex-col items-center justify-center"
               :style="{ transform: 'translateZ(20px)' }"
             >
-              <div class="text-4xl font-bold uppercase text-white">
+              <div class="text-6xl font-bold uppercase text-white">
                 {{ courseData.title }}
               </div>
             </div>

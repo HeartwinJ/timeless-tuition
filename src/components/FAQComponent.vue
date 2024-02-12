@@ -9,7 +9,7 @@ const faqs = [
       "We offer formalised Maths, English, and Science Grade-Specific Courses for KS2, 11+, KS3, GCSE/A-level students and more. Starting from children aged 5 to 17, each child follows a structured bespoke programme with set topics aligned with the national curriculum, along with a weekly homework and revision plan. To get started fill out the contact form to begin your educational journey.",
   },
   {
-    question: "How do I get my child enrolled / get started?",
+    question: "How do I enroll my child / get started?",
     answer:
       'To initiate your educational journey, complete the contact form on the "Get Started" page. Once submitted, we\'ll be in touch to discuss available subjects, next steps, and provide details about our free induction.',
   },
@@ -41,11 +41,13 @@ const faqs = [
     <div class="border-y-2 border-white">
       <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div class="mx-auto max-w-4xl divide-y divide-white">
-          <h2
-            class="text-center text-3xl font-bold uppercase leading-10 tracking-tight text-white"
-          >
-            Frequently asked questions
-          </h2>
+          <div class="py-4 text-center text-white">
+            <div class="font-bold">Frequently Asked Questions</div>
+            <div class="text-xl font-bold lg:text-2xl">
+              Can't find the answer you are looking for?<br />
+              Reach out to us.
+            </div>
+          </div>
           <dl class="mt-10 space-y-6 divide-y divide-white">
             <Disclosure
               as="div"
@@ -58,7 +60,7 @@ const faqs = [
                 <DisclosureButton
                   class="flex w-full items-start justify-between text-left text-white"
                 >
-                  <span class="text-xl font-semibold leading-7">{{
+                  <span class="text-lg leading-7 lg:text-xl lg:font-semibold">{{
                     faq.question
                   }}</span>
                   <span class="ml-6 flex h-7 items-center">
@@ -67,8 +69,8 @@ const faqs = [
                   </span>
                 </DisclosureButton>
               </dt>
-              <DisclosurePanel as="dd" class="mt-2 pr-12">
-                <p class="text-base leading-7 text-white">
+              <DisclosurePanel as="dd" class="mt-4 pr-12">
+                <p class="text-sm leading-7 text-white lg:text-base">
                   {{ faq.answer }}
                 </p>
               </DisclosurePanel>

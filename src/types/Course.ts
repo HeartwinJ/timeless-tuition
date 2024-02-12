@@ -5,4 +5,5 @@ export default interface Course {
   overview: string;
   highlights: string;
   colors: Array<string>;
+  mobileColors: Array<string>;
 }

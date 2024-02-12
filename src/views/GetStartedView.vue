@@ -22,8 +22,64 @@ interface FormData {
   message: string;
 }
 
+const subjects = {
+  default: [
+    "Maths",
+    "English",
+    "Science",
+    "11+ (NVR, VR, MATHS, COMP)",
+    "GCSE",
+    "A Level",
+    "AS Level",
+    "SATs",
+  ],
+  Reception: ["Maths", "English"],
+  "Year 1": ["Maths", "English"],
+  "Year 2": ["Maths", "English", "Science"],
+  "Year 3": ["11+ (NVR, VR, MATHS, COMP)", "Maths", "English", "Science"],
+  "Year 4": ["11+ (NVR, VR, MATHS, COMP)", "Maths", "English", "Science"],
+  "Year 5": ["11+ (NVR, VR, MATHS, COMP)", "Maths", "English", "Science"],
+  "Year 6": ["SATs Maths", "SATs English", "Science"],
+  "Year 7": ["Maths", "English", "Science"],
+  "Year 8": ["Maths", "English", "Science"],
+  "Year 9": ["Maths", "English", "Science"],
+  "Year 10": [
+    "GCSE Maths",
+    "GCSE English",
+    "GCSE Physics",
+    "GCSE Biology",
+    "GCSE Chemistry",
+    "GCSE Business Studies",
+    "GCSE Geography",
+  ],
+  "Year 11": [
+    "GCSE Maths",
+    "GCSE English",
+    "GCSE Physics",
+    "GCSE Biology",
+    "GCSE Chemistry",
+    "GCSE Business Studies",
+    "GCSE Geography",
+  ],
+  "Year 12": [
+    "AS Level Maths",
+    "AS Level Chemistry",
+    "AS Level Biology",
+    "AS Level Physics",
+    "AS Level Business Studies",
+  ],
+  "Year 13": [
+    "A Level Maths",
+    "A Level Chemistry",
+    "A Level Biology",
+    "A Level Physics",
+    "A Level Business Studies",
+  ],
+};
+
 const isProcessing = ref(false);
 const isSuccessDialogOpen = ref(false);
+const formData = ref();
 
 async function handleSubmit(formData: FormData) {
   isProcessing.value = true;
@@ -56,9 +112,11 @@ async function handleSubmit(formData: FormData) {
             we believe in providing personalised guidance from the very
             beginning. Our experienced tutors will work closely with you and
             your child to understand their strengths, areas for improvement, and
-            educational goals. Ready to get started? Simply fill out the form
-            below, and we'll be in touch to schedule your child's free induction
-            session. Let's unlock their full potential together!
+            educational goals. Ready to get started?
+          </div>
+          <div class="mt-3 text-xl font-bold">
+            Simply fill out the form below, and we'll be in touch with you
+            regarding the next steps and further information.
           </div>
         </div>
         <div
@@ -70,6 +128,7 @@ async function handleSubmit(formData: FormData) {
               type="form"
               :actions="false"
               @submit="handleSubmit"
+              v-model="formData"
             >
               <div class="flex w-full flex-col lg:flex-row lg:gap-3">
                 <div class="grow">
@@ -117,6 +176,7 @@ async function handleSubmit(formData: FormData) {
                 validation="required"
                 :disabled="isProcessing"
                 :options="[
+                  'Reception',
                   'Year 1',
                   'Year 2',
                   'Year 3',
@@ -128,7 +188,8 @@ async function handleSubmit(formData: FormData) {
                   'Year 9',
                   'Year 10',
                   'Year 11',
-                  'A Level',
+                  'Year 12',
+                  'Year 13',
                 ]"
               />
               <FormKit
@@ -138,17 +199,11 @@ async function handleSubmit(formData: FormData) {
                 placeholder="Select Subject"
                 validation="required"
                 :disabled="isProcessing"
-                :options="[
-                  'Maths',
-                  'English',
-                  'Science',
-                  'History',
-                  'Geography',
-                  'Computer Science',
-                  'Biology',
-                  'Chemistry',
-                  'Physics',
-                ]"
+                :options="
+                  subjects[
+                    (formData.year || 'default') as keyof typeof subjects
+                  ]
+                "
               />
               <FormKit
                 type="textarea"

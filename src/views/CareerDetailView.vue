@@ -140,11 +140,15 @@ async function handleSubmit(data: any) {
     <Dialog
       :open="isApplyDialogOpen"
       @close="isApplyDialogOpen = false"
-      class="relative z-50"
+      class="fixed inset-0 z-50"
     >
-      <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
-      <div class="fixed inset-0 flex w-screen items-center justify-center p-4">
-        <DialogPanel class="w-full max-w-4xl rounded bg-white p-4">
+      <div class="absolute h-full w-full bg-black/30" aria-hidden="true"></div>
+      <div
+        class="absolute z-10 flex h-full w-full items-center justify-center p-4"
+      >
+        <DialogPanel
+          class="max-h-full w-full max-w-4xl overflow-y-auto rounded bg-white p-8"
+        >
           <div class="flex items-center justify-between">
             <DialogTitle class="mb-3 text-2xl font-medium uppercase">
               Apply for position
@@ -213,7 +217,7 @@ async function handleSubmit(data: any) {
                 name="referrer"
                 label="How did you hear about us?"
                 :options="['Friends', 'Social Media', 'Leaflet', 'Other']"
-                options-class="flex gap-4"
+                options-class="flex gap-4 flex-wrap"
                 validation="required"
                 :disabled="isProcessing"
               />
