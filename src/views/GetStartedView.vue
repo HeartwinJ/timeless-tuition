@@ -20,6 +20,7 @@ interface FormData {
   year: string;
   subject: string[];
   message: string;
+  preference: string;
 }
 
 const subjects = {
@@ -137,7 +138,7 @@ async function handleSubmit(formData: FormData) {
                     name="firstname"
                     label="First Name"
                     placeholder="First Name"
-                    validation="required"
+                    validation="required:trim"
                     :disabled="isProcessing"
                   />
                 </div>
@@ -147,7 +148,7 @@ async function handleSubmit(formData: FormData) {
                     name="lastname"
                     label="Last Name"
                     placeholder="Last Name"
-                    validation="required"
+                    validation="required:trim"
                     :disabled="isProcessing"
                   />
                 </div>
@@ -157,8 +158,19 @@ async function handleSubmit(formData: FormData) {
                 name="email"
                 label="Email Address"
                 placeholder="Email Address"
-                validation="required"
+                validation="required|email"
                 :disabled="isProcessing"
+              />
+              <FormKit
+                type="email"
+                label="Confirm Email Address"
+                placeholder="Email Address"
+                :validation="`required|email|is:${formData.email}`"
+                :validation-messages="{
+                  is: 'Email addresses do not match',
+                }"
+                :disabled="isProcessing"
+                ignore
               />
               <FormKit
                 type="tel"
@@ -210,6 +222,13 @@ async function handleSubmit(formData: FormData) {
                 name="message"
                 label="Message"
                 placeholder="Eg. I would like to book a lesson"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="radio"
+                name="preference"
+                label="Preferred Contact Method"
+                :options="['Phone', 'Email', 'WhatsApp', 'Text Message']"
                 :disabled="isProcessing"
               />
               <div>

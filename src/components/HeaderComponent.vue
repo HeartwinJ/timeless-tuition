@@ -23,7 +23,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-triangles sticky top-0 z-50 w-full px-5 py-2 shadow-lg">
+  <div class="bg-triangles sticky top-0 z-30 w-full px-5 py-2 shadow-lg">
     <div class="flex items-center">
       <RouterLink to="/" class="z-10">
         <img
@@ -70,7 +70,7 @@ const mobileMenuOpen = ref(false);
           </div>
           <RouterLink
             to="/get-started"
-            class="text-brand flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase shadow"
+            class="flex items-center gap-2 rounded-md border bg-white px-4 py-2 text-lg font-medium uppercase text-brand shadow"
           >
             <PaperAirplaneIcon class="h-5 w-5" />
             <span class="whitespace-nowrap"> Get Started </span>
