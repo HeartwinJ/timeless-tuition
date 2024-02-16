@@ -147,10 +147,12 @@ async function handleSubmit(data: any) {
         class="absolute z-10 flex h-full w-full items-center justify-center p-4"
       >
         <DialogPanel
-          class="max-h-full w-full max-w-4xl overflow-y-auto rounded bg-white p-8"
+          class="max-h-full w-full max-w-6xl overflow-y-auto rounded bg-white p-8"
         >
-          <div class="flex items-center justify-between">
-            <DialogTitle class="mb-3 text-2xl font-medium uppercase">
+          <div class="flex items-center justify-between mb-8">
+            <DialogTitle
+              class="mb-3 border-b-4 border-brand text-2xl font-medium uppercase"
+            >
               Apply for position
             </DialogTitle>
             <button
@@ -217,7 +219,6 @@ async function handleSubmit(data: any) {
                 name="referrer"
                 label="How did you hear about us?"
                 :options="['Friends', 'Social Media', 'Leaflet', 'Other']"
-                options-class="flex gap-4 flex-wrap"
                 validation="required"
                 :disabled="isProcessing"
               />

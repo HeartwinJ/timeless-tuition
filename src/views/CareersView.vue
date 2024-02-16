@@ -24,7 +24,13 @@ onMounted(async () => {
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
           <div class="font-medium text-brand">Careers</div>
-          <div class="mb-3 text-xl font-bold uppercase">work with us</div>
+          <div class="flex justify-center">
+            <div
+              class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+            >
+              work with us
+            </div>
+          </div>
           <div>
             Join Our Team at Timeless Tuition! Are you an enthusiastic educator
             with a passion for making a difference in students' lives? Timeless
@@ -61,7 +67,7 @@ onMounted(async () => {
             <div class="text-lg font-medium text-brand">
               {{ opening.role }}
             </div>
-            <div class="text-gray-700 line-clamp-3">{{ opening.summary }}</div>
+            <div class="line-clamp-3 text-gray-700">{{ opening.summary }}</div>
           </div>
           <div class="flex flex-col gap-3">
             <div class="flex flex-col items-center justify-around">

@@ -51,8 +51,12 @@ const carouselRef = ref(null as any);
       <div class="mx-auto max-w-4xl"></div>
       <div class="py-4 text-center">
         <div class="font-medium text-brand">Testimonials</div>
-        <div class="text-xl font-bold uppercase">
-          we have tutored many students
+        <div class="flex justify-center">
+          <div
+            class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+          >
+            we have tutored many students
+          </div>
         </div>
       </div>
       <div class="flex justify-center gap-3">

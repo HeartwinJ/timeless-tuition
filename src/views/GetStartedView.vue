@@ -21,6 +21,7 @@ interface FormData {
   subject: string[];
   message: string;
   preference: string;
+  referrer: string[];
 }
 
 const subjects = {
@@ -87,6 +88,7 @@ async function handleSubmit(formData: FormData) {
   const payload = {
     ...formData,
     subject: formData.subject.join(", "),
+    referrer: formData.referrer.join(", "),
   };
   await Services.saveContact(payload);
   reset("query-form");
@@ -103,7 +105,13 @@ async function handleSubmit(formData: FormData) {
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="py-8 text-center">
           <div class="font-medium text-brand">Get Started</div>
-          <div class="mb-3 text-xl font-bold uppercase">reach out to us</div>
+          <div class="flex justify-center">
+            <div
+              class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+            >
+              reach out to us
+            </div>
+          </div>
           <div>
             Begin your child's educational journey with our complimentary
             induction session. Our free induction is designed to assess your
@@ -121,7 +129,7 @@ async function handleSubmit(formData: FormData) {
           </div>
         </div>
         <div
-          class="flex flex-col justify-around gap-8 border-2 border-brand p-5 lg:flex-row"
+          class="flex flex-col justify-around gap-8 rounded-lg border-4 border-brand p-5 lg:flex-row"
         >
           <div class="order-last basis-1/2 lg:order-first">
             <FormKit
@@ -229,6 +237,16 @@ async function handleSubmit(formData: FormData) {
                 name="preference"
                 label="Preferred Contact Method"
                 :options="['Phone', 'Email', 'WhatsApp', 'Text Message']"
+                options-class="flex flex-col lg:flex-row lg:gap-3"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="checkbox"
+                name="referrer"
+                label="How did you hear about us?"
+                :options="['Friends', 'Social Media', 'Leaflet', 'Other']"
+                options-class="flex flex-col lg:flex-row lg:gap-3"
+                validation="required"
                 :disabled="isProcessing"
               />
               <div>
@@ -257,7 +275,13 @@ async function handleSubmit(formData: FormData) {
           </div>
         </div>
         <div class="py-8 text-center">
-          <div class="text-xl font-bold uppercase">contact us</div>
+          <div class="flex justify-center">
+            <div
+              class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+            >
+              contact us
+            </div>
+          </div>
           <div>
             We're thrilled to hear from you and discuss how we can support your
             child's educational journey. Whether you have questions about our

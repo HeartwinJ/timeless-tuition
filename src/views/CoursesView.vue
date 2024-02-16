@@ -30,8 +30,12 @@ onMounted(async () => {
     <div class="mx-auto flex max-w-2xl flex-col items-center lg:max-w-none">
       <div class="py-8 text-center">
         <div class="font-medium text-brand">Courses</div>
-        <div class="mb-3 text-xl font-bold uppercase">
-          find the right course
+        <div class="flex justify-center">
+          <div
+            class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+          >
+            find the right course
+          </div>
         </div>
         <div>
           With over a decade of combined expertise, our courses are tailored to
@@ -66,7 +70,7 @@ onMounted(async () => {
             <div class="z-10 flex flex-col items-center justify-center">
               <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
               <div class="mt-3 hidden text-center group-hover:block">
-                <p v-html="course.summary"></p>
+                <p v-html="course.summary" class="mx-2"></p>
               </div>
             </div>
             <div
@@ -84,7 +88,7 @@ onMounted(async () => {
             <div class="z-10 flex flex-col items-center justify-center">
               <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
               <div class="mt-3 hidden text-center group-hover:block">
-                {{ course.summary }}
+                <p v-html="course.summary" class="mx-2"></p>
               </div>
             </div>
             <div
