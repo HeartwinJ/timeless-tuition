@@ -76,7 +76,9 @@ onMounted(async () => {
             </div>
           </div>
         </div>
-        <div class="prose prose-slate mt-5 max-w-none lg:prose-lg">
+        <div
+          :class="`prose-ul:list-checked prose prose-slate mt-5 max-w-none lg:prose-lg marker:prose-ul:text-brand`"
+        >
           <div v-html="courseData.highlights"></div>
         </div>
       </div>

@@ -53,7 +53,7 @@ const carouselRef = ref(null as any);
         <div class="font-medium text-brand">Testimonials</div>
         <div class="flex justify-center">
           <div
-            class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase"
+            class="mb-3 border-brand px-4 text-xl font-bold uppercase lg:border-b-4"
           >
             we have tutored many students
           </div>

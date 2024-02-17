@@ -15,6 +15,9 @@ export default {
       spacing: {
         "8xl": "92rem",
       },
+      listStyleType: {
+        checked: '"\\2713"',
+      },
     },
   },
   plugins: [typography],
