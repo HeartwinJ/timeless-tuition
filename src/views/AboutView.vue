@@ -26,13 +26,24 @@ onMounted(() => {
 
 function handleTitleHover(e: any) {
   console.log(e);
-  // anime({
-  //   targets: e.target,
-  //   scale: ["100%", "120%"],
-  //   easing: "easeOutExpo",
-  //   duration: 1000,
-  //   delay: anime.stagger(500, { start: 500 }),
-  // });
+  anime({
+    targets: e.target,
+    scale: ["100%", "110%"],
+    easing: "easeOutExpo",
+    duration: 500,
+    delay: anime.stagger(500, { start: 500 }),
+  });
+}
+
+function handleTitleHoverEnd(e: any) {
+  console.log(e);
+  anime({
+    targets: e.target,
+    scale: ["110%", "100%"],
+    easing: "easeOutExpo",
+    duration: 500,
+    delay: anime.stagger(500, { start: 500 }),
+  });
 }
 </script>
 
@@ -49,9 +60,11 @@ function handleTitleHover(e: any) {
         </div>
         <div class="about rounded-lg border-4 border-brand p-3">
           <div class="pt-4 text-center">
-            <div class="text-2xl font-bold uppercase">how we started</div>
+            <div class="texl-xl font-bold uppercase lg:text-2xl">
+              how we started
+            </div>
           </div>
-          <div class="mx-8 my-3 text-lg italic">
+          <div class="mx-8 my-3 italic lg:text-lg">
             <div class="inline-block">
               <RiDoubleQuotesL class="inline-block h-8 w-8 text-gray-500" />
             </div>
@@ -71,7 +84,7 @@ function handleTitleHover(e: any) {
               <RiDoubleQuotesR class="inline-block h-8 w-8 text-gray-500" />
             </div>
           </div>
-          <div class="mt-3 text-right text-xl">- Timeless Tuition</div>
+          <div class="mt-3 text-right lg:text-xl">- Timeless Tuition</div>
         </div>
       </div>
       <div
@@ -79,9 +92,11 @@ function handleTitleHover(e: any) {
       >
         <div>
           <div class="pt-4 text-center">
-            <div class="mb-3 text-2xl font-bold uppercase">our mission</div>
+            <div class="mb-3 text-xl font-bold uppercase lg:text-2xl">
+              our mission
+            </div>
           </div>
-          <div class="mx-8 my-3 text-center text-lg">
+          <div class="mx-8 my-3 text-center lg:text-lg">
             At Timeless Tuition, our mission is to empower students to achieve
             and exceed their learning goals through effective coaching,
             mentoring, and tutoring tailored to individual needs. We are
@@ -93,9 +108,11 @@ function handleTitleHover(e: any) {
         </div>
         <div>
           <div class="pt-4 text-center">
-            <div class="mb-3 text-2xl font-bold uppercase">our vision</div>
+            <div class="mb-3 text-xl font-bold uppercase lg:text-2xl">
+              our vision
+            </div>
           </div>
-          <div class="mx-8 my-3 text-center text-lg">
+          <div class="mx-8 my-3 text-center lg:text-lg">
             Our vision at Timeless Tuition is to transform education, creating a
             dynamic learning environment where students flourish. We envision a
             future where everyone has access to affordable, high-quality
@@ -110,12 +127,12 @@ function handleTitleHover(e: any) {
         <DividerComponent />
         <div class="mb-3 mt-12 flex justify-center">
           <div
-            class="mb-3 border-b-4 border-brand px-4 text-2xl font-bold uppercase"
+            class="mb-3 border-b-4 border-brand px-4 text-xl font-bold uppercase lg:text-2xl"
           >
             what makes timeless tuition stand out from the rest?
           </div>
         </div>
-        <div class="text-xl">
+        <div class="lg:text-xl">
           With over a decade of experience, Timeless Tuition has perfected our
           approach to delivering outstanding results. Our Maths, Science, and
           English Tuition Courses and more empower students in both classroom
@@ -125,10 +142,15 @@ function handleTitleHover(e: any) {
       </div>
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             Tailored courses for you
+            <div id="tailored-courses" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
+          <div class="lg:text-xl">
             Our committed tutors at Timeless Tuition work with each student to
             create a personalised learning plan that includes weekly assignments
             and assessments that follow the National Curriculum. Our courses for
@@ -150,31 +172,49 @@ function handleTitleHover(e: any) {
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
         <img src="https://picsum.photos/500/328?random=2" class="tilt-img" />
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             DBS Checked Professional Tutors
+            <div id="professional-tutors" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
-            At Timeless Tuition, our dedicated tutors assist in crafting
-            customised and tailored tuition programmes for each student,
-            providing weekly homework and assesments that are aligned with the
-            National Curriculum. Our goal is to support every learner in
-            achieving the best grades possible by advancing at their own pace
-            and addressing their individual learning needs.
+          <div class="lg:text-xl">
+            Trust our tutors; you're in good hands. Only one in ten applicants
+            are successfully hired at Timeless Tuition, as we hand pick the best
+            Tutors who are trained rigorously and have as well as undergone a
+            thorough DBS check to ensure your children are in safe hands. Our
+            tutors are not only experts in their fields but also passionate
+            about guiding students to success. With Timeless Tuition, your
+            child's academic growth is in capable and caring hands. Furthermore,
+            if you interested in being part of our team, head over to our
+            careers page.
           </div>
         </div>
       </div>
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             Small Group Sessions & One-to-One Support
+            <div id="small-group" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
-            At Timeless Tuition, our dedicated tutors assist in crafting
-            customised and tailored tuition programmes for each student,
-            providing weekly homework and assesments that are aligned with the
-            National Curriculum. Our goal is to support every learner in
-            achieving the best grades possible by advancing at their own pace
-            and addressing their individual learning needs.
+          <div class="lg:text-xl">
+            Our classes feature small group settings, with 3-6 students per
+            table, ensuring personalised attention and fostering a collaborative
+            learning atmosphere. Each student receives individualised support
+            and guidance from our experienced tutors, who tailor their teaching
+            approach to accommodate diverse learning styles and abilities. With
+            our intimate class sizes, students benefit from ample opportunities
+            for active participation, meaningful interactions, and peer-to-peer
+            learning experiences. Moreover, our dedicated tutors allocate
+            sufficient time and resources to address each student's unique
+            needs, ensuring comprehensive understanding and mastery of the
+            subject matter.
           </div>
         </div>
         <img
@@ -185,31 +225,54 @@ function handleTitleHover(e: any) {
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
         <img src="https://picsum.photos/500/328?random=4" class="tilt-img" />
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             Parental Engagement: Weekly Updates and Communication
+            <div id="parental-engagement" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
-            At Timeless Tuition, our dedicated tutors assist in crafting
-            customised and tailored tuition programmes for each student,
-            providing weekly homework and assesments that are aligned with the
-            National Curriculum. Our goal is to support every learner in
-            achieving the best grades possible by advancing at their own pace
-            and addressing their individual learning needs.
+          <div class="lg:text-xl">
+            At Timeless Tuition, we believe regular communication and updates
+            will help parents and teachers build good relationships. Our
+            thorough weekly reports, which offer in-depth insights into your
+            child's progress and accomplishments throughout tuition sessions,
+            demonstrate our commitment to parental engagement. These reports are
+            helpful resources for monitoring your child's intellectual
+            development and pinpointing areas in need of additional work.
+            Furthermore, because we value answering any worries or inquiries you
+            might have, we provide you with the flexibility to arrange
+            appointments to talk about your child's educational progress. You
+            can rely on Timeless Tuition to put transparency and collaboration
+            first in order to make sure that your child's educational journey is
+            successful.
           </div>
         </div>
       </div>
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             In-Person and Online
+            <div id="in-person" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
-            At Timeless Tuition, our dedicated tutors assist in crafting
-            customised and tailored tuition programmes for each student,
-            providing weekly homework and assesments that are aligned with the
-            National Curriculum. Our goal is to support every learner in
-            achieving the best grades possible by advancing at their own pace
-            and addressing their individual learning needs.
+          <div class="lg:text-xl">
+            There are alternatives for both in-person and online tutoring to
+            suit a range of schedules and learning preferences. The benefit of
+            face-to-face lesson is that it provides students with the
+            opportunity to connect directly with tutors in a setting that is
+            encouraging and favourable to learning. Our online tutoring platform
+            gives anyone who want flexibility and convenience access to
+            excellent tuition from the comforts of home. Irrespective of their
+            geographical location, students can obtain individualised advice and
+            support through interactive virtual classrooms, and real-time
+            feedback. Our mission is to enable students to realise their full
+            potential and attain academic success, whether in-person or
+            virtually.
           </div>
         </div>
         <img
@@ -220,16 +283,26 @@ function handleTitleHover(e: any) {
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
         <img src="https://picsum.photos/500/328?random=4" class="tilt-img" />
         <div>
-          <div class="mb-3 text-4xl font-bold" @mouseover="handleTitleHover">
+          <div
+            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            @mouseover="handleTitleHover"
+            @mouseleave="handleTitleHoverEnd"
+          >
             Tests, Mock Exams and Assessments
+            <div id="assesments" class="absolute -top-36"></div>
           </div>
-          <div class="text-xl">
-            At Timeless Tuition, our dedicated tutors assist in crafting
-            customised and tailored tuition programmes for each student,
-            providing weekly homework and assesments that are aligned with the
-            National Curriculum. Our goal is to support every learner in
-            achieving the best grades possible by advancing at their own pace
-            and addressing their individual learning needs.
+          <div class="lg:text-xl">
+            We recognise that frequent assessments and practice tests are
+            crucial in determining students' development and readiness for
+            future academic pursuits. This is why we take an in-depth approach
+            to education. Weekly tests, frequent mock exams, and assessments
+            help us identify students' areas of strength and growth, giving us
+            important information about their academic journey. Assisting
+            students in becoming comfortable with exam formats and boosting
+            their confidence, our knowledgeable tutors carefully craft
+            examinations that replicate genuine exam settings. We provide
+            tailored feedback and focused assistance to enable students to
+            overcome challenges and attain peak academic performance.
           </div>
         </div>
       </div>

@@ -45,9 +45,15 @@ const socials = [
 ];
 
 const isOpen = ref(false);
+const openTime = ref("");
+const message = ref("");
 
 function openSocials() {
   isOpen.value = true;
+  openTime.value = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   anime({
     targets: ".socials",
     translateY: ["20%", "0%"],
@@ -57,11 +63,19 @@ function openSocials() {
     delay: anime.stagger(500, { start: 1000 }),
   });
 }
+
+function handleSendMessage() {
+  window.open(
+    `https://wa.me/919791154922?text=${encodeURIComponent(message.value)}`,
+    "_blank",
+  );
+  message.value = "";
+}
 </script>
 <template>
   <div>
     <button
-      class="fixed bottom-3 right-3 z-50 rounded-full bg-brand p-3"
+      class="fixed bottom-3 right-3 z-50 rounded-full border bg-brand p-3 shadow shadow-white"
       @click="openSocials"
     >
       <IconMessageCircle2Filled class="h-8 w-8 text-white" />
@@ -73,19 +87,42 @@ function openSocials() {
           <div
             class="flex flex-col overflow-hidden rounded-lg border bg-white shadow"
           >
-            <div class="bg-green-500 px-8 py-3">Chat with us</div>
-            <div class="grow"></div>
-            <div class="p-2">
+            <div
+              class="flex items-center gap-3 bg-brand p-3 font-medium text-white"
+            >
+              <div class="rounded-full bg-white p-5"></div>
+              Timeless Tuition
+            </div>
+            <div
+              class="relative flex h-72 grow flex-col justify-start bg-[#e5ddd5] p-4"
+            >
+              <div
+                class="speech-bubble-left relative my-1 mr-auto flex max-w-xs flex-col rounded-lg rounded-tl-none bg-brand p-2 text-sm text-white"
+              >
+                <p>
+                  Hello! Welcome to Timeless Tuition. Feel free drop in any
+                  questions that you may have and we will reach out to you as
+                  soon as possible.
+                </p>
+                <p class="text-right text-xs leading-none text-gray-50">
+                  {{ openTime }}
+                </p>
+              </div>
+            </div>
+            <div class="border-t bg-gray-100 p-2">
               <div class="flex items-center justify-center gap-2">
                 <input
                   type="text"
                   placeholder="Type your message..."
-                  class="rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  class="grow border-none bg-transparent outline-none"
+                  v-model="message"
+                  @keyup.enter="handleSendMessage"
                 />
                 <button
-                  class="flex items-center justify-center rounded-full bg-green-500 p-3 text-white"
+                  class="flex items-center justify-center rounded-full bg-brand p-3 text-white"
+                  @click="handleSendMessage"
                 >
-                  <IconSend2 class="h-6 w-6" />
+                  <IconSend2 class="h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -107,3 +144,17 @@ function openSocials() {
     </Dialog>
   </div>
 </template>
+<style scoped>
+.speech-bubble-left::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid #f94564;
+  border-top: 5px solid #f94564;
+  border-bottom: 5px solid transparent;
+  left: -10px;
+  top: 0;
+}
+</style>

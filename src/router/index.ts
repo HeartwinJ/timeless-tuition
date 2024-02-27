@@ -26,7 +26,13 @@ const router = createRouter({
     { path: "/privacy", component: PrivacyView },
     { path: "/terms", component: TermsView },
   ],
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+      };
+    }
     return { top: 0 };
   },
 });
