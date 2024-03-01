@@ -1,5 +1,3 @@
-# Privacy Policy
-
 ## Student, Parents and Guardians
 
 Timeless Tuition is dedicated to safeguarding your personal information. This privacy notice sets out how Timeless Tuition, the data controller, protects, collects, and uses your information.

@@ -70,7 +70,7 @@ onMounted(async () => {
             <div class="z-10 flex flex-col items-center justify-center">
               <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
               <div class="mt-3 hidden text-center group-hover:block">
-                <p v-html="course.summary" class="mx-2"></p>
+                <p v-html="course.summary" class="mx-2 font-medium"></p>
               </div>
             </div>
             <div

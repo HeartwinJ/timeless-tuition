@@ -5,6 +5,8 @@ export default interface Career {
   role: string;
   description: string;
   experience: string;
+  salary: string;
   employmentType: string;
   location: string;
+  closingDate: string;
 }

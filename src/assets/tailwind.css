@@ -3,3 +3,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-triangles {
+  background-image: url("./triangles.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

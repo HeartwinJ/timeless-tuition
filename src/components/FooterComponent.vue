@@ -11,7 +11,11 @@ import {
 const socials = [
   { icon: RiFacebookFill, path: "https://facebook.com", title: "Facebook" },
   { icon: RiInstagramFill, path: "https://instagram.com", title: "Instagram" },
-  { icon: RiWhatsappFill, path: "https://wa.me/919791154922?text=Hi", title: "Whatsapp" },
+  {
+    icon: RiWhatsappFill,
+    path: "https://wa.me/919791154922?text=Hi",
+    title: "Whatsapp",
+  },
   { icon: RiTwitterFill, path: "https://twitter.com", title: "Twitter" },
   { icon: RiTiktokFill, path: "https://tiktok.com", title: "TikTok" },
   { icon: RiLinkedinFill, path: "https://linkedin.com", title: "LinkedIn" },
@@ -63,12 +67,3 @@ const socials = [
     </div>
   </div>
 </template>
-
-<style scoped>
-.bg-triangles {
-  background-image: url("../assets/triangles.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-</style>

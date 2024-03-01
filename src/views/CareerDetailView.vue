@@ -15,6 +15,8 @@ import {
   IconCalendar,
   IconHourglass,
   IconMapPin,
+  IconCoinPound,
+  IconCalendarOff,
   IconCircleArrowRight,
 } from "@tabler/icons-vue";
 import SpinnerComponent from "@/components/SpinnerComponent.vue";
@@ -35,8 +37,10 @@ const openingData = ref<Career>({
   summary: "",
   description: "",
   experience: "",
+  salary: "",
   employmentType: "",
   location: "",
+  closingDate: "",
 });
 
 const formData = reactive({
@@ -98,7 +102,7 @@ async function handleSubmit(data: any) {
             </div>
           </div>
           <div>
-            <div class="rounded-lg border px-4 py-2 shadow">
+            <div class="sticky top-36 rounded-lg border px-4 py-2 shadow">
               <div class="mb-2 text-sm text-gray-700">
                 <span
                   class="rounded-full border bg-white px-2 py-1"
@@ -108,23 +112,50 @@ async function handleSubmit(data: any) {
                 </span>
               </div>
               <div
-                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
+                class="flex flex-col gap-2 p-2 text-gray-700"
                 v-if="openingData.experience"
               >
-                <IconCalendar class="h-5 w-5" /> {{ openingData.experience }}
+                <div
+                  class="flex items-center gap-2 whitespace-nowrap font-bold"
+                >
+                  <IconCalendar class="h-5 w-5" /> Experience
+                </div>
+                <div class="ml-8">{{ openingData.experience }}</div>
+              </div>
+              <div class="flex flex-col gap-2 p-2 text-gray-700">
+                <div
+                  class="flex items-center gap-2 whitespace-nowrap font-bold"
+                >
+                  <IconHourglass class="h-5 w-5" /> Employment Type
+                </div>
+                <div class="ml-8">{{ openingData.employmentType }}</div>
+              </div>
+              <div class="flex flex-col gap-2 p-2 text-gray-700">
+                <div
+                  class="flex items-center gap-2 whitespace-nowrap font-bold"
+                >
+                  <IconMapPin class="h-5 w-5" /> Location
+                </div>
+                <div class="ml-8">{{ openingData.location }}</div>
+              </div>
+              <div class="flex flex-col gap-2 p-2 text-gray-700">
+                <div
+                  class="flex items-center gap-2 whitespace-nowrap font-bold"
+                >
+                  <IconCoinPound class="h-5 w-5" /> Salary
+                </div>
+                <div class="ml-8">{{ openingData.salary }}</div>
               </div>
               <div
-                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
-                v-if="openingData.employmentType"
+                class="flex flex-col gap-2 p-2 text-gray-700"
+                v-if="openingData.closingDate"
               >
-                <IconHourglass class="h-5 w-5" />
-                {{ openingData.employmentType }}
-              </div>
-              <div
-                class="flex items-center gap-2 whitespace-nowrap p-2 text-gray-700"
-                v-if="openingData.location"
-              >
-                <IconMapPin class="h-5 w-5" /> {{ openingData.location }}
+                <div
+                  class="flex items-center gap-2 whitespace-nowrap font-bold"
+                >
+                  <IconCalendarOff class="h-5 w-5" /> Closing Date
+                </div>
+                <div class="ml-8">{{ openingData.closingDate }}</div>
               </div>
               <button
                 class="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-brand px-12 py-2 text-white"
@@ -149,7 +180,7 @@ async function handleSubmit(data: any) {
         <DialogPanel
           class="max-h-full w-full max-w-6xl overflow-y-auto rounded bg-white p-8"
         >
-          <div class="flex items-center justify-between mb-8">
+          <div class="mb-8 flex items-center justify-between">
             <DialogTitle
               class="mb-3 border-b-4 border-brand text-2xl font-medium uppercase"
             >

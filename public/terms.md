@@ -1,5 +1,3 @@
-# Terms and Conditions
-
 ## Payment of Fees
 
 Timeless Tuition reserves the right to adjust the course fee(s) due if the tuition fees are amended for any reason. Any adjustments to the total course fee(s) will be included in, or deducted from, the final payment. Clients will be notified of any such adjustments as they occur. Timeless Tuition will impose a [£35.00] administration charge in all cases of dishonoured cheques.

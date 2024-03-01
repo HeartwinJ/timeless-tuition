@@ -113,12 +113,3 @@ const mobileMenuOpen = ref(false);
     </div>
   </div>
 </template>
-
-<style scoped>
-.bg-triangles {
-  background-image: url("../assets/triangles.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-</style>

@@ -1,48 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
-import { IconMessageCircle2Filled, IconSend2 } from "@tabler/icons-vue";
-import {
-  RiFacebookFill,
-  RiInstagramFill,
-  RiLinkedinFill,
-  RiTiktokFill,
-  RiTwitterFill,
-} from "@remixicon/vue";
+import { IconSend2, IconAt } from "@tabler/icons-vue";
+import { RiWhatsappFill } from "@remixicon/vue";
 import anime from "animejs";
-
-const socials = [
-  {
-    icon: RiFacebookFill,
-    path: "https://facebook.com",
-    title: "Facebook",
-    color: "text-[#0165E1]",
-  },
-  {
-    icon: RiInstagramFill,
-    path: "https://instagram.com",
-    title: "Instagram",
-    color: "text-[#E1306C]",
-  },
-  {
-    icon: RiTwitterFill,
-    path: "https://twitter.com",
-    title: "Twitter",
-    color: "text-[#1DA1F2]",
-  },
-  {
-    icon: RiTiktokFill,
-    path: "https://tiktok.com",
-    title: "TikTok",
-    color: "text-[#010101]",
-  },
-  {
-    icon: RiLinkedinFill,
-    path: "https://linkedin.com",
-    title: "LinkedIn",
-    color: "text-[#0077B5]",
-  },
-];
 
 const isOpen = ref(false);
 const openTime = ref("");
@@ -74,27 +35,46 @@ function handleSendMessage() {
 </script>
 <template>
   <div>
-    <button
-      class="fixed bottom-3 right-3 z-50 rounded-full border bg-brand p-3 shadow shadow-white"
-      @click="openSocials"
-    >
-      <IconMessageCircle2Filled class="h-8 w-8 text-white" />
-    </button>
+    <div class="fixed bottom-10 right-8 z-50">
+      <div class="relative flex items-center justify-center">
+        <div class="absolute animate-ping rounded-full bg-brand/50 p-6"></div>
+        <button
+          class="absolute rounded-full border bg-brand p-3 shadow shadow-white"
+          @click="openSocials"
+        >
+          <RiWhatsappFill class="h-8 w-8 text-white" />
+        </button>
+      </div>
+    </div>
     <Dialog :open="isOpen" @close="isOpen = false" class="relative z-40">
       <div class="fixed inset-0 bg-white/70" aria-hidden="true"></div>
       <div class="fixed bottom-20 right-3">
-        <DialogPanel class="flex gap-3 p-4">
+        <DialogPanel class="flex flex-col gap-3 p-4">
+          <div class="bg-triangles rounded-lg border p-2 text-white shadow">
+            <div class="mb-1 text-center">
+              For any info or enquiries, contact us on:
+            </div>
+            <a
+              href="mailto:heartwinhaveluck@gmail.com"
+              class="flex items-center justify-center gap-3"
+            >
+              <IconAt class="h-6 w-6" />
+              <div class="font-medium">heartwinhaveluck@gmail.com</div>
+            </a>
+          </div>
           <div
             class="flex flex-col overflow-hidden rounded-lg border bg-white shadow"
           >
             <div
-              class="flex items-center gap-3 bg-brand p-3 font-medium text-white"
+              class="bg-triangles flex items-center gap-3 p-3 font-medium uppercase text-white"
             >
-              <div class="rounded-full bg-white p-5"></div>
+              <div class="rounded-full bg-white p-2">
+                <RiWhatsappFill class="h-6 w-6 text-[#25D366]" />
+              </div>
               Timeless Tuition
             </div>
             <div
-              class="relative flex h-72 grow flex-col justify-start bg-[#e5ddd5] p-4"
+              class="relative flex h-72 grow flex-col justify-start bg-[#d5d3d3] p-4"
             >
               <div
                 class="speech-bubble-left relative my-1 mr-auto flex max-w-xs flex-col rounded-lg rounded-tl-none bg-brand p-2 text-sm text-white"
@@ -126,18 +106,6 @@ function handleSendMessage() {
                 </button>
               </div>
             </div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <button
-              class="socials mt-5 flex w-full items-center justify-end gap-5 rounded-lg"
-              :class="social.color"
-              v-for="(social, idx) in socials"
-              :key="idx"
-              @click="isOpen = false"
-            >
-              <div>{{ social.title }}</div>
-              <component :is="social.icon" class="h-8 w-8" />
-            </button>
           </div>
         </DialogPanel>
       </div>

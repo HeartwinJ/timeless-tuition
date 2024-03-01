@@ -48,11 +48,13 @@ onMounted(async () => {
     <div class="mx-auto max-w-2xl lg:max-w-none">
       <div v-if="isLoading">Loading...</div>
       <div class="flex flex-col gap-8 lg:flex-row" v-else>
-        <div>
+        <div class="shrink-0">
           <img class="tilt-img" :src="newsData.img" />
         </div>
         <div class="grow">
-          <div class="text-3xl font-medium">
+          <div
+            class="text-3xl font-medium underline decoration-brand underline-offset-4"
+          >
             {{ newsData.title }}
           </div>
           <div class="prose prose-slate lg:prose-lg">

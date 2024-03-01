@@ -64,24 +64,28 @@ function handleTitleHoverEnd(e: any) {
               how we started
             </div>
           </div>
-          <div class="mx-8 my-3 italic lg:text-lg">
-            <div class="inline-block">
-              <RiDoubleQuotesL class="inline-block h-8 w-8 text-gray-500" />
+          <div class="mx-8 my-3 text-center italic lg:text-lg">
+            <div class="relative mr-8 inline-block">
+              <RiDoubleQuotesL
+                class="absolute -top-7 inline-block h-8 w-8 text-gray-500"
+              />
             </div>
             As a child, my parents were determined to secure the best future for
             me. This led to many hours in tuition centres and private tution,
             each promising academic success. Amidst different approaches, I was
             able to see tuitions strengths, weaknesses, and impact on my
             learning journey. This drove me to create Timeless Tuition, offering
-            high-quality education with an affordable price. Our vision: empower
-            young minds to excel academically and in life. At Timeless Tuition,
+            high-quality education with an affordable price and empower young
+            minds to excel academically and in life. At Timeless Tuition,
             education means more than textbooks and exams. It's about instilling
             essential life skills, creativity, and expanding learning horizons.
             Through innovative teaching, we prepare individuals to confidently
             face future challenges with resilience and find the best possible
             version of themselves.
-            <div class="inline-block">
-              <RiDoubleQuotesR class="inline-block h-8 w-8 text-gray-500" />
+            <div class="relative inline-block">
+              <RiDoubleQuotesR
+                class="absolute inline-block h-8 w-8 text-gray-500 -bottom-4"
+              />
             </div>
           </div>
           <div class="mt-3 text-right lg:text-xl">- Timeless Tuition</div>

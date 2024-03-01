@@ -65,11 +65,17 @@ onMounted(async () => {
               <div class="text-6xl font-bold uppercase text-white">
                 {{ courseData.title }}
               </div>
+              <div
+                v-html="courseData.summary"
+                class="mt-5 text-center text-xl font-medium text-white"
+              ></div>
             </div>
           </div>
           <div class="lg:grow">
-            <div class="text-3xl font-bold">
-              {{ courseData.title }}
+            <div class="flex items-center text-3xl font-bold">
+              <div class="border-b-4 border-brand px-2">
+                {{ courseData.title }}
+              </div>
             </div>
             <div class="prose prose-slate lg:prose-lg">
               <div v-html="courseData.overview"></div>
@@ -77,7 +83,7 @@ onMounted(async () => {
           </div>
         </div>
         <div
-          :class="`prose-ul:list-checked prose prose-slate mt-5 max-w-none lg:prose-lg marker:prose-ul:text-brand`"
+          :class="`prose prose-slate mt-5 max-w-none lg:prose-lg prose-ul:list-checked marker:prose-ul:text-brand`"
         >
           <div v-html="courseData.highlights"></div>
         </div>
