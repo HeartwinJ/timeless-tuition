@@ -35,7 +35,7 @@ function handleSendMessage() {
 </script>
 <template>
   <div>
-    <div class="fixed bottom-10 right-8 z-50">
+    <div class="fixed bottom-10 right-10 z-50">
       <div class="relative flex items-center justify-center">
         <div class="absolute animate-ping rounded-full bg-brand/50 p-6"></div>
         <button

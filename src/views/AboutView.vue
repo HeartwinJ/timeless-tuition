@@ -4,6 +4,7 @@ import anime from "animejs";
 import VanillaTilt from "vanilla-tilt";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "@remixicon/vue";
 import DividerComponent from "@/components/DividerComponent.vue";
+import TimelineComponent from "@/components/TimelineComponent.vue";
 
 onMounted(() => {
   anime({
@@ -25,10 +26,10 @@ onMounted(() => {
 });
 
 function handleTitleHover(e: any) {
-  console.log(e);
+  const start = `${parseFloat(/\(([^)]+)\)/.exec(e.target.style.transform || "(1)")![1]) * 100}%`;
   anime({
     targets: e.target,
-    scale: ["100%", "110%"],
+    scale: [start, "110%"],
     easing: "easeOutExpo",
     duration: 500,
     delay: anime.stagger(500, { start: 500 }),
@@ -36,10 +37,10 @@ function handleTitleHover(e: any) {
 }
 
 function handleTitleHoverEnd(e: any) {
-  console.log(e);
+  const start = `${parseFloat(/\(([^)]+)\)/.exec(e.target.style.transform || "(1)")![1]) * 100}%`;
   anime({
     targets: e.target,
-    scale: ["110%", "100%"],
+    scale: [start, "100%"],
     easing: "easeOutExpo",
     duration: 500,
     delay: anime.stagger(500, { start: 500 }),
@@ -84,7 +85,7 @@ function handleTitleHoverEnd(e: any) {
             version of themselves.
             <div class="relative inline-block">
               <RiDoubleQuotesR
-                class="absolute inline-block h-8 w-8 text-gray-500 -bottom-4"
+                class="absolute -bottom-4 inline-block h-8 w-8 text-gray-500"
               />
             </div>
           </div>
@@ -309,6 +310,10 @@ function handleTitleHoverEnd(e: any) {
             overcome challenges and attain peak academic performance.
           </div>
         </div>
+      </div>
+      <div class="about">
+        <DividerComponent />
+        <TimelineComponent />
       </div>
     </div>
   </div>
