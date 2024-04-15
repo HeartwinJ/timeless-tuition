@@ -4,6 +4,7 @@ import anime from "animejs";
 import { PaperAirplaneIcon } from "@heroicons/vue/24/solid";
 import ScrollerComponent from "@/components/ScrollerComponent.vue";
 import ServicesComponent from "@/components/ServicesComponent.vue";
+import TimelineComponent from "@/components/TimelineComponent.vue";
 import TestimonialsComponent from "@/components/TestimonialsComponent.vue";
 import FAQComponent from "@/components/FAQComponent.vue";
 import DividerComponent from "@/components/DividerComponent.vue";
@@ -60,6 +61,10 @@ onMounted(() => {
     </div>
     <ScrollerComponent />
     <ServicesComponent />
+    <DividerComponent />
+    <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
+      <TimelineComponent />
+    </div>
     <DividerComponent />
     <TestimonialsComponent />
     <FAQComponent />

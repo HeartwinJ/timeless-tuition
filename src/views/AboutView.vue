@@ -170,12 +170,12 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="https://picsum.photos/500/328?random=1"
-          class="tilt-img order-first lg:order-last"
+          src="/images/about-1.jpg"
+          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="https://picsum.photos/500/328?random=2" class="tilt-img" />
+        <img src="/images/about-2.png" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
             class="relative mb-3 text-2xl font-bold lg:text-4xl"
@@ -223,12 +223,12 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="https://picsum.photos/500/328?random=3"
-          class="tilt-img order-first lg:order-last"
+          src="/images/about-3.jpg"
+          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="https://picsum.photos/500/328?random=4" class="tilt-img" />
+        <img src="/images/about-4.jpg" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
             class="relative mb-3 text-2xl font-bold lg:text-4xl"
@@ -281,12 +281,12 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="https://picsum.photos/500/328?random=5"
-          class="tilt-img order-first lg:order-last"
+          src="/images/about-5.jpg"
+          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="https://picsum.photos/500/328?random=4" class="tilt-img" />
+        <img src="/images/about-6.jpg" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
             class="relative mb-3 text-2xl font-bold lg:text-4xl"

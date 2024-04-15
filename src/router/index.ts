@@ -10,6 +10,7 @@ import AboutView from "@/views/AboutView.vue";
 import GetStartedView from "@/views/GetStartedView.vue";
 import PrivacyView from "@/views/PrivacyView.vue";
 import TermsView from "@/views/TermsView.vue";
+import TestView from "@/views/TestView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,7 @@ const router = createRouter({
     { path: "/get-started", component: GetStartedView },
     { path: "/privacy", component: PrivacyView },
     { path: "/terms", component: TermsView },
+    { path: "/test", component: TestView },
   ],
   scrollBehavior(to) {
     if (to.hash) {
