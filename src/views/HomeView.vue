@@ -18,6 +18,14 @@ onMounted(() => {
     duration: 1000,
     delay: 500,
   });
+  anime({
+    targets: "#timeline",
+    translateY: ["20%", "0%"],
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: 3000,
+  });
 });
 </script>
 
@@ -62,7 +70,17 @@ onMounted(() => {
     <ScrollerComponent />
     <ServicesComponent />
     <DividerComponent />
-    <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto w-full max-w-7xl px-6 lg:px-8" id="timeline">
+      <div class="py-4 text-center">
+        <div class="font-medium text-brand">Process</div>
+        <div class="flex justify-center">
+          <div
+            class="border-brand px-4 text-xl font-bold uppercase lg:border-b-4"
+          >
+            how we work
+          </div>
+        </div>
+      </div>
       <TimelineComponent />
     </div>
     <DividerComponent />

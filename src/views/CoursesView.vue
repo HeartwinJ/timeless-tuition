@@ -68,7 +68,9 @@ onMounted(async () => {
             class="group relative hidden h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white lg:flex"
           >
             <div class="z-10 flex flex-col items-center justify-center">
-              <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
+              <div class="text-center text-4xl font-bold uppercase">
+                {{ course.title }}
+              </div>
               <div class="mt-3 hidden text-center group-hover:block">
                 <p v-html="course.summary" class="mx-2 font-medium"></p>
               </div>
@@ -86,7 +88,9 @@ onMounted(async () => {
             class="group relative flex h-64 w-full flex-col items-center justify-center bg-cover bg-center text-white lg:hidden"
           >
             <div class="z-10 flex flex-col items-center justify-center">
-              <div class="text-4xl font-bold uppercase">{{ course.title }}</div>
+              <div class="text-center text-4xl font-bold uppercase">
+                {{ course.title }}
+              </div>
               <div class="mt-3 hidden text-center group-hover:block">
                 <p v-html="course.summary" class="mx-2"></p>
               </div>
