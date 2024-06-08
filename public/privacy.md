@@ -61,7 +61,7 @@ You are entitled to request access to the information we have on record about yo
 
 ## Use of cookies
 
-Cookies and similar technologies may be utilized on our website. These small text files can be stored on your computer or mobile device during your site visit. Their functions include enabling efficient navigation between web pages and preserving your preferences.
+Cookies and similar technologies may be utilised on our website. These small text files can be stored on your computer or mobile device during your site visit. Their functions include enabling efficient navigation between web pages and preserving your preferences.
 
 ## How we intend to inform you of any future modifications to this privacy notice.
 
@@ -69,6 +69,6 @@ Any revisions to our privacy notice will be posted on our website. Please period
 
 ## How to contact us
 
-Should you have any inquiries or concerns regarding the utilization of your personal information, please reach out to the Privacy Manager at (email)
+Should you have any inquiries or concerns regarding the utilisation of your personal information, please reach out to the Privacy Manager at (email)
 
 **By using this website, you agree to the terms and conditions and Privacy Policy outlined in this website. Thank you for choosing Timeless Tuition.**

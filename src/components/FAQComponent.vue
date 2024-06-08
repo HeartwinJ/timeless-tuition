@@ -5,34 +5,28 @@ import { IconPlus, IconMinus } from "@tabler/icons-vue";
 const faqs = [
   {
     question: "What courses does your tuition centre provide?",
-    answer:
-      "We offer formalised Maths, English, and Science Grade-Specific Courses for KS2, 11+, KS3, GCSE/A-level students and more. Starting from children aged 5 to 17, each child follows a structured bespoke programme with set topics aligned with the national curriculum, along with a weekly homework and revision plan. To get started fill out the contact form to begin your educational journey.",
+    answer: `<p>We offer formalised <span class="font-extrabold">Maths</span>, <span class="font-extrabold">English</span>, and <span class="font-extrabold">Science</span> Grade-Specific Courses for <span class="font-extrabold">KS2, 11+, KS3, GCSE/A-level</span> students and more. Starting from children aged <span class="font-extrabold">5 to 17</span>, each child follows a <span class="font-extrabold">structured bespoke programme</span> with set topics aligned with the <span class="font-extrabold">national curriculum</span>, along with a <span class="font-extrabold">weekly homework</span> and <span class="font-extrabold">revision plan</span>. To get started fill out the <span class="font-extrabold">contact form</span> to begin your educational journey.</p>`,
   },
   {
     question: "How do I enroll my child / get started?",
-    answer:
-      'To initiate your educational journey, complete the contact form on the "Get Started" page. Once submitted, we\'ll be in touch to discuss available subjects, next steps, and provide details about our free induction.',
+    answer: `<p>To initiate your educational journey, complete the contact form on the <span class="font-extrabold">"Get Started"</span> page. Once submitted, we'll be in touch to discuss available subjects, next steps, and provide details about our <span class="font-extrabold">free induction.</span></p>`,
   },
   {
     question: "Are Timeless Tuition's tutors qualified?",
-    answer:
-      "Certainly! All our tutors are qualified, with verified DBS certificates and Safeguarding Training. Some are also first aid trained. Our team includes QTS Qualified teachers, graduates, and subject matter specialists. Each tutor undergoes a rigorous selection and hiring process, ensuring they meet high standards. Feel confident that the tutor assigned to your child has been thoughtfully chosen for their expertise and commitment to achieve the best results possible.",
+    answer: `<p>Certainly! All our tutors are qualified, with verified <span class="font-extrabold">DBS certificates</span>, <span class="font-extrabold">Safeguarding Training</span> and a select number of tutors who are <span class="font-extrabold">first aid trained</span>. Our team includes QTS Qualified teachers, graduates, and subject matter specialists. Each tutor undergoes a <span class="font-extrabold">rigorous selection</span></span> and <span class="font-extrabold">hiring process</span>, ensuring they meet <span class="font-extrabold">high standards</span>. Feel confident that the tutor assigned to your child has been thoughtfully chosen for their expertise and commitment to achieve the best results possible.</p>`,
   },
   {
     question: "Where is your tuition centre located?",
-    answer:
-      "We offer tuition services both in person at our Watford center …. and online, providing flexibility and convenience to meet your educational needs. This allow you the flexibility to opt for either in-person or online tuition.",
+    answer: `<p>We offer tuition services both <span class="font-extrabold">in person</span> at our Watford center …. and <span class="font-extrabold">online</span>, providing <span class="font-extrabold">flexibility</span> and convenience to meet your educational needs. This allow you the flexibility to opt for either in-person or online tuition.</p>`,
   },
   {
     question: "What are your prices?",
-    answer:
-      "Our prices are competitive, starting from as low as £15/hr and vary depending on the course and the number of subjects your child is enrolled in. We offer a free induction and assessment to understand your child's needs and provide a tailored plan. We also offer sibling discounts, referral discounts and flexible payment options. To get a quote, please fill out the contact form and we'll be in touch to discuss your requirements.",
+    answer: `<p>Our prices are competitive, starting from as low as <span class="font-extrabold">£15/hr</span> and vary depending on the course and the number of subjects your child is enrolled in. We offer a free <span class="font-extrabold">induction</span> and assessment to understand your child's needs and provide a <span class="font-extrabold">tailored plan</span>. We also offer <span class="font-extrabold">sibling discounts</span>, <span class="font-extrabold">referral discounts</span> and <span class="font-extrabold">flexible payment options</span>. To get a quote, please fill out the <span class="font-extrabold">contact form</span> and we'll be in touch to discuss <span class="font-extrabold">your requirements</span>.</p>`,
   },
   {
     question:
       "Is there anything specific your child should bring to the lessons?",
-    answer:
-      "All required materials for the lesson will be provided, but children should bring a pencil case and a water bottle. Additionally, please ensure they bring any resources provided in advance, and avoid bringing food or fizzy drinks to class.",
+    answer: `<p>All required materials for the lesson will be provided, but children should bring a pencil case and a water bottle. Additionally, please ensure they bring any <span class="font-extrabold">resources</span> provided in advance, and avoid bringing food or fizzy drinks to class.</p>`,
   },
 ];
 </script>
@@ -61,7 +55,7 @@ const faqs = [
                   class="flex w-full items-start justify-between text-left text-white"
                 >
                   <span
-                    class="text-lg font-medium leading-7 lg:text-xl lg:font-semibold"
+                    class="text-lg font-extrabold leading-7 lg:text-xl lg:font-semibold"
                     >{{ faq.question }}</span
                   >
                   <span class="ml-6 flex h-7 items-center">
@@ -71,9 +65,10 @@ const faqs = [
                 </DisclosureButton>
               </dt>
               <DisclosurePanel as="dd" class="mt-4 pr-12">
-                <p class="text-sm leading-7 text-white lg:text-base">
-                  {{ faq.answer }}
-                </p>
+                <p
+                  class="text-sm leading-7 text-white lg:text-base"
+                  v-html="faq.answer"
+                ></p>
               </DisclosurePanel>
             </Disclosure>
           </dl>
