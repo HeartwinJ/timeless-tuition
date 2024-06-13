@@ -16,12 +16,11 @@ onMounted(() => {
 <template>
   <div id="timeline">
     <div class="py-4 text-center">
-      <div class="font-medium text-brand">Process</div>
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-3">
         <div
           class="border-brand px-4 text-xl font-bold uppercase lg:border-b-4"
         >
-          how we work
+          our step by step process
         </div>
       </div>
     </div>

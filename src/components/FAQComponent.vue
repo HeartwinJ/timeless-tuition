@@ -54,10 +54,9 @@ const faqs = [
                 <DisclosureButton
                   class="flex w-full items-start justify-between text-left text-white"
                 >
-                  <span
-                    class="text-lg font-extrabold leading-7 lg:text-xl lg:font-semibold"
-                    >{{ faq.question }}</span
-                  >
+                  <span class="text-lg font-semibold leading-7 lg:text-xl">{{
+                    faq.question
+                  }}</span>
                   <span class="ml-6 flex h-7 items-center">
                     <IconPlus v-if="!open" class="h-6 w-6" aria-hidden="true" />
                     <IconMinus v-else class="h-6 w-6" aria-hidden="true" />

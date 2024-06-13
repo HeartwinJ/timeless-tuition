@@ -47,7 +47,7 @@ function handleSendMessage() {
       </div>
     </div>
     <Dialog :open="isOpen" @close="isOpen = false" class="relative z-40">
-      <div class="fixed inset-0 bg-white/70" aria-hidden="true"></div>
+      <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
       <div class="fixed bottom-20 right-3">
         <DialogPanel class="flex flex-col gap-3 p-4">
           <div class="bg-triangles rounded-lg border p-2 text-white shadow">

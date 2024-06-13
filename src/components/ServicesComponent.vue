@@ -42,7 +42,7 @@ onMounted(() => {
     opacity: [0, 1],
     easing: "easeOutExpo",
     duration: 1000,
-    delay: anime.stagger(500, { start: 1000 }),
+    delay: anime.stagger(500, { start: 1500 }),
   });
 });
 </script>

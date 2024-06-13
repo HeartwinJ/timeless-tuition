@@ -5,8 +5,8 @@ import { BookOpenIcon } from "@heroicons/vue/24/solid";
 
 <template>
   <div class="bg-triangles p-3 font-normal text-white">
-    <Vue3Marquee class="text-xl uppercase" :delay="0.5">
-      <div class="mx-32 flex items-center">
+    <Vue3Marquee class="text-lg uppercase font-medium" :delay="0.5" :duration="30" clone>
+      <div class="flex items-center">
         <span>located in watford</span>
         <BookOpenIcon class="mx-3 h-6 w-6" />
         <span>in-person tutoring</span>
@@ -26,6 +26,7 @@ import { BookOpenIcon } from "@heroicons/vue/24/solid";
         <span>GCSE</span>
         <BookOpenIcon class="mx-3 h-6 w-6" />
         <span>A Level</span>
+        <BookOpenIcon class="mx-3 h-6 w-6" />
       </div>
     </Vue3Marquee>
   </div>
