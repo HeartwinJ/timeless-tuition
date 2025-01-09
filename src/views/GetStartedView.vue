@@ -226,6 +226,22 @@ async function handleSubmit(formData: FormData) {
                 "
               />
               <FormKit
+                type="radio"
+                name="lessonType"
+                label="Type of Lesson"
+                :options="['Online Tutoring', 'In-Person Tutoring']"
+                options-class="flex flex-col lg:flex-row lg:gap-3"
+                :disabled="isProcessing"
+              />
+              <FormKit
+                type="radio"
+                name="classType"
+                label="Type of Class"
+                :options="['Group Session', 'One-to-One Session']"
+                options-class="flex flex-col lg:flex-row lg:gap-3"
+                :disabled="isProcessing"
+              />
+              <FormKit
                 type="textarea"
                 name="message"
                 label="Message"
@@ -245,6 +261,7 @@ async function handleSubmit(formData: FormData) {
                 name="referrer"
                 label="How did you hear about us?"
                 :options="['Friends', 'Social Media', 'Leaflet', 'Other']"
+                help="You get a discount if you refer a friend!"
                 options-class="flex flex-col lg:flex-row lg:gap-3"
                 validation="required"
                 :disabled="isProcessing"

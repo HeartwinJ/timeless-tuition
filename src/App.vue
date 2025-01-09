@@ -2,6 +2,7 @@
 import HeaderComponent from "./components/HeaderComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 import ChatComponent from "./components/ChatComponent.vue";
+import InductionBanner from "./components/InductionBanner.vue";
 </script>
 
 <template>
@@ -11,4 +12,5 @@ import ChatComponent from "./components/ChatComponent.vue";
   </div>
   <FooterComponent />
   <ChatComponent />
+  <InductionBanner />
 </template>
