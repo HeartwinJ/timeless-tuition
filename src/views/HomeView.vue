@@ -30,7 +30,7 @@ onMounted(() => {
         alt=""
       />
       <div class="flex flex-col justify-between lg:flex-row">
-        <div class="mx-8 max-w-3xl pb-32 lg:pb-72 pt-16">
+        <div class="mx-8 max-w-3xl pb-32 pt-16 lg:pb-72">
           <div class="text-left" id="hero-content">
             <h1
               class="text-center text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl"
@@ -93,8 +93,8 @@ onMounted(() => {
     </div>
     <ScrollerComponent />
     <ServicesComponent />
-    <DividerComponent />
-    <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
+    <DividerComponent class="hidden lg:block" />
+    <div class="mx-auto hidden w-full max-w-7xl px-6 lg:block lg:px-8">
       <TimelineComponent />
     </div>
     <DividerComponent />
