@@ -71,18 +71,18 @@ function handleTitleHoverEnd(e: any) {
                 class="absolute -top-7 inline-block h-8 w-8 text-gray-500"
               />
             </div>
-            As a child, my parents were determined to secure the best future for
-            me. This led to many hours in tuition centres and private tution,
-            each promising academic success. Amidst different approaches, I was
-            able to see tuitions strengths, weaknesses, and impact on my
-            learning journey. This drove me to create Timeless Tuition, offering
-            high-quality education with an affordable price and empower young
-            minds to excel academically and in life. At Timeless Tuition,
-            education means more than textbooks and exams. It's about instilling
-            essential life skills, creativity, and expanding learning horizons.
-            Through innovative teaching, we prepare individuals to confidently
-            face future challenges with resilience and find the best possible
-            version of themselves.
+            Growing up, my parents were deeply committed to ensuring the best
+            possible future for me. This meant countless hours studying at
+            various tuition centres and receiving private tutoring. Through
+            these experiences, I gained valuable insights into the strengths and
+            weaknesses of different teaching methods and discovered what worked
+            best for me. <br />
+            I began by tutoring my younger siblings, which soon expanded to
+            helping family friends. Over time, word-of-mouth recommendations led
+            to a growing number of students under my guidance. This journey
+            inspired me to establish Timeless Tuition—a place dedicated to
+            providing high-quality education at an affordable price while
+            empowering young minds to thrive academically.
             <div class="relative inline-block">
               <RiDoubleQuotesR
                 class="absolute -bottom-4 inline-block h-8 w-8 text-gray-500"
@@ -102,13 +102,11 @@ function handleTitleHoverEnd(e: any) {
             </div>
           </div>
           <div class="mx-8 my-3 text-center lg:text-lg">
-            At Timeless Tuition, our mission is to empower students to achieve
-            and exceed their learning goals through effective coaching,
-            mentoring, and tutoring tailored to individual needs. We are
-            committed to providing affordable, high-quality education that leads
-            to significant improvements in grades, confidence, and overall
-            understanding. Our dedication is to foster growth and success in
-            both academia and life.
+            At Timeless Tuition, our mission is to empower young minds through
+            high-quality, personalised education that inspires academic
+            excellence and builds confidence. We are committed to providing
+            affordable, accessible, and innovative learning solutions that cater
+            to the unique needs of every student.
           </div>
         </div>
         <div>
@@ -118,13 +116,12 @@ function handleTitleHoverEnd(e: any) {
             </div>
           </div>
           <div class="mx-8 my-3 text-center lg:text-lg">
-            Our vision at Timeless Tuition is to transform education, creating a
-            dynamic learning environment where students flourish. We envision a
-            future where everyone has access to affordable, high-quality
-            education that fosters personal growth, nurtures creativity, and
-            empowers individuals to excel academically and in life, instilling
-            the knowledge and confidence needed for a successful and bright
-            career ahead.
+            Our vision is to inspire academic success and personal growth by
+            empowering students to reach their full potential with confidence
+            and a passion for learning. We think that education should be
+            accessible and effective, whether delivered online or in person,
+            ensuring every student has the tools they need to excel and thrive
+            in their journey.
           </div>
         </div>
       </div>
@@ -156,17 +153,15 @@ function handleTitleHoverEnd(e: any) {
             <div id="tailored-courses" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
-            Our committed tutors at Timeless Tuition work with each student to
-            create a personalised learning plan that includes weekly assignments
-            and assessments that follow the National Curriculum. Our courses for
-            Key Stage 4 and 5 are tailored to the specific exam boards that your
-            child takes, for example AQA Maths or Edexcel Maths for GCSE Level.
-            This further highlights how our courses are specifically designed to
-            meet your Childs needs By allowing all students to learn at their
-            own pace, giving them independence when needed, but also
-            individualised support, we tend to their specific learning needs, we
-            hope to assist each student in attaining the greatest grades
-            possible.
+            Our tutors at Timeless Tuition work with each student to create a
+            personalised learning plan that includes weekly assignments and
+            assessments that follow the National Curriculum. Our courses for
+            GCSE and A Levels are tailored to the specific exam boards that your
+            child takes. For 11+ we follow CEM, GL and ISEB style boards
+            aligning with all grammar schools in the catchment area. We allow
+            all students to learn at their own pace, minimising stress and
+            giving them independence when needed, but also individualised
+            support.
           </div>
         </div>
         <img
@@ -209,17 +204,12 @@ function handleTitleHoverEnd(e: any) {
             <div id="small-group" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
-            Our classes feature small group settings, with 3-6 students per
+            Whether you want one to one support or group sessions we have the
+            lot. Our classes feature small group settings, with 3-6 students per
             table, ensuring personalised attention and fostering a collaborative
             learning atmosphere. Each student receives individualised support
             and guidance from our experienced tutors, who tailor their teaching
-            approach to accommodate diverse learning styles and abilities. With
-            our intimate class sizes, students benefit from ample opportunities
-            for active participation, meaningful interactions, and peer-to-peer
-            learning experiences. Moreover, our dedicated tutors allocate
-            sufficient time and resources to address each student's unique
-            needs, ensuring comprehensive understanding and mastery of the
-            subject matter.
+            approach to accommodate diverse learning styles and abilities.
           </div>
         </div>
         <img
@@ -249,8 +239,8 @@ function handleTitleHoverEnd(e: any) {
             Furthermore, because we value answering any worries or inquiries you
             might have, we provide you with the flexibility to arrange
             appointments to talk about your child's educational progress. You
-            can rely on Timeless Tuition to put transparency and collaboration
-            first in order to make sure that your child's educational journey is
+            can rely on Timeless Tuition to put transparency and communication
+            first, to make sure that your child's educational journey is
             successful.
           </div>
         </div>
@@ -271,11 +261,11 @@ function handleTitleHoverEnd(e: any) {
             face-to-face lesson is that it provides students with the
             opportunity to connect directly with tutors in a setting that is
             encouraging and favourable to learning. Our online tutoring platform
-            gives anyone who want flexibility and convenience access to
-            excellent tuition from the comforts of home. Irrespective of their
-            geographical location, students can obtain individualised advice and
-            support through interactive virtual classrooms, and real-time
-            feedback. Our mission is to enable students to realise their full
+            gives anyone who is looking for flexibility and convenient access to
+            excellent tuition from the comforts of their home. Irrespective of
+            their geographical location, students can obtain individualised
+            advice and support through interactive virtual classrooms, and
+            real-time feedback. We believe children can realise their full
             potential and attain academic success, whether in-person or
             virtually.
           </div>
@@ -304,10 +294,11 @@ function handleTitleHoverEnd(e: any) {
             help us identify students' areas of strength and growth, giving us
             important information about their academic journey. Assisting
             students in becoming comfortable with exam formats and boosting
-            their confidence, our knowledgeable tutors carefully craft
-            examinations that replicate genuine exam settings. We provide
-            tailored feedback and focused assistance to enable students to
-            overcome challenges and attain peak academic performance.
+            their confidence, our knowledgeable tutors craft examinations that
+            replicate genuine exam settings. Whether you choose us for our
+            tuition services or not, our mock exams are available for everyone.
+            We provide tailored feedback and focused support, enabling students
+            to learn and improve.
           </div>
         </div>
       </div>

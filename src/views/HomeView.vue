@@ -93,7 +93,7 @@ onMounted(() => {
     </div>
     <ScrollerComponent />
     <ServicesComponent />
-    <DividerComponent class="hidden lg:block" />
+    <DividerComponent class="hidden lg:flex" />
     <div class="mx-auto hidden w-full max-w-7xl px-6 lg:block lg:px-8">
       <TimelineComponent />
     </div>
