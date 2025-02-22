@@ -145,12 +145,12 @@ function handleTitleHoverEnd(e: any) {
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="tailored-courses"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             Tailored courses for you
-            <div id="tailored-courses" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             Our tutors at Timeless Tuition work with each student to create a
@@ -173,12 +173,12 @@ function handleTitleHoverEnd(e: any) {
         <img src="/images/about-2.png" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="professional-tutors"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             DBS Checked Professional Tutors
-            <div id="professional-tutors" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             Trust our tutors; you're in good hands. Only one in ten applicants
@@ -196,12 +196,12 @@ function handleTitleHoverEnd(e: any) {
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="small-group"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             Small Group Sessions & One-to-One Support
-            <div id="small-group" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             Whether you want one to one support or group sessions we have the
@@ -221,12 +221,12 @@ function handleTitleHoverEnd(e: any) {
         <img src="/images/about-4.jpg" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="parental-engagement"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             Parental Engagement: Weekly Updates and Communication
-            <div id="parental-engagement" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             At Timeless Tuition, we believe regular communication and updates
@@ -248,12 +248,12 @@ function handleTitleHoverEnd(e: any) {
       <div class="about flex flex-col gap-8 lg:flex-row">
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="in-person"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             In-Person and Online
-            <div id="in-person" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             There are alternatives for both in-person and online tutoring to
@@ -279,12 +279,12 @@ function handleTitleHoverEnd(e: any) {
         <img src="/images/about-6.jpg" class="tilt-img h-[328px] w-[500px]" />
         <div>
           <div
-            class="relative mb-3 text-2xl font-bold lg:text-4xl"
+            id="assesments"
+            class="mb-3 scroll-mt-52 text-2xl font-bold lg:text-4xl"
             @mouseover="handleTitleHover"
             @mouseleave="handleTitleHoverEnd"
           >
             Tests, Mock Exams and Assessments
-            <div id="assesments" class="absolute -top-36"></div>
           </div>
           <div class="lg:text-xl">
             We recognise that frequent assessments and practice tests are

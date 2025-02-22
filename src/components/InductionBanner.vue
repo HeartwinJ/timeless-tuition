@@ -19,7 +19,7 @@ router.beforeEach(() => {
   >
     <IconInfoCircle class="h-12 w-12 text-brand lg:h-8 lg:w-8" />
     <div class="flex grow flex-col items-center gap-3 lg:flex-row">
-      <h2 class="grow lg:text-3xl">
+      <h2 class="grow text-center lg:text-left lg:text-3xl">
         Book your <span class="font-bold">FREE</span> induction lesson for our
         current enrolment!
       </h2>
