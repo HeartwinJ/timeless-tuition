@@ -165,12 +165,15 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="/images/about-1.jpg"
-          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
+          src="/images/about-1.png"
+          class="tilt-img order-first aspect-video w-full brightness-95 lg:order-last lg:w-[600px]"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="/images/about-2.png" class="tilt-img h-[328px] w-[500px]" />
+        <img
+          src="/images/about-2.png"
+          class="tilt-img aspect-video w-full brightness-95 lg:w-[600px]"
+        />
         <div>
           <div
             id="professional-tutors"
@@ -213,12 +216,15 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="/images/about-3.jpg"
-          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
+          src="/images/about-3.png"
+          class="tilt-img order-first aspect-video w-full brightness-95 lg:order-last lg:w-[600px]"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="/images/about-4.jpg" class="tilt-img h-[328px] w-[500px]" />
+        <img
+          src="/images/about-4.png"
+          class="tilt-img aspect-video w-full brightness-95 lg:w-[600px]"
+        />
         <div>
           <div
             id="parental-engagement"
@@ -271,12 +277,15 @@ function handleTitleHoverEnd(e: any) {
           </div>
         </div>
         <img
-          src="/images/about-5.jpg"
-          class="tilt-img order-first h-[328px] w-[500px] lg:order-last"
+          src="/images/about-5.png"
+          class="tilt-img order-first w-full lg:w-[600px] aspect-video brightness-95 lg:order-last"
         />
       </div>
       <div class="about flex flex-col gap-8 text-right lg:flex-row">
-        <img src="/images/about-6.jpg" class="tilt-img h-[328px] w-[500px]" />
+        <img
+          src="/images/about-6.png"
+          class="tilt-img w-full lg:w-[600px] aspect-video brightness-95"
+        />
         <div>
           <div
             id="assesments"

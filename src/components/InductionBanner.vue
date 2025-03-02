@@ -1,16 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 import { IconInfoCircle, IconX } from "@tabler/icons-vue";
 import { StarIcon } from "@heroicons/vue/24/solid";
 
-const router = useRouter();
-
 const isOpen = ref(true);
-
-router.beforeEach(() => {
-  isOpen.value = true;
-});
 </script>
 <template>
   <div
