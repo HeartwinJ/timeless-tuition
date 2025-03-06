@@ -55,11 +55,11 @@ function handleSendMessage() {
               For any info or enquiries, contact us on:
             </div>
             <a
-              href="mailto:heartwinhaveluck@gmail.com"
+              href="mailto:info@timelesstuition.com"
               class="flex items-center justify-center gap-3"
             >
               <IconAt class="h-6 w-6" />
-              <div class="font-medium">heartwinhaveluck@gmail.com</div>
+              <div class="font-medium">info@timelesstuition.com</div>
             </a>
           </div>
           <div
