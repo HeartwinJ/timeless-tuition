@@ -19,6 +19,8 @@ interface FormData {
   phone: string;
   year: string;
   subject: string[];
+  lesson_type: string;
+  class_type: string;
   message: string;
   preference: string;
   referrer: string[];
@@ -87,12 +89,8 @@ async function handleSubmit(formData: FormData) {
   isProcessing.value = true;
   const payload = {
     ...formData,
-    lesson_type: formData.lessonType,
-    class_type: formData.classType,
     subject: formData.subject.join(", "),
     referrer: formData.referrer.join(", "),
-    lessonType: undefined,
-    classType: undefined,
   };
   await Services.saveContact(payload);
   reset("query-form");
@@ -231,7 +229,7 @@ async function handleSubmit(formData: FormData) {
               />
               <FormKit
                 type="radio"
-                name="lessonType"
+                name="lesson_type"
                 label="Type of Lesson"
                 :options="['Online Tutoring', 'In-Person Tutoring']"
                 options-class="flex flex-col lg:flex-row lg:gap-3"
@@ -239,7 +237,7 @@ async function handleSubmit(formData: FormData) {
               />
               <FormKit
                 type="radio"
-                name="classType"
+                name="class_type"
                 label="Type of Class"
                 :options="['Group Session', 'One-to-One Session']"
                 options-class="flex flex-col lg:flex-row lg:gap-3"

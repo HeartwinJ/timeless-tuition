@@ -7,7 +7,11 @@ interface QueriesTable {
   phone: string;
   year: string;
   subject: string;
+  lesson_type: string;
+  class_type: string;
   message: string;
+  preference: string;
+  referrer: string;
 }
 
 interface ApplicationsTable {
