@@ -87,8 +87,12 @@ async function handleSubmit(formData: FormData) {
   isProcessing.value = true;
   const payload = {
     ...formData,
+    lesson_type: formData.lessonType,
+    class_type: formData.classType,
     subject: formData.subject.join(", "),
     referrer: formData.referrer.join(", "),
+    lessonType: undefined,
+    classType: undefined,
   };
   await Services.saveContact(payload);
   reset("query-form");
