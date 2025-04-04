@@ -78,6 +78,7 @@ async function handleSubmit(data: any) {
   const cvUrl = await Services.uploadCV(data.cv_url[0].file);
   await Services.saveApplication({
     ...data,
+    referrer: data.referrer.join(", "),
     cv_url: cvUrl,
   });
   reset("application-form");

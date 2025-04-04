@@ -21,6 +21,10 @@ interface ApplicationsTable {
   lastname: string;
   email: string;
   phone: string;
+  referrer: string;
+  gcse_math: string;
+  gcse_science: string;
+  gcse_english: string;
   message: string;
 }
 
